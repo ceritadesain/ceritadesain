@@ -22,9 +22,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                <ul class="navbar-nav mx-0 mx-lg-3">
+                    <li class="nav-item d-block d-lg-none d-xl-block">
+                        <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Beranda</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Diskusi</a>
@@ -32,18 +32,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Kebijakan Privasi</a>
                     </li>
-
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Cari diskusi..." aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Cari</button>
+                <form class="d-flex w-100 me-4 my-2 my-lg-0" role="search" action="#" method="GET">
+                    <div class="input-group">
+                        <span class="input-group-text border-end-0 "><img
+                                src="{{ url('assets/images/search-vector.png') }}" alt="Search"></span>
+                        <input class="form-control border-start-0 ps-0 " type="search" placeholder="Cari diskusi..."
+                            aria-label="Search" name="" value="">
+                    </div>
                 </form>
-                <ul class="navbar-nav ">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                <ul>
+                    <li class="nav-item my-auto">
+                        <a class="nav-link text-nowrap " href="#"">Masuk</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Diskusi</a>
+                    <li class="nav-item ps-1 pe-0">
+                        <a class="btn btn-primary-white " href="#"">Daftar</a>
                     </li>
                 </ul>
             </div>

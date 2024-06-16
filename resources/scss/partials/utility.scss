@@ -4,3 +4,24 @@
 .navbar {
     background-color: $navbar-bg-color;
 }
+
+.form-control {
+    background-color: $input-color; // Warna latar belakang untuk input
+    color: $text-color-search; // Warna teks untuk input
+    &:focus,
+    &:active {
+        background-color: $input-color; // Pastikan warna latar belakang tetap sama saat fokus atau aktif
+        color: $text-color-search; // Pastikan warna teks tetap sama saat fokus atau aktif
+        border-color: $input-color; // Optional: ubah warna border saat fokus atau aktif
+        box-shadow: none; // Optional: hapus shadow saat fokus atau aktif jika ada
+    }
+}
+.input-group-text {
+    background-color: $input-color; // Warna latar belakang untuk input group text
+    color: $text-color-search; // Warna teks untuk input group text
+}
+
+.input-group-text img {
+    max-width: 100%; // Mengatur lebar maksimum untuk gambar agar sesuai dengan input group text
+    height: auto; // Memastikan gambar sesuai dengan proporsi aslinya
+}
