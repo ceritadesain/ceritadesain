@@ -14,4 +14,30 @@
         padding-left: 15.9rem; // Sesuaikan nilai sesuai kebutuhan Anda
         padding-right: 15.9rem; // Sesuaikan nilai sesuai kebutuhan Anda
     }
+
+    .font-extra-extra-large {
+        font-size: 6rem;
+    }
+    .font-small {
+        font-size: 1.5rem;
+    }
+}
+
+// INFOGRAPHIC
+.info-image {
+    max-width: 100%; // Make sure the image doesn't exceed its container width
+    width: auto; // Allow the image to maintain its aspect ratio
+    height: auto; // Maintain aspect ratio by not forcing a specific height
+}
+
+@media (max-width: 768px) {
+    .info-image {
+        max-width: 80%; // Smaller image for mobile
+    }
+}
+
+@media (min-width: 992px) {
+    .info-image {
+        max-width: 50%; // Larger image for desktop
+    }
 }

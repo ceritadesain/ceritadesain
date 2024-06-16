@@ -53,6 +53,7 @@
             </div>
         </div>
     </nav>
+
     {{-- HERO --}}
     <section class="container-fluid hero ">
         <div class="row align-items-center h-100 text-center  ">
@@ -62,7 +63,7 @@
                         Komunitas untuk Para Penggemar UI/UX</h1>
                 </div>
                 <div class=" hero-text pt-2">
-                    <p class="mb-4 text-white ">Selamat Datang di CeritaDesain, tempat kreativitas bertemu dengan
+                    <p class="mb-4 text-white  ">Selamat Datang di CeritaDesain, tempat kreativitas bertemu dengan
                         kolaborasi
                         dalam
                         dunia desain UI/UX yang dinamis. Terjunlah ke dalam komunitas yang bersemangat, di mana desainer
@@ -75,7 +76,67 @@
         </div>
     </section>
 
-    {{-- SECTION --}}
+    {{-- PROMOTION SECTION --}}
+    <section class="container height-promotion text-white d-flex align-items-center justify-content-center">
+        <div class="row w-100 align-items-center">
+            <div class="col-12 col-lg-6 ">
+                <h2>Gabung <br> Komunitas Kami</h2>
+            </div>
+            <div class="col-12 col-lg-6 d-flex flex-column align-items-center">
+                <div class="col-12 col-lg-4 ">
+                    <h2 class="font-extra-extra-large">51,875</h2>
+                    <p class="font-small">Diskusi</p>
+                </div>
+                <div class="col-12 col-lg-4 pt-2 pt-lg-5">
+                    <h2 class="font-extra-extra-large">12,984</h2>
+                    <p class="font-small">Jawaban</p>
+                </div>
+                <div class="col-12 col-lg-4 pt-2 pt-lg-5">
+                    <h2 class="font-extra-extra-large ">11,675</h2>
+                    <p class="font-small">Pengguna</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- INFOGRAPHIC SECTION --}}
+    <section class="container height-promotion text-white d-flex align-items-center justify-content-center">
+        <div class="container text-center">
+            <div class="row p-2 p-lg-5">
+                <div class="col-lg-6 col-sm-12   d-flex align-items-center justify-content-center ">
+                    <div>
+                        <h2>Kolaborasi Komunitas</h2>
+                        <p>Dengan menggunakan platform CeritaDesain, Anda dapat terhubung dengan komunitas luas dari
+                            profesional dan penggemar UI/UX. Mulai dari desainer senior hingga pemula, platform ini
+                            menyediakan ruang untuk kolaborasi, pertukaran ide, dan umpan balik yang berharga.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12   order-first order-lg-last">
+                    <img class="info-image pb-2" src="{{ url('assets/images/image-1.png') }}" alt="image-1">
+                </div>
+
+            </div>
+            <div class="row p-lg-5">
+                <div class="col-lg-6 col-sm-12 ">
+                    <img class="info-image pb-2" src="{{ url('assets/images/image-2.png') }}" alt="image-2">
+                </div>
+                <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center ">
+                    <div>
+                        <h2>Pusat Sumber Informasi</h2>
+                        <p>CeritaDesain juga berfungsi sebagai pusat sumber daya lengkap untuk segala hal yang berkaitan
+                            dengan UI/UX. Anda akan menemukan artikel, tutorial, dan sumber daya lain yang berguna yang
+                            dibagikan oleh anggota komunitas. Mulai dari tren terbaru dalam desain antarmuka hingga
+                            teknik pengujian pengguna, platform ini memberikan akses ke informasi terkini dan dapat
+                            diandalkan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Help Others SECTION --}}
+
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </body>
