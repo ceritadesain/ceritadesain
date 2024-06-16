@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    {{-- NAVBAR --}}
     <nav class="navbar navbar-dark navbar-expand-lg">
         <div class="container flex justify-content-between">
             <a class="navbar-link" href="#"><img class="h-48px" src="{{ url('assets/images/ceritadesain-logo.png') }}"
@@ -52,6 +53,30 @@
             </div>
         </div>
     </nav>
+    {{-- HERO --}}
+    <section class="container-fluid hero ">
+        <div class="row align-items-center h-100 text-center  ">
+            <div class="col-12 col-lg-12  ">
+                <div class=" hero-text">
+                    <h1 class="text-white">Selamat Datang di DesignSpeak <br>
+                        Komunitas untuk Para Penggemar UI/UX</h1>
+                </div>
+                <div class=" hero-text pt-2">
+                    <p class="mb-4 text-white ">Selamat Datang di CeritaDesain, tempat kreativitas bertemu dengan
+                        kolaborasi
+                        dalam
+                        dunia desain UI/UX yang dinamis. Terjunlah ke dalam komunitas yang bersemangat, di mana desainer
+                        penuh gairah seperti Anda berkumpul untuk berbagi wawasan, bertukar ide, dan meningkatkan
+                        keterampilan mereka.</p>
+                </div>
+                <a href="#" class="btn btn-primary me-2 mb-2 mb-lg-0">Masuk</a>
+                <a href="#" class="btn btn-secondary mb-2 mb-lg-0">Gabung Diskusi</a>
+            </div>
+        </div>
+    </section>
+
+    {{-- SECTION --}}
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </body>
 

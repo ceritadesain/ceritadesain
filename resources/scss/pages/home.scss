@@ -1,0 +1,17 @@
+.hero {
+    padding-top: 24px;
+    padding-bottom: 16px;
+    background-image: url("../../../public/assets/images/hero-image.png");
+    background-size: cover;
+    background-position: center;
+}
+
+@include media-breakpoint-up(lg) {
+    .hero {
+        height: 100vh;
+    }
+    .hero-text {
+        padding-left: 15.9rem; // Sesuaikan nilai sesuai kebutuhan Anda
+        padding-right: 15.9rem; // Sesuaikan nilai sesuai kebutuhan Anda
+    }
+}
