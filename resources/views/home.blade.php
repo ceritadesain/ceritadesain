@@ -135,6 +135,103 @@
     </section>
 
     {{-- Help Others SECTION --}}
+    <section class=" container height-promotion text-white d-flex align-items-center justify-content-center">
+        <div class="container py-80px">
+            <h2 class="text-center mb-5">Bantu Sesama</h2>
+            <div class="row">
+                <div class="col-12 col-lg-4 mb-3">
+                    <div class="card">
+                        <a href="#">
+                            <h3>Seberapa pentingnya riset pengguna dalam proses desain UI/UX?</h3>
+                        </a>
+                        <div>
+                            <p class="mb-5">Riset pengguna memungkinkan kita memahami kebutuhan dan preferensi
+                                pengguna, sehingga desain dapat disesuaikan untuk memberikan pengalaman yang lebih baik
+                                ...</p>
+                            <div class="row">
+                                <div class="col me-1 me-lg-2">
+                                    <a href="#"><span
+                                            class="badge rounded-pill text-bg-light ">Research</span></a>
+                                </div>
+                                <div class="col-5 col-lg-7">
+                                    <div class="avatar-sm-wrapper d-inline-block">
+                                        <a href="#" class="me-1">
+                                            <img src="{{ url('assets/images/sahal1.png') }}"
+                                                class="avatar rounded-circle" alt="">
+                                        </a>
+                                    </div>
+                                    <span class="fs-12px">
+                                        <a href="#" class="me-1 fw-bold">sahaln</a>
+                                        <span class="color-gray">7 hours ago</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 mb-3">
+                    <div class="card">
+                        <a href="#">
+                            <h3>Seberapa pentingnya riset pengguna dalam proses desain UI/UX?</h3>
+                        </a>
+                        <div>
+                            <p class="mb-5">Riset pengguna memungkinkan kita memahami kebutuhan dan preferensi
+                                pengguna, sehingga desain dapat disesuaikan untuk memberikan pengalaman yang lebih baik
+                                ...</p>
+                            <div class="row">
+                                <div class="col me-1 me-lg-2">
+                                    <a href="#"><span
+                                            class="badge rounded-pill text-bg-light ">Research</span></a>
+                                </div>
+                                <div class="col-5 col-lg-7">
+                                    <div class="avatar-sm-wrapper d-inline-block">
+                                        <a href="#" class="me-1">
+                                            <img src="{{ url('assets/images/sahal1.png') }}"
+                                                class="avatar rounded-circle" alt="">
+                                        </a>
+                                    </div>
+                                    <span class="fs-12px">
+                                        <a href="#" class="me-1 fw-bold">sahaln</a>
+                                        <span class="color-gray">7 hours ago</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 mb-3">
+                    <div class="card">
+                        <a href="#">
+                            <h3>Seberapa pentingnya riset pengguna dalam proses desain UI/UX?</h3>
+                        </a>
+                        <div>
+                            <p class="mb-5">Riset pengguna memungkinkan kita memahami kebutuhan dan preferensi
+                                pengguna, sehingga desain dapat disesuaikan untuk memberikan pengalaman yang lebih baik
+                                ...</p>
+                            <div class="row">
+                                <div class="col me-1 me-lg-2">
+                                    <a href="#"><span
+                                            class="badge rounded-pill text-bg-light ">Research</span></a>
+                                </div>
+                                <div class="col-5 col-lg-7">
+                                    <div class="avatar-sm-wrapper d-inline-block">
+                                        <a href="#" class="me-1">
+                                            <img src="{{ url('assets/images/sahal1.png') }}"
+                                                class="avatar rounded-circle" alt="">
+                                        </a>
+                                    </div>
+                                    <span class="fs-12px">
+                                        <a href="#" class="me-1 fw-bold">sahaln</a>
+                                        <span class="color-gray">7 hours ago</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
