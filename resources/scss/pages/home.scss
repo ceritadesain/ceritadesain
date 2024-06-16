@@ -1,6 +1,6 @@
 .hero {
-    padding-top: 24px;
-    padding-bottom: 16px;
+    padding-top: 3rem;
+    padding-bottom: 7rem;
     background-image: url("../../../public/assets/images/hero-image.png");
     background-size: cover;
     background-position: center;
@@ -9,10 +9,12 @@
 @include media-breakpoint-up(lg) {
     .hero {
         height: 100vh;
+        padding-top: 144px;
+        padding-bottom: 144px;
     }
     .hero-text {
-        padding-left: 15.9rem; // Sesuaikan nilai sesuai kebutuhan Anda
-        padding-right: 15.9rem; // Sesuaikan nilai sesuai kebutuhan Anda
+        padding-left: 15.9rem;
+        padding-right: 15.9rem;
     }
 
     .font-extra-extra-large {
@@ -21,6 +23,16 @@
     .font-small {
         font-size: 1.5rem;
     }
+}
+
+.custom-padding {
+    padding-top: 144px;
+    padding-bottom: 144px;
+}
+
+// PROMOTION
+.min-h-372px {
+    min-height: 372px;
 }
 
 // INFOGRAPHIC
@@ -33,6 +45,9 @@
 @media (max-width: 768px) {
     .info-image {
         max-width: 80%; // Smaller image for mobile
+    }
+    .hero-text {
+        font-size: small;
     }
 }
 
