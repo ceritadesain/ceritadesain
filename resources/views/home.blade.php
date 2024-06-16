@@ -30,7 +30,7 @@
                         <a class="nav-link" href="#">Diskusi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Kebijakan Privasi</a>
+                        <a class="nav-link text-nowrap" href="#">Kebijakan Privasi</a>
                     </li>
                 </ul>
                 <form class="d-flex w-100 me-4 my-2 my-lg-0" role="search" action="#" method="GET">
@@ -41,12 +41,12 @@
                             aria-label="Search" name="" value="">
                     </div>
                 </form>
-                <ul>
+                <ul class="navbar-nav ms-auto my-2 my-lg-0">
                     <li class="nav-item my-auto">
                         <a class="nav-link text-nowrap " href="#"">Masuk</a>
                     </li>
                     <li class="nav-item ps-1 pe-0">
-                        <a class="btn btn-primary-white " href="#"">Daftar</a>
+                        <a class="btn btn-primary-black " href="#"">Daftar</a>
                     </li>
                 </ul>
             </div>

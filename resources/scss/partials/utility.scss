@@ -6,22 +6,78 @@
 }
 
 .form-control {
-    background-color: $input-color; // Warna latar belakang untuk input
-    color: $text-color-search; // Warna teks untuk input
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+    background-color: $input-color;
+    color: $text-color-search;
     &:focus,
     &:active {
-        background-color: $input-color; // Pastikan warna latar belakang tetap sama saat fokus atau aktif
-        color: $text-color-search; // Pastikan warna teks tetap sama saat fokus atau aktif
-        border-color: $input-color; // Optional: ubah warna border saat fokus atau aktif
-        box-shadow: none; // Optional: hapus shadow saat fokus atau aktif jika ada
+        background-color: $input-color;
+        color: $text-color-search;
+        border-color: $input-color;
+        box-shadow: none;
     }
 }
 .input-group-text {
-    background-color: $input-color; // Warna latar belakang untuk input group text
-    color: $text-color-search; // Warna teks untuk input group text
+    background-color: $input-color;
+    color: $text-color-search;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
 }
 
 .input-group-text img {
-    max-width: 100%; // Mengatur lebar maksimum untuk gambar agar sesuai dengan input group text
-    height: auto; // Memastikan gambar sesuai dengan proporsi aslinya
+    max-width: 100%;
+    height: auto;
+}
+
+.navbar-nav {
+    .nav-link.active {
+        color: $white;
+        font-weight: bold;
+    }
+    .nav-link {
+        color: $white;
+
+        &:hover {
+            color: $gray-200;
+        }
+    }
+}
+
+.nav-item {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@include media-breakpoint-up(lg) {
+    .nav-item {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.btn-primary-black {
+    background-color: $black-button;
+    color: $white;
+    border-radius: 50px;
+    padding: 0.56rem 4rem;
+    min-width: 128px;
+
+    &:hover {
+        background-color: $gray-100;
+        color: $black;
+    }
+}
+
+.btn-primary {
+    background-color: $primary-blue;
+    color: $white;
+    border-radius: 50px;
+    padding: 10px 24px;
+    min-width: 128px;
+
+    &:hover {
+        color: $primary-blue;
+        background-color: $white;
+    }
 }
