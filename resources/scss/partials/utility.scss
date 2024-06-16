@@ -109,6 +109,10 @@ body {
     padding-bottom: 16px;
 }
 
+.min-h-372px {
+    height: 372px;
+}
+
 // HELP OTHERS
 
 .py-80px {
@@ -154,4 +158,13 @@ a {
 
 .fs-12px {
     font-size: 12px;
+}
+
+// footer
+footer {
+    background-color: $navbar-bg-color;
+}
+
+.me-140px {
+    margin-right: 140px;
 }
