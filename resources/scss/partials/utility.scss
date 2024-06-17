@@ -123,11 +123,38 @@ body {
     border-radius: 20px;
     padding: 24px;
 }
+.container-fluid {
+    @include media-breakpoint-down(lg) {
+        display: flex;
+        justify-content: center; /* Mengatur agar div berada di tengah horizontal */
+        align-items: center; /* Mengatur agar div berada di tengah vertikal */
+    }
+}
+.padding-container {
+    padding-left: 15rem;
+    padding-right: 15rem;
+    @include media-breakpoint-down(lg) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    @include media-breakpoint-down(md) {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-top: 5rem; /* Tambahan padding atas pada layar md */
+    }
+}
 
-// a {
-//     text-decoration: none;
-//     color: inherit;
-// }
+.img-container {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
 
 .color-gray {
     color: $gray-500;
