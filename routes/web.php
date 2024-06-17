@@ -27,3 +27,9 @@ Route::get('login', function () {
 Route::get('sign-up', function () {
     return view('pages.auth.sign-up');
 });
+
+
+// DISCUSSION
+Route::get('discussions', function () {
+    return view('pages.discussions.index');
+});	

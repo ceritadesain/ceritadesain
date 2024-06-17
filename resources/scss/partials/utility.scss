@@ -119,9 +119,15 @@ body {
 }
 
 .card {
+    color: white;
+    background-color: $navbar-bg-color;
     border: none;
     border-radius: 20px;
     padding: 24px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
 }
 .container-fluid {
     @include media-breakpoint-down(lg) {
@@ -172,8 +178,8 @@ body {
 }
 
 .avatar-sm-wrapper {
-    height: 18px;
-    width: 18px;
+    height: 24px;
+    width: 24px;
 }
 
 .avatar {

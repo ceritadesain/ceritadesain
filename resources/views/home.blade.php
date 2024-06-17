@@ -7,7 +7,7 @@
             <div class="col-12">
                 <div class=" hero-text">
                     <h1 class="text-white">Selamat Datang di DesignSpeak <br>
-                        Komunitas untuk Para Penggemar UI/UX</h1>
+                        Komunitas untuk Para Penggemar UI/UX Indonesia</h1>
                 </div>
                 <div class="hero-text pt-2 ">
                     <p class="mb-4 text-white">Selamat Datang di CeritaDesain, tempat kreativitas bertemu dengan
@@ -88,7 +88,7 @@
             <div class="row">
                 <div class="col-12 col-lg-4 mb-3">
                     <div class="card">
-                        <a href="#" class="text-decoration-none text-reset">
+                        <a href="#">
                             <h3>Seberapa pentingnya riset pengguna dalam proses desain UI/UX?</h3>
                         </a>
                         <div>
@@ -107,7 +107,7 @@
                                         </a>
                                     </div>
                                     <span class="fs-12px">
-                                        <a href="#" class="me-1 fw-bold text-decoration-none text-reset">sahaln</a>
+                                        <a href="#" class="me-1 fw-bold ">sahaln</a>
                                         <span class="color-gray">7 hours ago</span>
                                     </span>
                                 </div>
@@ -117,7 +117,7 @@
                 </div>
                 <div class="col-12 col-lg-4 mb-3">
                     <div class="card">
-                        <a href="#" class="text-decoration-none text-reset">
+                        <a href="#">
                             <h3>Seberapa pentingnya riset pengguna dalam proses desain UI/UX?</h3>
                         </a>
                         <div>
@@ -136,7 +136,7 @@
                                         </a>
                                     </div>
                                     <span class="fs-12px">
-                                        <a href="#" class="me-1 fw-bold text-decoration-none text-reset">sahaln</a>
+                                        <a href="#" class="me-1 fw-bold ">sahaln</a>
                                         <span class="color-gray">7 hours ago</span>
                                     </span>
                                 </div>
@@ -146,7 +146,7 @@
                 </div>
                 <div class="col-12 col-lg-4 mb-3">
                     <div class="card">
-                        <a href="#" class="text-decoration-none text-reset">
+                        <a href="#">
                             <h3>Seberapa pentingnya riset pengguna dalam proses desain UI/UX?</h3>
                         </a>
                         <div>
@@ -165,7 +165,7 @@
                                         </a>
                                     </div>
                                     <span class="fs-12px">
-                                        <a href="#" class="me-1 fw-bold text-decoration-none text-reset">sahaln</a>
+                                        <a href="#" class="me-1 fw-bold ">sahaln</a>
                                         <span class="color-gray">7 hours ago</span>
                                     </span>
                                 </div>
