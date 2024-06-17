@@ -141,7 +141,7 @@
             <div class="row">
                 <div class="col-12 col-lg-4 mb-3">
                     <div class="card">
-                        <a href="#">
+                        <a href="#" class="text-decoration-none text-reset">
                             <h3>Seberapa pentingnya riset pengguna dalam proses desain UI/UX?</h3>
                         </a>
                         <div>
@@ -161,7 +161,8 @@
                                         </a>
                                     </div>
                                     <span class="fs-12px">
-                                        <a href="#" class="me-1 fw-bold">sahaln</a>
+                                        <a href="#"
+                                            class="me-1 fw-bold text-decoration-none text-reset">sahaln</a>
                                         <span class="color-gray">7 hours ago</span>
                                     </span>
                                 </div>
@@ -171,7 +172,7 @@
                 </div>
                 <div class="col-12 col-lg-4 mb-3">
                     <div class="card">
-                        <a href="#">
+                        <a href="#" class="text-decoration-none text-reset">
                             <h3>Seberapa pentingnya riset pengguna dalam proses desain UI/UX?</h3>
                         </a>
                         <div>
@@ -191,7 +192,8 @@
                                         </a>
                                     </div>
                                     <span class="fs-12px">
-                                        <a href="#" class="me-1 fw-bold">sahaln</a>
+                                        <a href="#"
+                                            class="me-1 fw-bold text-decoration-none text-reset">sahaln</a>
                                         <span class="color-gray">7 hours ago</span>
                                     </span>
                                 </div>
@@ -201,7 +203,7 @@
                 </div>
                 <div class="col-12 col-lg-4 mb-3">
                     <div class="card">
-                        <a href="#">
+                        <a href="#" class="text-decoration-none text-reset">
                             <h3>Seberapa pentingnya riset pengguna dalam proses desain UI/UX?</h3>
                         </a>
                         <div>
@@ -221,7 +223,8 @@
                                         </a>
                                     </div>
                                     <span class="fs-12px">
-                                        <a href="#" class="me-1 fw-bold">sahaln</a>
+                                        <a href="#"
+                                            class="me-1 fw-bold text-decoration-none text-reset">sahaln</a>
                                         <span class="color-gray">7 hours ago</span>
                                     </span>
                                 </div>
