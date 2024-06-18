@@ -211,3 +211,17 @@ footer {
     height: 32px;
     width: 32px;
 }
+
+// CREATE/EDIT DISCUSSION
+pre {
+    padding: 12px;
+    font-size: 14px;
+    background-color: #262626;
+    border: 0.5px solid grey;
+    border-radius: 6px;
+    color: #999999;
+}
+
+.note-editable {
+    color: #fff; /* Gunakan kode warna putih sesuai kebutuhan */
+}

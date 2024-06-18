@@ -56,3 +56,9 @@ Route::get('privacy-policy', function () {
 Route::get('term-of-use', function () {
     return view('pages.others.term_of_use');
 })->name('others.term_of_use');
+
+
+// CREATE/EDIT DISCUSSION
+Route::get('discussions/create', function () {
+    return view('pages.discussions.form');
+})->name('discussions.create');
