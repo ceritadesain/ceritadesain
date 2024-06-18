@@ -33,3 +33,8 @@ Route::get('sign-up', function () {
 Route::get('discussions', function () {
     return view('pages.discussions.index');
 });	
+
+// DETAIL DISCUSSION
+Route::get('discussions/lorem', function () {
+    return view('pages.discussions.show');
+});

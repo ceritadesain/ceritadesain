@@ -5,6 +5,7 @@ body {
 .h-48px {
     height: 48px;
 }
+
 .navbar {
     background-color: $navbar-bg-color;
 }
@@ -22,6 +23,7 @@ body {
         box-shadow: none;
     }
 }
+
 .input-group-text {
     background-color: $input-color;
     color: $text-color-search;
@@ -125,10 +127,12 @@ body {
     border-radius: 20px;
     padding: 24px;
 }
+
 a {
     text-decoration: none;
     color: inherit;
 }
+
 .container-fluid {
     @include media-breakpoint-down(lg) {
         display: flex;
@@ -136,6 +140,7 @@ a {
         align-items: center; /* Mengatur agar div berada di tengah vertikal */
     }
 }
+
 .padding-container {
     padding-left: 15rem;
     padding-right: 15rem;
@@ -192,11 +197,17 @@ a {
     font-size: 12px;
 }
 
-// footer
+// FOOTER
 footer {
     background-color: $navbar-bg-color;
 }
 
 .me-140px {
     margin-right: 140px;
+}
+
+// DETAIL PAGE
+.like-icon {
+    height: 32px;
+    width: 32px;
 }
