@@ -67,3 +67,9 @@ Route::get('discussions/create', function () {
 Route::get('answers/1', function () {
     return view('pages.answers.form');
 })->name('answers.edit');
+
+
+// SHOW PROFILE
+Route::get('users/sahaln', function () {
+    return view('pages.users.show');
+})->name('users.show');
