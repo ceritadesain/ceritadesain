@@ -45,7 +45,7 @@
                         </form>
                     </div>
                     <div class="text-center text-white-50">
-                        Belum punya akun?<a href="#"><u> Daftar di sini</u></a>
+                        Belum punya akun?<a  href="{{ route('auth.sign-up.show') }}"><u> Daftar di sini</u></a>
                     </div>
                 </div>
             </div>

@@ -42,7 +42,7 @@
                     </form>
                 </div>
                 <div class="text-center">
-                    Sudah punya akun? Masuk <a href="#"><u>di sini</u></a>
+                    Sudah punya akun? Masuk <a href="{{ route('auth.login.show') }}"><u>di sini</u></a>
                 </div>
             </div>
         </div>

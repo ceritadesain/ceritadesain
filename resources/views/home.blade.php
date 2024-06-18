@@ -17,8 +17,8 @@
                         penuh gairah seperti Anda berkumpul untuk berbagi wawasan, bertukar ide, dan meningkatkan
                         keterampilan mereka.</p>
                 </div>
-                <a href="#" class="btn btn-primary me-2 mb-2 mb-lg-0">Masuk</a>
-                <a href="#" class="btn btn-secondary mb-2 mb-lg-0">Gabung Diskusi</a>
+                <a href="{{ route('auth.login.show') }}" class="btn btn-primary me-2 mb-2 mb-lg-0">Masuk</a>
+                <a href="{{ route('discussions.index') }}" class="btn btn-secondary mb-2 mb-lg-0">Gabung Diskusi</a>
             </div>
         </div>
     </section>
@@ -181,8 +181,7 @@
         <h2>Siap untuk berkontribusi?</h2>
         <p class="mb-4">Ingin membuat dampak besar?</p>
         <div class="text-center">
-
-            <a href="#" class="btn btn-secondary mb-2 mb-lg-0">Gabung Diskusi Sekarang!</a>
+            <a href="{{ route('discussions.index') }}" class="btn btn-secondary mb-2 mb-lg-0">Gabung Diskusi Sekarang!</a>
         </div>
     </section>
 @endsection

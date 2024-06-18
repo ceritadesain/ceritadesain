@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             <div class="pb-3">
-                                <a href="#">
+                                <a href="{{ route('discussions.show') }}">
                                     <h3>Apa perbedaan antara UI dan UX?</h3>
                                 </a>
                                 <p>UI (User Interface) adalah tentang tampilan visual dan interaksi pengguna dengan produk
@@ -73,13 +73,13 @@
                         </div>
                     </div>
                     <div class="mt-4">
-                        <p class="fs-5 fw-normal"> <a href="">Tentang kami</a></p>
+                        <p class="fs-5 fw-normal"> <a href="{{ route('others.about_us') }}">Tentang kami</a></p>
                     </div>
                     <div class="mt-4">
-                        <p class="fs-5 fw-normal"> <a href="">Kode Etik</a></p>
+                        <p class="fs-5 fw-normal"> <a href="{{ route('others.code_of_coduct') }}">Kode Etik</a></p>
                     </div>
                     <div class="mt-4">
-                        <p class="fs-5 fw-normal"> <a href="">Syarat dan Ketentuan</a></p>
+                        <p class="fs-5 fw-normal"> <a href="{{ route('others.term_of_use') }}">Syarat dan Ketentuan</a></p>
                     </div>
                 </div>
             </div>
