@@ -62,3 +62,8 @@ Route::get('term-of-use', function () {
 Route::get('discussions/create', function () {
     return view('pages.discussions.form');
 })->name('discussions.create');
+
+// CREATE/EDIT ANSWER
+Route::get('answers/1', function () {
+    return view('pages.answers.form');
+})->name('answers.edit');
