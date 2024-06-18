@@ -73,3 +73,8 @@ Route::get('answers/1', function () {
 Route::get('users/sahaln', function () {
     return view('pages.users.show');
 })->name('users.show');
+
+// EDIT PROFILE
+Route::get('users/sahaln/edit', function () {
+    return view('pages.users.form');
+})->name('users.edit');
