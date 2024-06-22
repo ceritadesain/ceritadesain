@@ -22,4 +22,9 @@ class LoginController extends Controller
 
         return redirect()->back()->withInput()->withErrors(['credentials' => 'Email atau kata sandi yang Anda masukkan tidak tepat.']);
     }
+     public function logout(){
+        auth()->logout();
+
+        return redirect()->route('home');
+    }
 }

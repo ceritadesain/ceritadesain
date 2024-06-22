@@ -231,3 +231,47 @@ pre {
     height: 128px;
     width: 128px;
 }
+
+// DROP DOWN
+.avatar-nav-wrapper {
+    height: 36px;
+    width: 36px;
+}
+
+.dropdown-menu {
+    background-color: $navbar-bg-color;
+    padding: 0;
+}
+
+.dropdown-item {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+}
+
+.navbar-nav .dropdown-menu {
+    left: -15px;
+    right: auto;
+    border-radius: 10px;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:hover,
+.navbar-nav .dropdown-menu .dropdown-item:focus,
+.navbar-nav .dropdown-menu .dropdown-item:active {
+    background-color: #495057;
+    color: #ffffff;
+}
+
+.navbar-dark .navbar-toggler {
+    border: none;
+}
