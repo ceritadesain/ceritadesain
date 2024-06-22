@@ -17,10 +17,13 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+
+
 // LOGIN ROUTE
-Route::get('login', function () {
-    return view('pages.auth.login');
-})->name('auth.login.show');
+Route::namespace('App\Http\Controllers\Auth')->group(function(){
+    Route::get('login', 'LoginController@show')->name('auth.login.show');
+    Route::post('login', 'LoginController@login')->name('auth.login.login');
+});
 
 
 // SIGNUP
