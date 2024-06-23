@@ -5,7 +5,13 @@
         <div class="container">
             <div class="mb-4">
                 <div class="mb-3 d-flex align-items-center justify-content-between">
-                    <h2 class="me-4 mb-0">Semua diskusi</h2>
+                    <h2 class="me-4 mb-0">
+                        @if (@isset($search))
+                            {{ "Hasil pencarian dari \"$search\"" }}
+                        @else
+                            {{ 'Semua Diskusi' }}
+                        @endif
+                    </h2>
                     <div>
                         {{ $discussions->total() }} Diskusi
                     </div>
