@@ -11,6 +11,7 @@
                         @else
                             {{ 'Semua Diskusi' }}
                         @endif
+                        <span>{{ isset($withCategory) ? ' Tentang ' . $withCategory->name : '' }}</span>
                     </h2>
                     <div>
                         {{ $discussions->total() }} Diskusi
@@ -55,7 +56,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-auto me-1 me-lg-2">
-                                        <a href="#">
+                                        <a href="{{ route('discussions.categories.show', $discussion->category->slug) }}">
                                             <span
                                                 class="badge rounded-pill text-bg-light">{{ $discussion->category->name }}</span>
                                         </a>
@@ -94,7 +95,7 @@
                         <h3>Semua Kategori</h3>
                         <div>
                             @foreach ($categories as $category)
-                                <a href="#">
+                                <a href="{{ route('discussions.categories.show', $category->slug) }}">
                                     <span class="badge rounded-pill text-bg-light m-lg-1">{{ $category->name }}</span>
                                 </a>
                             @endforeach
