@@ -7,69 +7,87 @@
                 <div class="mb-3 d-flex align-items-center justify-content-between">
                     <h2 class="me-4 mb-0">Semua diskusi</h2>
                     <div>
-                        51,875 Diskusi
+                        {{ $discussions->total() }} Diskusi
                     </div>
                 </div>
-                <a href="#" class="btn btn-primary">Masuk untuk membuat diskusi</a>
+                @auth
+                    <a href="{{ route('discussions.create') }}" class="btn btn-primary">Buat diskusi</a>
+                @endauth
+                @guest
+                    <a href="{{ route('auth.login.show') }}" class="btn btn-primary">Masuk untuk membuat diskusi</a>
+                @endguest
             </div>
             <div class="row">
                 <div class="col-12 col-lg-8 mb-5 mb-lg-0">
-                    {{-- DISKUSI CARD --}}
-                    <div class="card card-discussions">
-                        <div class="row">
-                            <div class="row d-flex align-items-center pb-3">
-                                <div class="col-auto ">
-                                    <div class="avatar-sm-wrapper d-inline-block">
-                                        <a href="#">
-                                            <img src="{{ url('/assets/images/sahal1.png') }}" alt="SahalN"
-                                                class="avatar rounded-circle">
-                                        </a>
+                    @forelse ($discussions as $discussion)
+                        {{-- DISKUSI CARD --}}
+                        <div class="card card-discussions">
+                            <div class="row">
+                                <div class="row d-flex align-items-center pb-3">
+                                    <div class="col-auto ">
+                                        <div class="avatar-sm-wrapper d-inline-block">
+                                            <a href="{{ route('users.show', $discussion->user->username) }}">
+                                                <img src="{{ filter_var($discussion->user->picture, FILTER_VALIDATE_URL) ? $discussion->user->picture : Storage::url($discussion->user->picture) }}"
+                                                    alt="{{ $discussion->user->username }}" class="avatar rounded-circle">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto fs-6 ps-0">
+                                        <a href="{{ route('users.show', $discussion->user->username) }}"
+                                            class="me-1 bold">{{ $discussion->user->username }}</a>
+                                    </div>
+                                    <div class="col-auto color-gray fs-6 ps-0">
+                                        {{ $discussion->created_at->diffForHumans() }}
                                     </div>
                                 </div>
-                                <div class="col-auto fs-6 ps-0">
-                                    <a href="#" class="me-1 bold">SahalN</a>
-                                </div>
-                                <div class="col-auto color-gray fs-6 ps-0"> 7 jam yang lalu
-                                </div>
-                            </div>
-                            <div class="pb-3">
-                                <a href="{{ route('discussions.show') }}">
-                                    <h3>Apa perbedaan antara UI dan UX?</h3>
-                                </a>
-                                <p>UI (User Interface) adalah tentang tampilan visual dan interaksi pengguna dengan produk
-                                    digital, seperti tata letak, warna, dan tombol yang digunakan. Sementara itu, ...</p>
-                            </div>
-                            <div class="row">
-                                <div class="col-auto me-1 me-lg-2">
-                                    <a href="#">
-                                        <span class="badge rounded-pill text-bg-light">Affordance</span>
+                                <div class="pb-3">
+                                    <a href="{{ route('discussions.show', $discussion->slug) }}">
+                                        <h3>{{ $discussion->title }}</h3>
                                     </a>
+                                    <p>{{ $discussion->content_preview }}
+                                    </p>
                                 </div>
-                                <div class="col-auto ms-auto">
-                                    <div class="row justify-content-end">
-                                        <div class="col-auto d-flex align-items-center ">
-                                            <img src="{{ url('assets/images/like.png') }}" alt="suka" class="pe-2">3
-                                        </div>
-                                        <div class="col-auto d-flex align-items-center ">
-                                            <img src="{{ url('assets/images/diskusi.png') }}" alt="diskusi" class="pe-2">
-                                            9
+                                <div class="row">
+                                    <div class="col-auto me-1 me-lg-2">
+                                        <a href="#">
+                                            <span
+                                                class="badge rounded-pill text-bg-light">{{ $discussion->category->name }}</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-auto ms-auto">
+                                        <div class="row justify-content-end">
+                                            <div class="col-auto d-flex align-items-center ">
+                                                <img src="{{ url('assets/images/like.png') }}" alt="suka"
+                                                    class="pe-2">3
+                                            </div>
+                                            <div class="col-auto d-flex align-items-center ">
+                                                <img src="{{ url('assets/images/diskusi.png') }}" alt="diskusi"
+                                                    class="pe-2">
+                                                9
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @empty
+                        <div class="card card-discussions">
+                            Saat ini belum ada diskusi
+                        </div>
+                    @endforelse
+
                 </div>
                 {{-- KATEGORI --}}
                 <div class="col-12 col-lg-4">
                     <div class="card">
                         <h3>Semua Kategori</h3>
                         <div>
-                            <a href="#">
-                                <span class="badge rounded-pill text-bg-light">Wireframe</span>
-                                <span class="badge rounded-pill text-bg-light">User Flow</span>
-                                <span class="badge rounded-pill text-bg-light">Accessibility</span>
-                            </a>
+                            @foreach ($categories as $category)
+                                <a href="#">
+                                    <span class="badge rounded-pill text-bg-light m-lg-1">{{ $category->name }}</span>
+                                </a>
+                            @endforeach
+
                         </div>
                     </div>
                     <div class="mt-4">

@@ -14,15 +14,16 @@ use App\Http\Controllers\DiscussionController;
 |
 */
 
-// CREATE/EDIT DISCUSSION
-// Route::get('discussions/create', function () {
-//     return view('pages.discussions.form');
-// })->name('discussions.create');
-
+// CREATE DISCUSSION
 Route::middleware('auth')->group(function () {
     Route::namespace('App\Http\Controllers')->group(function () {
         Route::resource('discussions', DiscussionController::class)->only(['create','store', 'edit', 'update', 'destroy' ]);
     });
+});
+
+// DISCUSSION LIST
+Route::namespace('App\Http\Controllers')->group(function () {
+    Route::resource('discussions', DiscussionController::class)->only(['index','show']);
 });
 
 Route::get('/', function () {
@@ -38,10 +39,7 @@ Route::namespace('App\Http\Controllers\Auth')->group(function(){
     Route::post('sign-up', 'SignUpController@signUp')->name('auth.sign-up.sign-up');
 });
 
-// DISCUSSION
-Route::get('discussions', function () {
-    return view('pages.discussions.index');
-})->name('discussions.index');	
+
 
 
 // DETAIL DISCUSSION

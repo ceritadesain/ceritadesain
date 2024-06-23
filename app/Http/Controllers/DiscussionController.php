@@ -15,7 +15,20 @@ class DiscussionController extends Controller
      */
     public function index()
     {
-        //
+        // load semua discussion
+        // eager load relationshipnya / relasinya
+        // return page index beserta datanya
+        // data yang di pass ke view adl
+        // discussion yang sudah disort dengan created at menurun, pagination per 10/20
+        // data semua category
+
+        $discussion = Discussion::with('user' , 'category');
+
+        return response()->view('pages.discussions.index', [
+            'discussions' => $discussion->orderBy('created_at', 'desc')->paginate(10),
+            'categories'=>Category::all()
+        ]);
+
     }
 
     /**
