@@ -275,3 +275,37 @@ pre {
 .navbar-dark .navbar-toggler {
     border: none;
 }
+
+// PAGINATION
+// Mengubah warna teks dan gaya pagination
+.pagination-info {
+    color: white;
+    font-weight: 500;
+}
+
+// Mengubah gaya link pagination
+.pagination {
+    .page-link {
+        color: white; // Mengubah warna teks tautan pagination menjadi putih
+        background-color: $navbar-bg-color; // Menghapus latar belakang default
+        border-color: white; // Mengatur warna border default
+        &:hover {
+            color: #ccc; // Warna teks saat hover
+            background-color: $navbar-bg-color; // Latar belakang saat hover
+            border-color: white; // Border warna saat hover
+        }
+    }
+
+    // Mengatur gaya item pagination yang aktif
+    .page-item.active .page-link {
+        background-color: white; // Mengubah warna latar belakang item aktif
+        color: $navbar-bg-color; // Mengubah warna teks item aktif
+    }
+
+    // Mengatur gaya item pagination yang disabled
+    .page-item.disabled .page-link {
+        color: #666; // Warna teks item disabled
+        background-color: $navbar-bg-color; // Latar belakang item disabled
+        border-color: white; // Border item disabled
+    }
+}

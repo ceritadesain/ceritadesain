@@ -50,7 +50,7 @@
                                     <a href="{{ route('discussions.show', $discussion->slug) }}">
                                         <h3>{{ $discussion->title }}</h3>
                                     </a>
-                                    <p>{{ $discussion->content_preview }}
+                                    <p>{!! $discussion->content_preview !!}
                                     </p>
                                 </div>
                                 <div class="row">
@@ -81,6 +81,11 @@
                             Saat ini belum ada diskusi
                         </div>
                     @endforelse
+
+                    <div class="pagination-info">
+                        {{ $discussions->links('vendor.pagination.bootstrap-5') }}
+                    </div>
+
 
                 </div>
                 {{-- KATEGORI --}}
