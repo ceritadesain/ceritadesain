@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function () {
     });
 });
 
-// DISCUSSION LIST
+// DISCUSSION LIST and DETAIL LIST
 Route::namespace('App\Http\Controllers')->group(function () {
     Route::resource('discussions', DiscussionController::class)->only(['index','show']);
     Route::get('discussions/categories/{category}', 'CategoryController@show')->name('discussions.categories.show');
@@ -41,12 +41,6 @@ Route::namespace('App\Http\Controllers\Auth')->group(function(){
 });
 
 
-
-
-// DETAIL DISCUSSION
-Route::get('discussions/lorem', function () {
-    return view('pages.discussions.show');
-})->name('discussions.show');
 
 // OTHERS
 Route::get('about-us', function () {

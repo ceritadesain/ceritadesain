@@ -8,7 +8,7 @@
                         <div class="fs-2 fw-bold color-gray me-2 mb-0">Diskusi</div>
                         <div class="fs-2 fw-bold color-gray me-2 mb-0">></div>
                     </div>
-                    <h2 class="mb-0">Apa perbedaan antara UI dan UX?</h2>
+                    <h2 class="mb-0">{{ $discussion->title }}</h2>
                 </div>
             </div>
             <div class="row">
@@ -21,15 +21,17 @@
                                         <div class="col-auto">
                                             <div class="avatar-sm-wrapper d-inline-block">
                                                 <a href="#">
-                                                    <img src="{{ url('/assets/images/sahal1.png') }}" alt="SahalN"
+                                                    <img src="{{ filter_var($discussion->user->picture, FILTER_VALIDATE_URL) ? $discussion->user->picture : Storage::url($discussion->user->picture) }}"
+                                                        alt="{{ $discussion->user->username }}"
                                                         class="avatar rounded-circle">
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="col-auto fs-6 ps-0">
-                                            <a href="#" class="me-1 bold">SahalN</a>
+                                            <a href="#" class="me-1 bold">{{ $discussion->user->username }}</a>
                                         </div>
-                                        <div class="col-auto color-gray fs-6 ps-0"> 7 jam yang lalu
+                                        <div class="col-auto color-gray fs-6 ps-0">
+                                            {{ $discussion->created_at->diffForHumans() }}
                                         </div>
                                     </div>
 
@@ -38,8 +40,8 @@
                                     <div>
                                         <span class="color-gray  ">
                                             <a href="javascript:;" id="share-discussion"><small>Share</small></a>
-                                            <input type="text" value="{{ url('discussions/lorem') }}" id="current-url"
-                                                class="d-none">
+                                            <input type="text" value="{{ route('discussions.show', $discussion->slug) }}"
+                                                id="current-url" class="d-none">
                                         </span>
                                     </div>
 
@@ -47,37 +49,13 @@
                             </div>
                             <div class="pb-3">
                                 <p>
-                                    I am working on a blogging application in Laravel 8. There are 4 user roles, among
-                                    which, the I am working on a blogging application in Laravel 8. There are 4 user
-                                    roles,
-                                    among which, the I am working on a blogging application in Laravel 8. There are 4
-                                    user
-                                    roles, among which, the I am working on a blogging application in Laravel 8. There
-                                    are 4
-                                    user roles, among which, the I am working on a blogging application in Laravel 8.
-                                    There
-                                    are 4 user roles, among
-                                    which, the I am working on a blogging application in Laravel 8. There are 4 user
-                                    roles,
-                                    among
-                                    which, the I am working on a blogging application in Laravel 8. There are 4 user
-                                    roles,
-                                    among
-                                    which, the I am working on a blogging application in Laravel 8. There are 4 user
-                                    roles,
-                                    among
-                                    which, the I am working on a blogging application in Laravel 8. There are 4 user
-                                    roles,
-                                    among
-                                    which, the I am working on a blogging application in Laravel 8. There are 4 user
-                                    roles,
-                                    among
-                                    which, the
+                                    {!! $discussion->content !!}
                                 </p>
                             </div>
                             <div class="d-flex">
                                 <div class="w-100 me-1 me-lg-2">
-                                    <a href="#"><span class="badge rounded-pill text-bg-light">Facade</span></a>
+                                    <a href="{{ route('discussions.categories.show', $discussion->category->slug) }}"><span
+                                            class="badge rounded-pill text-bg-light">{{ $discussion->category->slug }}</span></a>
                                 </div>
                                 <div class="flex-shrink-1">
                                     <div class="d-flex align-items-center">
@@ -129,22 +107,27 @@
                             </div>
 
                         </div>
-                        <div class="fw-bold text-center">Silakan <a href="{{ route('auth.login.show') }}"
-                                class="text-primary">masuk</a> atau <a href="{{ route('auth.sign-up.show') }}"
-                                class="text-primary">buat akun</a>
-                            untuk berpartisipasi dalam diskusi ini.
-                        </div>
+                        @guest
+                            <div class="fw-bold text-center">Silakan <a href="{{ route('auth.login.show') }}"
+                                    class="text-primary">masuk</a> atau <a href="{{ route('auth.sign-up.show') }}"
+                                    class="text-primary">buat akun</a>
+                                untuk berpartisipasi dalam diskusi ini.
+                            </div>
+                        @endguest
+
                     </div>
                 </div>
                 <div class="col-12 col-lg-4">
                     <div class="card">
                         <h3>Semua Kategori</h3>
                         <div>
-                            <a href="#">
-                                <span class="badge rounded-pill text-bg-light">Wireframe</span>
-                                <span class="badge rounded-pill text-bg-light">User Flow</span>
-                                <span class="badge rounded-pill text-bg-light">Accessibility</span>
-                            </a>
+                            @foreach ($categories as $category)
+                                <a href="{{ route('discussions.categories.show', $category->slug) }}">
+                                    <span class="badge rounded-pill text-bg-light">{{ $category->name }}</span>
+
+                                </a>
+                            @endforeach
+
                         </div>
                     </div>
                     <div class="mt-4">
