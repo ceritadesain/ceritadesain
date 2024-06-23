@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DiscussionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +14,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// CREATE/EDIT DISCUSSION
+// Route::get('discussions/create', function () {
+//     return view('pages.discussions.form');
+// })->name('discussions.create');
+
+Route::middleware('auth')->group(function () {
+    Route::namespace('App\Http\Controllers')->group(function () {
+        Route::resource('discussions', DiscussionController::class)->only(['create','store', 'edit', 'update', 'destroy' ]);
+    });
+});
+
 Route::get('/', function () {
     return view('home');
 })->name('home');
-
-
 
 // LOGIN & SIGNUP ROUTE
 Route::namespace('App\Http\Controllers\Auth')->group(function(){
@@ -57,10 +67,7 @@ Route::get('term-of-use', function () {
 })->name('others.term_of_use');
 
 
-// CREATE/EDIT DISCUSSION
-Route::get('discussions/create', function () {
-    return view('pages.discussions.form');
-})->name('discussions.create');
+
 
 // CREATE/EDIT ANSWER
 Route::get('answers/1', function () {

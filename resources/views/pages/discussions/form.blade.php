@@ -17,41 +17,46 @@
                     <div class="card card-discussions mb-5 ">
                         <div class="row">
                             <div class="col-12">
-                                <form action="" method="POST">
+                                <form action="{{ route('discussions.store') }}" method="POST">
+                                    @csrf
                                     <div class="mb-3">
                                         <label for="title" class="form-label">Judul</label>
-                                        <input type="text" class="form-control" id="title" name="title" autofocus>
+                                        <input type="text" class="form-control @error('title') is-invalid @enderror"
+                                            id="title" name="title" value="{{ old('title') }}" autofocus>
+                                        @error('title')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="category_slug" class="form-label">Kategori</label>
-                                        <select class="form-select text-black" name="category_slug" id="category_slug">
-                                            <option value="design-principles">Prinsip Desain</option>
-                                            <option value="user-research">Riset Pengguna</option>
-                                            <option value="prototyping">Prototyping</option>
-                                            <option value="usability-testing">Usability Testing</option>
-                                            <option value="accessibility">Aksesibilitas</option>
-                                            <option value="visual-design">Desain Visual</option>
-                                            <option value="interaction-design">Desain Interaksi</option>
-                                            <option value="information-architecture">Arsitektur Informasi</option>
-                                            <option value="wireframing">Wireframing</option>
-                                            <option value="user-personas">User Personas</option>
-                                            <option value="responsive-design">Desain Responsif</option>
-                                            <option value="mobile-ux">UX Mobile</option>
-                                            <option value="ui-development">Pengembangan UI</option>
-                                            <option value="microinteractions">Microinteractions</option>
-                                            <option value="content-strategy">Strategi Konten</option>
-                                            <option value="a-b-testing">A/B Testing</option>
+                                        <select class="form-select text-black @error('category_slug') is-invalid @enderror"
+                                            name="category_slug" id="category_slug">
+                                            <option value="">--Pilih Salah Satu ---</option>
+                                            @foreach ($categories as $category)
+                                                <option
+                                                    value="{{ $category->slug }}"@if (old('category_slug') === $category->slug) {{ 'selected' }} @endif>
+
+                                                    {{ $category->name }}</option>
+                                            @endforeach
                                         </select>
+                                        @error('category_slug')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label for="content" class="form-label ">Ceritakan Pengalamanmu atau Masukkan
+                                        <label for="content"
+                                            class="form-label @error('content') is-invalid @enderror ">Ceritakan
+                                            Pengalamanmu atau Masukkan
                                             Sebuah pertanyaan
                                         </label>
-                                        <textarea class="form-control text-white" id="content" name="content"></textarea>
+                                        <textarea class="form-control text-white" id="content" name="content">{{ old('content') }}</textarea>
+                                        @error('content')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div>
                                         <button class="btn btn-primary me-4" type="submit">Kirim</button>
-                                        <a href="">Batal</a>
+                                        <a href="{{ route('discussions.index') }}">Batal</a>
                                     </div>
                                 </form>
                             </div>
