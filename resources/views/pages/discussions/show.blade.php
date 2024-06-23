@@ -123,7 +123,7 @@
                         <div>
                             @foreach ($categories as $category)
                                 <a href="{{ route('discussions.categories.show', $category->slug) }}">
-                                    <span class="badge rounded-pill text-bg-light">{{ $category->name }}</span>
+                                    <span class="badge rounded-pill text-bg-light m-lg-1">{{ $category->name }}</span>
 
                                 </a>
                             @endforeach
