@@ -38,6 +38,19 @@
                                 </div>
                                 <div>
                                     <div>
+                                        {{-- TOMBOL EDIT --}}
+                                        @if ($discussion->user_id === auth()->id())
+                                            <span class="color-gray  ">
+                                                <a
+                                                    href="{{ route('discussions.edit', $discussion->slug) }}"><small>Edit</small></a>
+                                                <input type="text"
+                                                    value="{{ route('discussions.show', $discussion->slug) }}"
+                                                    id="current-url" class="d-none">
+                                            </span>
+                                        @endif
+
+
+                                        {{-- TOMBOL SHARE --}}
                                         <span class="color-gray  ">
                                             <a href="javascript:;" id="share-discussion"><small>Share</small></a>
                                             <input type="text" value="{{ route('discussions.show', $discussion->slug) }}"
@@ -59,7 +72,8 @@
                                 </div>
                                 <div class="flex-shrink-1">
                                     <div class="d-flex align-items-center">
-                                        <a id="discussion-like" href="javascript:;" data-liked="{{ $discussion->liked() }}">
+                                        <a id="discussion-like" href="javascript:;"
+                                            data-liked="{{ $discussion->liked() }}">
                                             <img src="{{ $discussion->liked() ? $likedImage : $notLikedImage }}"
                                                 alt="suka" id="discussion-like-icon" class="pe-2">
                                         </a>
