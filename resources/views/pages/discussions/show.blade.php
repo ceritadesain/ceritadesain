@@ -134,6 +134,21 @@
                             </div>
 
                         </div>
+                        @auth
+                            <h3 class="mb-5">Tanggapanmu</h3>
+                            <div class="card card-discussions">
+                                <form action="{{ route('discussions.answer.store', $discussion->slug) }}" method="POST">
+                                    @csrf
+                                    <div class="mb-3">
+                                        <textarea name="answer" id="answer">{{ old('answer') }}</textarea>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-primary me-4" type="submit">Kirim</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        @endauth
                         @guest
                             <div class="fw-bold text-center">Silakan <a href="{{ route('auth.login.show') }}"
                                     class="text-primary">masuk</a> atau <a href="{{ route('auth.sign-up.show') }}"
@@ -188,6 +203,27 @@
                 let alertContainer = alert.find('.container');
                 alertContainer.first().text('Link to this discussion copied succesfully');
             });
+            $('#answer').summernote({
+                placeholder: 'tulis solusi kamu di sini',
+                tabSize: 2,
+                height: 220,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link']],
+                    ['view', ['codeview', 'help']],
+                ],
+                callbacks: {
+                    onInit: function() {
+                        $('.note-editable').css('color', 'white');
+                    }
+                }
+            });
+            $('span.note-icon-caret').remove();
+
 
             $('#discussion-like').click(function() {
                 // dapatkan data apakah discussion ini sudah pernah dilike oleh user
