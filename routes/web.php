@@ -18,6 +18,8 @@ use App\Http\Controllers\DiscussionController;
 Route::middleware('auth')->group(function () {
     Route::namespace('App\Http\Controllers')->group(function () {
         Route::resource('discussions', DiscussionController::class)->only(['create','store', 'edit', 'update', 'destroy' ]);
+        Route::post('discussions/{discussion}/like', 'LikeController@discussionLike')->name('discussions.like.like');
+        Route::post('discussions/{discussion}/unlike', 'LikeController@discussionUnlike')->name('discussions.like.unlike');
     });
 });
 

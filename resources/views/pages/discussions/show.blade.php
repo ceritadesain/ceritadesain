@@ -59,8 +59,12 @@
                                 </div>
                                 <div class="flex-shrink-1">
                                     <div class="d-flex align-items-center">
-                                        <img src="{{ url('assets/images/like.png') }}" alt="suka" class="pe-2">
-                                        <span>3</span>
+                                        <a id="discussion-like" href="javascript:;" data-liked="{{ $discussion->liked() }}">
+                                            <img src="{{ $discussion->liked() ? $likedImage : $notLikedImage }}"
+                                                alt="suka" id="discussion-like-icon" class="pe-2">
+                                        </a>
+                                        <span id="discussion-like-count">{{ $discussion->likeCount }}</span>
+
                                     </div>
                                 </div>
                             </div>
@@ -73,11 +77,10 @@
                         <div class="card card-discussions">
                             <div class="row">
                                 <div class="col-1 d-flex flex-column justify-content-start align-items-center ">
-                                    <a href="#">
-                                        <img src="{{ url('assets/images/like.png') }}" alt="Like"
-                                            class="like-icon mb-1">
+                                    <a href="">
+                                        <img src="" alt="Like" class="like-icon mb-1">
                                     </a>
-                                    <span class="fs-4 color-gray mb-1">12</span>
+                                    <span class="fs-4 color-gray mb-1">2</span>
                                 </div>
                                 <div class="col-11">
                                     <div class="align-items-start justify-content-start ">
@@ -151,14 +154,48 @@
     <script>
         $(document).ready(function() {
             $('#share-discussion').click(function() {
-                var copyText = $('#current-url')
+                let copyText = $('#current-url')
                 copyText[0].select();
                 copyText[0].setSelectionRange(0, 99999);
                 navigator.clipboard.writeText(copyText.val());
-                var alert = $('#alert');
+                let alert = $('#alert');
                 alert.removeClass('d-none');
-                var alertContainer = alert.find('.container');
+                let alertContainer = alert.find('.container');
                 alertContainer.first().text('Link to this discussion copied succesfully');
+            });
+
+            $('#discussion-like').click(function() {
+                // dapatkan data apakah discussion ini sudah pernah dilike oleh user
+                // tentukan route like ajax, berdasarkan dengan apakah ini sudah dilike atau belum
+                // lakukan proses ajax
+                // jika ajax berhasil maka dapatkan status jsonnya
+                // jika statusnya success maka isi counter like dengan data counter like dari jsonnya
+                // lalu kita ganti icon likenya berdasarkan dengan nilai variable point 1
+                // jika user seblumnya sudah me-like, maka ganti icon jadi notlikedImage
+                // jika user seblumnya belum me-like, maka ganti icon jadi likedImage
+
+                let isLiked = $(this).data('liked');
+                let likeRoute = isLiked ? '{{ route('discussions.like.unlike', $discussion->slug) }}' :
+                    '{{ route('discussions.like.like', $discussion->slug) }}';
+
+                $.ajax({
+                    method: 'POST',
+                    url: likeRoute,
+                    data: {
+                        '_token': '{{ csrf_token() }}'
+                    }
+                }).done(function(res) {
+                    if (res.status === 'success') {
+                        $('#discussion-like-count').text(res.data.likeCount);
+                        if (isLiked) {
+                            $('#discussion-like-icon').attr('src', '{{ $notLikedImage }}');
+                        } else {
+                            $('#discussion-like-icon').attr('src', '{{ $likedImage }}');
+                        }
+                        $('#discussion-like').data('liked', !isLiked);
+                    }
+                })
+
             })
         })
     </script>
