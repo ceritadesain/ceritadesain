@@ -37,24 +37,34 @@
 
                                 </div>
                                 <div>
-                                    <div>
-                                        {{-- TOMBOL EDIT --}}
+                                    <div class="row d-flex justify-content-end">
+
                                         @if ($discussion->user_id === auth()->id())
-                                            <span class="color-gray  ">
+                                            {{-- TOMBOL EDIT --}}
+                                            <span class="color-gray  col-auto">
                                                 <a
                                                     href="{{ route('discussions.edit', $discussion->slug) }}"><small>Edit</small></a>
                                                 <input type="text"
                                                     value="{{ route('discussions.show', $discussion->slug) }}"
                                                     id="current-url" class="d-none">
                                             </span>
+                                            {{-- TOMBOLE DELETE --}}
+
+                                            <form action="{{ route('discussions.destroy', $discussion->slug) }}"
+                                                method="POST" class="col-auto ">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="border-0 bg-transparent p-0 " id="delete-discussion"><small
+                                                        class="color-gray">Hapus</small></button>
+                                            </form>
                                         @endif
 
 
                                         {{-- TOMBOL SHARE --}}
-                                        <span class="color-gray  ">
+                                        <span class="color-gray col-auto">
                                             <a href="javascript:;" id="share-discussion"><small>Share</small></a>
                                             <input type="text" value="{{ route('discussions.show', $discussion->slug) }}"
-                                                id="current-url" class="d-none">
+                                                id="current-url" class="d-none ">
                                         </span>
                                     </div>
 
@@ -154,7 +164,8 @@
                         <p class="fs-5 fw-normal"> <a href="{{ route('others.code_of_coduct') }}">Kode Etik</a></p>
                     </div>
                     <div class="mt-4">
-                        <p class="fs-5 fw-normal"> <a href="{{ route('others.term_of_use') }}">Syarat dan Ketentuan</a></p>
+                        <p class="fs-5 fw-normal"> <a href="{{ route('others.term_of_use') }}">Syarat dan Ketentuan</a>
+                        </p>
                     </div>
                 </div>
 
@@ -209,7 +220,12 @@
                         $('#discussion-like').data('liked', !isLiked);
                     }
                 })
+            });
 
+            $('#delete-discussion').click(function(event) {
+                if (!confirm('Hapus Diskusi?')) {
+                    event.preventDefault();
+                }
             })
         })
     </script>
