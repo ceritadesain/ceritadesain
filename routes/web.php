@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AnswerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DiscussionController;
+use App\Models\Answer;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,8 @@ Route::middleware('auth')->group(function () {
         Route::post('discussions/{discussion}/unlike', 'LikeController@discussionUnlike')->name('discussions.like.unlike');
 
         Route::post('discussions/{discussion}/answer', 'AnswerController@store')->name('discussions.answer.store');
+
+        Route::resource('answers', AnswerController::class)->only(['edit', 'update', 'destroy']);
 
         Route::post('answers/{answer}/like', 'LikeController@answerLike')->name('answers.like.like');
         Route::post('answers/{answer}/unlike', 'LikeController@answerUnlike')->name('answers.like.unlike');
@@ -66,13 +70,6 @@ Route::get('term-of-use', function () {
     return view('pages.others.term_of_use');
 })->name('others.term_of_use');
 
-
-
-
-// CREATE/EDIT ANSWER
-Route::get('answers/1', function () {
-    return view('pages.answers.form');
-})->name('answers.edit');
 
 
 // SHOW PROFILE

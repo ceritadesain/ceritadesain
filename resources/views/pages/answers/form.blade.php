@@ -17,16 +17,17 @@
                     <div class="card card-discussions mb-5 ">
                         <div class="row">
                             <div class="col-12">
-                                <form action="" method="POST">
-
+                                <form action="{{ route('answers.update', $answer->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
                                     <div class="mb-3">
                                         <label for="answer" class="form-label ">Berikan tanggapanmu di bawah ya!
                                         </label>
-                                        <textarea class="form-control text-white" id="answer" name="answer"></textarea>
+                                        <textarea class="form-control text-white" id="answer" name="answer">{{ $answer->answer ?? old('answer') }}</textarea>
                                     </div>
                                     <div>
                                         <button class="btn btn-primary me-4" type="submit">Kirim</button>
-                                        <a href="">Batal</a>
+                                        <a href="{{ route('discussions.show', $answer->discussion->slug) }}">Batal</a>
                                     </div>
                                 </form>
                             </div>

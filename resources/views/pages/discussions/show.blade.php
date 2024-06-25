@@ -97,7 +97,7 @@
                         $answerCount = $discussion->answers->count();
                     @endphp
 
-                    <h3 class="mb-5"> {{ $answerCount }} Jawaban</h3>
+                    <h3 class="mb-5"> {{ $answerCount }} Tanggapan</h3>
 
                     <div class="mb-5">
                         @forelse ($discussionAnswers as $answer)
@@ -133,6 +133,17 @@
                                                 <div class="col-auto color-gray fs-6 ps-0"> 7 jam yang lalu
                                                 </div>
 
+                                                <div class="col-auto color-gray fs-6 ps-0 ms-auto">
+                                                    <div class="row ">
+                                                        <div class="col-12 col-lg-auto ">
+                                                            @if ($answer->user_id === auth()->id())
+                                                                <span class="color-gray me-2"><a
+                                                                        href="{{ route('answers.edit', $answer->id) }}"><small>Edit</small></a></span>
+                                                            @endif
+                                                        </div>
+                                                        <div class="col-12 col-lg-auto ">hapus</div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div>
                                                 <div>{!! $answer->answer !!}</div>
@@ -140,7 +151,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         @empty
                             <div class="card card-discussion mb-5">
