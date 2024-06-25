@@ -130,7 +130,8 @@
                                                     class="col-auto fs-6 ps-0 {{ $answer->user->username === $discussion->user->username ? 'text-primary' : '' }} ">
                                                     <a href="#" class="me-1 bold">{{ $answer->user->username }}</a>
                                                 </span>
-                                                <div class="col-auto color-gray fs-6 ps-0"> 7 jam yang lalu
+                                                <div class="col-auto color-gray fs-6 ps-0">
+                                                    {{ $answer->created_at->diffForHumans() }}
                                                 </div>
 
                                                 <div class="col-auto color-gray fs-6 ps-0 ms-auto">
