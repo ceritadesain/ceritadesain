@@ -64,13 +64,13 @@
                                     <div class="col-auto ms-auto">
                                         <div class="row justify-content-end">
                                             <div class="col-auto d-flex align-items-center ">
-                                                <img src="{{ url('assets/images/like.png') }}" alt="suka"
-                                                    class="pe-2">3
+                                                <img src="{{ url('assets/images/like-white-heart.png') }}" alt="suka"
+                                                    class="pe-2">{{ $discussion->likeCount }}
                                             </div>
                                             <div class="col-auto d-flex align-items-center ">
                                                 <img src="{{ url('assets/images/diskusi.png') }}" alt="diskusi"
                                                     class="pe-2">
-                                                9
+                                                {{ $discussion->answers->count() }}
                                             </div>
                                         </div>
                                     </div>
