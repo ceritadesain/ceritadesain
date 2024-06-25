@@ -139,9 +139,16 @@
                                                             @if ($answer->user_id === auth()->id())
                                                                 <span class="color-gray me-2"><a
                                                                         href="{{ route('answers.edit', $answer->id) }}"><small>Edit</small></a></span>
+                                                                <form action="{{ route('answers.destroy', $answer->id) }}"
+                                                                    class="d-inline-block lh-1" method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="submit"
+                                                                        class=" delete-answer color-gray border-0 bg-transparent p-0"><small>Hapus</small></button>
+                                                                </form>
                                                             @endif
                                                         </div>
-                                                        <div class="col-12 col-lg-auto ">hapus</div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -287,6 +294,12 @@
 
             $('#delete-discussion').click(function(event) {
                 if (!confirm('Hapus Diskusi?')) {
+                    event.preventDefault();
+                }
+            });
+
+            $('.delete-answer').click(function(event) {
+                if (!confirm('Hapus tanggapan?')) {
                     event.preventDefault();
                 }
             });
