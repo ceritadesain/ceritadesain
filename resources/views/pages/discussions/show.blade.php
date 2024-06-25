@@ -94,46 +94,59 @@
                             </div>
                         </div>
                     </div>
+                    @php
+                        $answerCount = $discussion->answers->count();
+                    @endphp
 
-                    <h3 class="mb-5"> 2 Jawaban</h3>
+                    <h3 class="mb-5"> {{ $answerCount }} Jawaban</h3>
 
                     <div class="mb-5">
-                        <div class="card card-discussions">
-                            <div class="row">
-                                <div class="col-1 d-flex flex-column justify-content-start align-items-center ">
-                                    <a href="">
-                                        <img src="" alt="Like" class="like-icon mb-1">
-                                    </a>
-                                    <span class="fs-4 color-gray mb-1">2</span>
-                                </div>
-                                <div class="col-11">
-                                    <div class="align-items-start justify-content-start ">
-                                        <div class="row pb-3">
-                                            <div class="col-auto">
-                                                <div class="avatar-sm-wrapper d-inline-block">
-                                                    <a href="#">
-                                                        <img src="{{ url('/assets/images/sahal1.png') }}" alt="SahalN"
-                                                            class="avatar rounded-circle">
-                                                    </a>
+                        @forelse ($discussionAnswers as $answer)
+                            <div class="card card-discussions">
+                                <div class="row">
+                                    <div class="col-1 d-flex flex-column justify-content-start align-items-center ">
+                                        <a href="">
+                                            <img src="" alt="Like" class="like-icon mb-1">
+                                        </a>
+                                        <span class="fs-4 color-gray mb-1">2</span>
+                                    </div>
+                                    <div class="col-11">
+                                        <div class="align-items-start justify-content-start ">
+                                            <div class="row pb-3">
+                                                <div class="col-auto">
+                                                    <div class="avatar-sm-wrapper d-inline-block">
+                                                        <a href="#">
+                                                            <img src="{{ filter_var($answer->user->picture, FILTER_VALIDATE_URL) ? $answer->user->picture : Storage::url($answer->user->picture) }}"
+                                                                alt="{{ $answer->user->username }}"
+                                                                class="avatar rounded-circle">
+                                                        </a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-auto fs-6 ps-0">
-                                                <a href="#" class="me-1 bold">SahalN</a>
-                                            </div>
-                                            <div class="col-auto color-gray fs-6 ps-0"> 7 jam yang lalu
-                                            </div>
+                                                <span
+                                                    class="col-auto fs-6 ps-0 {{ $answer->user->username === $discussion->user->username ? 'text-primary' : '' }} ">
+                                                    <a href="#" class="me-1 bold">{{ $answer->user->username }}</a>
+                                                </span>
+                                                <div class="col-auto color-gray fs-6 ps-0"> 7 jam yang lalu
+                                                </div>
 
-                                        </div>
-                                        <div>
-                                            <p>lorem ipsum dolor sit amet contecstur lorem ipsum dolor sit amet
-                                                contecsturlorem
-                                                ipsum dolor sit amet contecsturlorem ipsum dolor sit amet contecstur</p>
+                                            </div>
+                                            <div>
+                                                <p>{!! $answer->answer !!}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
+                            </div>
+                        @empty
+                            <div class="card card-discussion mb-5">
+                                Saat ini belum ada tanggapan
+                            </div>
+                        @endforelse
+                        <div class="pagination-info">
+                            {{ $discussionAnswers->links('vendor.pagination.bootstrap-5') }}
                         </div>
+
                         @auth
                             <h3 class="mb-5">Tanggapanmu</h3>
                             <div class="card card-discussions">
