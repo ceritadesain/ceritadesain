@@ -36,7 +36,7 @@
                      <li class="nav-item my-auto dropdown">
                          <a class="nav-link p-0 d-flex align-items-center" href="javascript:;" data-bs-toggle="dropdown">
                              <div class="avatar-nav-wrapper me-2">
-                                 <img src="{{ filter_var(auth()->user()->picture, FILTER_VALIDATE_URL) ? auth()->user()->picture : Storage::url(auth->user()->picture) }}"
+                                 <img src="{{ filter_var(auth()->user()->picture, FILTER_VALIDATE_URL) ? auth()->user()->picture : Storage::url(auth()->user()->picture) }}"
                                      alt="{{ auth()->user()->username }}" class="avatar rounded-circle">
                              </div>
                              <span class="fw-bold">{{ auth()->user()->username }}</span>

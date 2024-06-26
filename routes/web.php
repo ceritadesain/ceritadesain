@@ -19,6 +19,10 @@ use App\Models\Answer;
 
 
 Route::middleware('auth')->group(function () {
+    Route::namespace('App\Http\Controllers\My')->group(function () {
+        Route::resource('users', UserController::class)->only(['edit', 'update']);
+    });
+
     Route::namespace('App\Http\Controllers')->group(function () {
         Route::resource('discussions', DiscussionController::class)->only(['create','store', 'edit', 'update', 'destroy' ]);
         Route::post('discussions/{discussion}/like', 'LikeController@discussionLike')->name('discussions.like.like');
@@ -53,6 +57,9 @@ Route::namespace('App\Http\Controllers\Auth')->group(function(){
 });
 
 
+Route::namespace('App\Http\Controllers\My')->group(function () {
+    Route::resource('users', UserController::class)->only(['show']);
+});
 
 // OTHERS
 Route::get('about-us', function () {
@@ -70,13 +77,3 @@ Route::get('privacy-policy', function () {
 Route::get('term-of-use', function () {
     return view('pages.others.term_of_use');
 })->name('others.term_of_use');
-
-Route::namespace('App\Http\Controllers\My')->group(function () {
-    Route::resource('users', UserController::class)->only(['show']);
-});
-
-
-// EDIT PROFILE
-Route::get('users/sahaln/edit', function () {
-    return view('pages.users.form');
-})->name('users.edit');

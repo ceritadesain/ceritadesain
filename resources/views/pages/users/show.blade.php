@@ -13,11 +13,10 @@
                         <div>
                             <div class="mb-4">
                                 <div class="fs-2 fw-bold mb-1 text-break">
-                                    sahaln
+                                    {{ $user->username }}
                                 </div>
                                 <div class="color-gray">
                                     Anggota semenjak {{ $user->created_at->diffForHumans() }}
-
                                 </div>
                             </div>
                         </div>
@@ -25,7 +24,12 @@
                     </div>
                     <div>
                         <input type="text" id="current-url" class="d-none" value="{{ request()->url() }}">
-                        <a id="share-profile" class="btn btn-primary me-4" href="javascript:;">Share</a>
+                        <a id="share-profile" class="btn btn-primary me-4" href="javascript:;">Bagikan</a>
+                        @auth
+                            @if ($user->id === auth()->id())
+                                <a href="{{ route('users.edit', $user->username) }}">Edit Profile</a>
+                            @endif
+                        @endauth
                     </div>
                 </div>
                 <div class="col-12 col-lg-8 ">
@@ -141,7 +145,7 @@
                 var alert = $('#alert');
                 alert.removeClass('d-none');
                 var alertContainer = alert.find('.container');
-                alertContainer.first().text('Link to this discussion copied succesfully');
+                alertContainer.first().text('Link untuk profil ini sukses disalin');
             })
         })
     </script>
