@@ -8,7 +8,7 @@
                 <div class="col-12 col-lg-4 mb-5 mb-lg-0">
                     <div class="d-flex mb-4">
                         <div class="avatar-wrapper rounded-circle overflow-hidden flex-shrink-0 me-4">
-                            <img src="{{ url('assets/images/sahal1.png') }}" alt="" class="avatar">
+                            <img src="{{ $picture }}" alt="" class="avatar">
                         </div>
                         <div>
                             <div class="mb-4">
@@ -16,7 +16,7 @@
                                     sahaln
                                 </div>
                                 <div class="color-gray">
-                                    Member since 1 year ago
+                                    Anggota semenjak {{ $user->created_at->diffForHumans() }}
 
                                 </div>
                             </div>
@@ -32,80 +32,101 @@
                     <div class="mb-5">
                         <h2 class="mb-3">Diskusi Saya</h2>
                         <div>
-                            <div class="card card-discussions">
-                                <div class="row">
-                                    <div class="row d-flex align-items-center pb-3">
-                                        <div class="col-auto ">
-                                            <div class="avatar-sm-wrapper d-inline-block">
-                                                <a href="#">
-                                                    <img src="{{ url('/assets/images/sahal1.png') }}" alt="SahalN"
-                                                        class="avatar rounded-circle">
+                            @forelse ($discussions as $discussion)
+                                <div class="card card-discussions">
+                                    <div class="row">
+                                        <div class="row d-flex align-items-center pb-3">
+                                            <div class="col-auto ">
+                                                <div class="avatar-sm-wrapper d-inline-block">
+                                                    <a href="{{ route('users.show', $discussion->user->username) }}">
+                                                        <img src="{{ filter_var($discussion->user->picture, FILTER_VALIDATE_URL) ? $discussion->user->picture : Storage::url($discussion->user->picture) }}"
+                                                            alt="{{ $discussion->user->username }}"
+                                                            class="avatar rounded-circle">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto fs-6 ps-0">
+                                                <a href="{{ route('users.show', $discussion->user->username) }}"
+                                                    class="me-1 bold">{{ $discussion->user->username }}</a>
+                                            </div>
+                                            <div class="col-auto color-gray fs-6 ps-0">
+                                                {{ $discussion->created_at->diffForHumans() }}
+                                            </div>
+                                        </div>
+                                        <div class="pb-3">
+                                            <a href="{{ route('discussions.show', $discussion->slug) }}">
+                                                <h3>{{ $discussion->title }}</h3>
+                                            </a>
+                                            <p>{!! $discussion->content_preview !!}
+                                            </p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-auto me-1 me-lg-2">
+                                                <a
+                                                    href="{{ route('discussions.categories.show', $discussion->category->slug) }}">
+                                                    <span
+                                                        class="badge rounded-pill text-bg-light">{{ $discussion->category->name }}</span>
                                                 </a>
                                             </div>
-                                        </div>
-                                        <div class="col-auto fs-6 ps-0">
-                                            <a href="#" class="me-1 bold">SahalN</a>
-                                        </div>
-                                        <div class="col-auto color-gray fs-6 ps-0"> 7 jam yang lalu
-                                        </div>
-                                    </div>
-                                    <div class="pb-3">
-                                        <a href="{{ route('discussions.show') }}">
-                                            <h3>Apa perbedaan antara UI dan UX?</h3>
-                                        </a>
-                                        <p>UI (User Interface) adalah tentang tampilan visual dan interaksi pengguna dengan
-                                            produk
-                                            digital, seperti tata letak, warna, dan tombol yang digunakan. Sementara itu,
-                                            ...</p>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-auto me-1 me-lg-2">
-                                            <a href="#">
-                                                <span class="badge rounded-pill text-bg-light">Affordance</span>
-                                            </a>
-                                        </div>
-                                        <div class="col-auto ms-auto">
-                                            <div class="row justify-content-end">
-                                                <div class="col-auto d-flex align-items-center ">
-                                                    <img src="{{ url('assets/images/like.png') }}" alt="suka"
-                                                        class="pe-2">3
-                                                </div>
-                                                <div class="col-auto d-flex align-items-center ">
-                                                    <img src="{{ url('assets/images/diskusi.png') }}" alt="diskusi"
-                                                        class="pe-2">
-                                                    9
+                                            <div class="col-auto ms-auto">
+                                                <div class="row justify-content-end">
+                                                    <div class="col-auto d-flex align-items-center ">
+                                                        <img src="{{ url('assets/images/like-white-heart.png') }}"
+                                                            alt="suka" class="pe-2">{{ $discussion->likeCount }}
+                                                    </div>
+                                                    <div class="col-auto d-flex align-items-center ">
+                                                        <img src="{{ url('assets/images/diskusi.png') }}" alt="diskusi"
+                                                            class="pe-2">
+                                                        {{ $discussion->answers->count() }}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            @empty
+                                <div class="card card-discussions">
+                                    Saat ini belum ada diskusi
+                                </div>
+                            @endforelse
+                            <div class="pagination-info">
+                                {{ $discussions->appends(['answers' => $answers->currentPage()])->links('vendor.pagination.bootstrap-5') }}
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <h2 class="mb-3">Jawaban saya</h2>
                         <div>
-                            <div class="card card-discussions">
-                                <div class="row align-items-center">
-                                    <div class="col-2 col-lg-1 text-center">
-                                        12
-                                    </div>
-                                    <div class="col">
-                                        <span>Menanggapi </span>
-                                        <span class="fw-bold text-primary">
-                                            <a href="#">
-                                                How to add a custom validation in laravel
-                                            </a>
-                                        </span>
+                            <h2 class="mb-3">Jawaban saya</h2>
+                            <div>
+                                @forelse ($answers as $answer)
+                                    <div class="card card-discussions">
+                                        <div class="row align-items-center">
+                                            <div class="col-2 col-lg-1 text-center">
+                                                {{ $answer->likeCount }}
+                                            </div>
+                                            <div class="col">
+                                                <span>Menanggapi </span>
+                                                <span class="fw-bold text-primary">
+                                                    <a href="{{ route('discussions.show', $answer->discussion->slug) }}">
+                                                        {{ $answer->discussion->title }}
+                                                    </a>
+                                                </span>
 
+                                            </div>
+                                        </div>
                                     </div>
+                                @empty
+                                    <div class="card card-discussions">
+                                        Saat ini belum ada list tanggapan dari diskusi
+                                    </div>
+                                @endforelse
+                                <div class="pagination-info">
+                                    {{ $answers->appends(['discussions' => $discussions->currentPage()])->links('vendor.pagination.bootstrap-5') }}
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 @endsection
 

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AnswerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DiscussionController;
+use App\Http\Controllers\My\UserController;
 use App\Models\Answer;
 
 /*
@@ -70,12 +71,10 @@ Route::get('term-of-use', function () {
     return view('pages.others.term_of_use');
 })->name('others.term_of_use');
 
+Route::namespace('App\Http\Controllers\My')->group(function () {
+    Route::resource('users', UserController::class)->only(['show']);
+});
 
-
-// SHOW PROFILE
-Route::get('users/sahaln', function () {
-    return view('pages.users.show');
-})->name('users.show');
 
 // EDIT PROFILE
 Route::get('users/sahaln/edit', function () {

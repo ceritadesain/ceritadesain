@@ -43,7 +43,8 @@
                          </a>
                          <ul class="dropdown-menu mt-2">
                              <li>
-                                 <a class="dropdown-item" href="">Profil Saya</a>
+                                 <a class="dropdown-item" href="{{ route('users.show', auth()->user()->username) }}">Profil
+                                     Saya</a>
                              </li>
                              <li>
                                  <form action="{{ route('auth.login.logout') }}" method="POST">
