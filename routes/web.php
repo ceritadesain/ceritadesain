@@ -37,15 +37,14 @@ Route::middleware('auth')->group(function () {
     });
 });
 
-// DISCUSSION LIST and DETAIL LIST
+
 Route::namespace('App\Http\Controllers')->group(function () {
+    Route::get('/', 'HomeController@index')->name('home');
+
     Route::resource('discussions', DiscussionController::class)->only(['index','show']);
     Route::get('discussions/categories/{category}', 'CategoryController@show')->name('discussions.categories.show');
 });
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
 
 // LOGIN & SIGNUP ROUTE
 Route::namespace('App\Http\Controllers\Auth')->group(function(){
