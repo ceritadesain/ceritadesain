@@ -1,4 +1,4 @@
- <nav class="navbar navbar-dark navbar-expand-lg">
+ <nav class="navbar navbar-dark navbar-expand-lg ">
      <div class="container flex justify-content-between">
          <a class="navbar-link" href="{{ route('home') }}"><img class="h-48px"
                  src="{{ url('assets/images/ceritadesain-logo.png') }}" alt="ceritadesain-logo"></a>

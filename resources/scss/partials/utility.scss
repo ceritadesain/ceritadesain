@@ -124,7 +124,7 @@ body {
     color: white;
     background-color: $navbar-bg-color;
     border: none;
-    border-radius: 20px;
+    border-radius: 8px;
     padding: 24px;
 }
 
@@ -308,4 +308,8 @@ pre {
         background-color: $navbar-bg-color; // Latar belakang item disabled
         border-color: white; // Border item disabled
     }
+}
+
+.align-center {
+    text-align: justify;
 }

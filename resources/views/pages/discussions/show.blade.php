@@ -207,18 +207,46 @@
 
                         </div>
                     </div>
-                    <div class="mt-4">
-                        <p class="fs-5 fw-normal"> <a href="{{ route('others.about_us') }}">Tentang kami</a></p>
+                    <div class="mt-4 row align-items-center">
+                        <div class="col-auto m-0 p-0">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/about-4x.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">Tentang kami</p>
+                            </a>
+                        </div>
                     </div>
-                    <div class="mt-4">
-                        <p class="fs-5 fw-normal"> <a href="{{ route('others.code_of_coduct') }}">Kode Etik</a></p>
+                    <div class="mt-4 row align-items-center">
+                        <div class="col-auto m-0 p-0">
+                            <a href="{{ route('others.code_of_coduct') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/code-4x.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('others.code_of_coduct') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">Kode Etik</p>
+                            </a>
+                        </div>
                     </div>
-                    <div class="mt-4">
-                        <p class="fs-5 fw-normal"> <a href="{{ route('others.term_of_use') }}">Syarat dan Ketentuan</a>
-                        </p>
+                    <div class="mt-4 row align-items-center">
+                        <div class="col-auto m-0 p-0">
+                            <a href="{{ route('others.term_of_use') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/syarat-4x.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('others.term_of_use') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">Syarat dan Ketentuan</p>
+                            </a>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

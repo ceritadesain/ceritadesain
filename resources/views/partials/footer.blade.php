@@ -11,7 +11,7 @@
                     <div class="d-flex flex-column me-140px mb-3 mb-lg-0">
                         <p class="fw-bold fs-5 text-white text-nowrap">Kontak kami</p>
                         <ul class="list-unstyled">
-                            <li class="text-white"><a href="mailto:hi@laracuss.com">hi@ceritadesain.com</a></li>
+                            <li class="text-white"><a href="mailto:hi@laracuss.com">ceritadesain@gmail.com</a></li>
                         </ul>
                     </div>
                     <div class="d-flex flex-column">

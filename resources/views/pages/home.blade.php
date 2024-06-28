@@ -6,16 +6,13 @@
         <div class="row align-items-center h-100 text-center px-lg-5 ">
             <div class="col-12">
                 <div class=" hero-text">
-                    <h1 class="text-white">Selamat Datang di DesignSpeak <br>
-                        Komunitas untuk Para Penggemar UI/UX Indonesia</h1>
+                    <h1 class="text-white">Selamat Datang di CeritaDesain <br>
+                        Forum Online untuk Komunitas UI/UX Indonesia</h1>
                 </div>
                 <div class="hero-text pt-2 ">
-                    <p class="mb-4 text-white">Selamat Datang di CeritaDesain, tempat kreativitas bertemu dengan
-                        kolaborasi
-                        dalam
-                        dunia desain UI/UX yang dinamis. Terjunlah ke dalam komunitas yang bersemangat, di mana desainer
-                        penuh gairah seperti Anda berkumpul untuk berbagi wawasan, bertukar ide, dan meningkatkan
-                        keterampilan mereka.</p>
+                    <p class="mb-4 text-white">Selamat Datang di CeritaDesain, tempat berdiskusi antar sesama penggiat UI/UX.
+                        Di sini, Anda bisa berbagi wawasan, bertukar ide, dan belajar bersama desainer lainnya. Ayo
+                        bergabung dengan komunitas kami dan kembangkan keterampilan desain Anda bersama-sama.</p>
                 </div>
                 <a href="{{ route('auth.login.show') }}" class="btn btn-primary me-2 mb-2 mb-lg-0">Masuk</a>
                 <a href="{{ route('discussions.index') }}" class="btn btn-secondary mb-2 mb-lg-0">Gabung Diskusi</a>
@@ -29,19 +26,22 @@
         <div class="row w-100 align-items-center">
             <div class="col-12 col-lg-6 ">
                 <h2>Gabung <br> Komunitas Kami</h2>
+                <p>Ayo gabung dengan komunitas kami dan rasakan serunya berkolaborasi dengan para desainer hebat!</p>
             </div>
-            <div class="col-12 col-lg-6 ">
-                <div class="col-12 col-lg-4 ">
-                    <h2 class="font-extra-extra-large">{{ $discussionCount }}</h2>
-                    <p class="font-small">Diskusi</p>
-                </div>
-                <div class="col-12 col-lg-4 pt-2 pt-lg-5">
-                    <h2 class="font-extra-extra-large">{{ $answerCount }}</h2>
-                    <p class="font-small">Jawaban</p>
-                </div>
-                <div class="col-12 col-lg-4 pt-2 pt-lg-5">
-                    <h2 class="font-extra-extra-large ">{{ $userCount }}</h2>
-                    <p class="font-small">Pengguna</p>
+            <div class="col-12 col-lg-6 d-flex flex-column align-items-center justify-content-center">
+                <div class="d-flex flex-column align-items-center w-100">
+                    <div class="col-12 col-lg-4 d-flex flex-column align-items-center  mb-4">
+                        <h2 class="font-extra-extra-large">{{ $discussionCount }}</h2>
+                        <p class="font-small ">Diskusi</p>
+                    </div>
+                    <div class="col-12 col-lg-4 d-flex flex-column align-items-center mb-4">
+                        <h2 class="font-extra-extra-large">{{ $answerCount }}</h2>
+                        <p class="font-small">Jawaban</p>
+                    </div>
+                    <div class="col-12 col-lg-4 d-flex flex-column align-items-center">
+                        <h2 class="font-extra-extra-large">{{ $userCount }}</h2>
+                        <p class="font-small">Pengguna</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,9 +53,10 @@
             <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center   ">
                 <div class="text-center">
                     <h2>Kolaborasi Komunitas</h2>
-                    <p>Dengan menggunakan platform CeritaDesain, Anda dapat terhubung dengan komunitas luas dari
-                        profesional dan penggemar UI/UX. Mulai dari desainer senior hingga pemula, platform ini
-                        menyediakan ruang untuk kolaborasi, pertukaran ide, dan umpan balik yang berharga.</p>
+                    <p>Dengan menggunakan platform CeritaDesain, Anda bisa terhubung dengan komunitas besar UI/UX di
+                        Indonesia
+                        yang belum pernah ada sebelumnya. Mulai dari desainer senior hingga pemula, platform ini
+                        menyediakan ruang untuk kolaborasi, berbagi ide, dan mendapatkan umpan balik yang berharga.</p>
                 </div>
             </div>
             <div class="col-lg-6 col-sm-12 order-first order-lg-last d-flex align-items-center justify-content-center">
@@ -70,11 +71,9 @@
             <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center ">
                 <div class="text-center">
                     <h2>Pusat Sumber Informasi</h2>
-                    <p>CeritaDesain juga berfungsi sebagai pusat sumber daya lengkap untuk segala hal yang berkaitan
-                        dengan UI/UX. Anda akan menemukan artikel, tutorial, dan sumber daya lain yang berguna yang
-                        dibagikan oleh anggota komunitas. Mulai dari tren terbaru dalam desain antarmuka hingga
-                        teknik pengujian pengguna, platform ini memberikan akses ke informasi terkini dan dapat
-                        diandalkan.</p>
+                    <p>CeritaDesain juga sebagai pusat informasi utama untuk UI/UX. Di sini, Anda bisa menemukan artikel,
+                        tutorial, dan sumber daya lain yang berguna dari anggota komunitas. Platform ini memberikan akses ke
+                        tren terbaru dalam desain antarmuka dan teknik pengujian pengguna yang dapat diandalkan.</p>
                 </div>
             </div>
         </div>
@@ -129,11 +128,11 @@
     </section>
     {{-- CTA --}}
     <section class="container py-80px d-flex flex-column align-items-center justify-content-center text-white">
-        <h2>Siap untuk berkontribusi?</h2>
-        <p class="mb-4">Ingin membuat dampak besar?</p>
+        <h2>Ayo gabung sekarang!</h2>
+        <p class="mb-4">Siapkan diri Anda untuk aktif berpartisipasi dalam mendukung sesama</p>
         <div class="text-center">
-            <a href="{{ route('discussions.index') }}" class="btn btn-secondary mb-2 mb-lg-0">Gabung Diskusi
-                Sekarang!</a>
+            <a href="{{ route('discussions.index') }}" class="btn btn-secondary mb-2 mb-lg-0">Gabung diskusi
+                di sini</a>
         </div>
     </section>
 @endsection
