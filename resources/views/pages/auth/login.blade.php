@@ -6,12 +6,13 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-12 col-lg-5 px-6">
                     <div class="text-center">
-                        <a href="#" class="nav-link mb-5 ">
-                            <img src="{{ url('assets/images/ceritadesain-login-logo.png') }}" class="img-fluid w-50"
-                                alt="CeritaDesain logo">
+                        <a href="#" class="nav-link mb-3 ">
+                            <img src="{{ url('assets/images/logo-1.png') }}" class="img-fluid w-50" alt="CeritaDesain logo">
                         </a>
-                        <h1 class="text-white fs-3">Bergabunglah dengan Komunitas CeritaDesain</h1>
-                        <p class="text-white-50">Rangkul kreativitas dan bergabunglah dengan kami di Komunitas DesignSpeak.
+                        <h1 class="text-white fs-4">Bergabunglah dengan Komunitas CeritaDesain</h1>
+                        <p class="text-white-50">Tempat di mana
+                            ide-ide kreatif berkembang, kolaborasi , dan setiap desainer dapat berbagi
+                            pengalaman serta belajar bersama.
                         </p>
                     </div>
 
@@ -58,16 +59,22 @@
                                 <button type="submit" class="btn btn-primary rounded-2">Masuk</button>
 
                             </div>
-                            <div class="fs-6">
-                                <p>Dengan masuk, Anda menyetujui kebijakan <a href="#">privasi</a>, <a
-                                        href="#">syarat
-                                        penggunaan</a>, dan <a href="#">kode etik</a> kami.
+                            <div class="fs-6 ">
+                                <p>Dengan masuk, Anda menyetujui <a class="text-primary"
+                                        href="{{ route('others.privacy_policy') }}"> kebijakan
+                                        privasi</a>, <a href="{{ route('others.term_of_use') }}" class="text-primary">syarat
+                                        penggunaan</a>, dan <a class="text-primary"
+                                        href="
+                                        {{ route('others.code_of_coduct') }}">kode
+                                        etik</a>
+                                    kami.
                                 </p>
                             </div>
                         </form>
                     </div>
                     <div class="text-center text-white-50">
-                        Belum punya akun?<a href="{{ route('auth.sign-up.show') }}"><u> Daftar di sini</u></a>
+                        Belum mempunyai akun? Daftar<a class="text-primary" href="{{ route('auth.sign-up.show') }}"><u> di
+                                sini</u></a>
                     </div>
                 </div>
             </div>
