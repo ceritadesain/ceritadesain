@@ -3,8 +3,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-6 mb-5 mb-lg-0">
-                <img src="{{ url('assets/images/ceritadesain-logo.png') }}" alt="CeritaDesain Logo" class="h-32px mb-4">
-                <p class="text-white">Menguatkan Ide, Membangkitkan Percakapan UI/UX.</p>
+                <img src="{{ url('assets/images/logo.png') }}" alt="CeritaDesain Logo" class="h-32px mb-1">
+                <p class="text-white">Kolaborasi UI/UX untuk Indonesia</p>
             </div>
             <div class="col-12 col-lg-6 me-auto">
                 <div class="d-flex flex-column flex-lg-row justify-content-end ">

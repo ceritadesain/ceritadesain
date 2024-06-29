@@ -10,7 +10,7 @@
                         Forum Online untuk Komunitas UI/UX Indonesia</h1>
                 </div>
                 <div class="hero-text pt-2 ">
-                    <p class="mb-4 text-white">Selamat Datang di CeritaDesain, tempat berdiskusi antar sesama penggiat UI/UX.
+                    <p class="mb-4 text-white">CeritaDesain adalah tempat berdiskusi antar sesama penggiat UI/UX.
                         Di sini, Anda bisa berbagi wawasan, bertukar ide, dan belajar bersama desainer lainnya. Ayo
                         bergabung dengan komunitas kami dan kembangkan keterampilan desain Anda bersama-sama.</p>
                 </div>
@@ -55,7 +55,7 @@
                     <h2>Kolaborasi Komunitas</h2>
                     <p>Dengan menggunakan platform CeritaDesain, Anda bisa terhubung dengan komunitas besar UI/UX di
                         Indonesia
-                        yang belum pernah ada sebelumnya. Mulai dari desainer senior hingga pemula, platform ini
+                        yang belum pernah ada sebelumnya. Mulai dari desainer pemula hingga senior, platform ini
                         menyediakan ruang untuk kolaborasi, berbagi ide, dan mendapatkan umpan balik yang berharga.</p>
                 </div>
             </div>
@@ -80,10 +80,11 @@
 
     </section>
 
-    {{-- Help Others SECTION --}}
+    {{-- Help Others Section --}}
     <section class=" container py-80px text-white">
         <div class="container py-80px">
-            <h2 class="text-center mb-5">Bantu Sesama</h2>
+            <h2 class="text-center ">Bantu Sesama</h2>
+            <p class="text-center mb-5">Dukung antar anggota dalam diskusi terbaru CeritaDesain!</p>
             <div class="row">
                 @forelse ($latestDiscussions as $latestDiscussion)
                     <div class="col-12 col-lg-4 mb-3">
@@ -131,7 +132,8 @@
         <h2>Ayo gabung sekarang!</h2>
         <p class="mb-4">Siapkan diri Anda untuk aktif berpartisipasi dalam mendukung sesama</p>
         <div class="text-center">
-            <a href="{{ route('discussions.index') }}" class="btn btn-secondary mb-2 mb-lg-0">Gabung diskusi
+            <a href="{{ route('discussions.index') }}" class="btn btn-secondary mb-2 mb-lg-0">Gabung
+                diskusi
                 di sini</a>
         </div>
     </section>
