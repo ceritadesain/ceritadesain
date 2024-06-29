@@ -9,3 +9,22 @@
     height: 32px;
     width: 32px;
 }
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+@media (max-width: 992px) {
+    /* Ubah sesuai dengan breakpoint yang sesuai dengan tampilan mobile */
+    .mb-3.d-flex.flex-column.flex-lg-row.align-items-center.justify-content-between {
+        flex-direction: column; /* Layout kolom untuk tampilan mobile */
+    }
+
+    .me-4.mb-3.mb-lg-0.fs-3 {
+        margin-right: 0 !important; /* Menghapus margin kanan hanya di tampilan mobile */
+    }
+
+    .d-flex.justify-content-center.justify-content-lg-end {
+        justify-content: flex-start; /* Mengubah menjadi flex-start untuk menjaga tombol tetap di sebelah kiri di tampilan mobile */
+    }
+}

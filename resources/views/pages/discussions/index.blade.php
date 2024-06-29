@@ -4,25 +4,31 @@
     <section class="text-white pt-4 pb-5">
         <div class="container">
             <div class="mb-4">
-                <div class="mb-3 d-flex align-items-center justify-content-between">
-                    <h2 class="me-4 mb-0">
+                <div class="mb-3 d-flex flex-column flex-lg-row align-items-center justify-content-between">
+                    <div class="me-4 mb-3 mb-lg-0 fs-3 ">
                         @if (@isset($search))
-                            {{ "Hasil pencarian dari \"$search\"" }}
+                            <div> {{ "Hasil pencarian dari \"$search\"" }}</div>
                         @else
-                            {{ 'Semua Diskusi' }}
+                            <div>
+                                <a href="{{ route('discussions.index') }}"
+                                    class="{{ Route::currentRouteName() === 'discussions.index' ? 'font-weight-bold' : '' }}">Terbaru</a>
+                                <a href="{{ route('home') }}"
+                                    class="{{ Route::currentRouteName() === 'home' ? 'font-weight-bold' : '' }}">Populer</a>
+                            </div>
                         @endif
                         <span>{{ isset($withCategory) ? ' Tentang ' . $withCategory->name : '' }}</span>
-                    </h2>
-                    <div>
-                        {{ $discussions->total() }} Diskusi
+                    </div>
+
+                    {{-- Tombol Diskusi atau Masuk --}}
+                    <div class="d-flex justify-content-center justify-content-lg-end">
+                        @auth
+                            <a href="{{ route('discussions.create') }}" class="btn btn-outline-primary">Buat Diskusi Baru</a>
+                        @endauth
+                        @guest
+                            <a href="{{ route('auth.login.show') }}" class="btn btn-primary">Masuk untuk membuat diskusi</a>
+                        @endguest
                     </div>
                 </div>
-                @auth
-                    <a href="{{ route('discussions.create') }}" class="btn btn-primary">Buat diskusi</a>
-                @endauth
-                @guest
-                    <a href="{{ route('auth.login.show') }}" class="btn btn-primary">Masuk untuk membuat diskusi</a>
-                @endguest
             </div>
             <div class="row">
                 <div class="col-12 col-lg-8 mb-5 mb-lg-0">

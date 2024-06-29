@@ -88,6 +88,19 @@ body {
     }
 }
 
+.btn-outline-primary {
+    border-color: $primary-blue;
+    color: $white;
+    border-radius: 50px;
+    padding: 0.56rem 4rem;
+    min-width: 128px;
+
+    &:hover {
+        color: $primary-blue;
+        background-color: $white;
+    }
+}
+
 // HERO
 .btn-secondary {
     background-color: transparent;
