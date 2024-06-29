@@ -4,6 +4,7 @@ use App\Http\Controllers\AnswerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DiscussionController;
 use App\Http\Controllers\My\UserController;
+use App\Http\Controllers\PopularDiscussionController;
 use App\Models\Answer;
 
 /*
@@ -42,6 +43,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
 
     Route::resource('discussions', DiscussionController::class)->only(['index','show']);
+    Route::resource('popular-discussions', PopularDiscussionController::class)->only(['index', 'show']);
     Route::get('discussions/categories/{category}', 'CategoryController@show')->name('discussions.categories.show');
 });
 
@@ -59,6 +61,8 @@ Route::namespace('App\Http\Controllers\Auth')->group(function(){
 Route::namespace('App\Http\Controllers\My')->group(function () {
     Route::resource('users', UserController::class)->only(['show']);
 });
+
+
 
 // OTHERS
 Route::get('about-us', function () {

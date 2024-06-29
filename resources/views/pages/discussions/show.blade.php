@@ -207,8 +207,8 @@
 
                         </div>
                     </div>
-                    <div class="mt-4 row align-items-center">
-                        <div class="col-auto m-0 p-0">
+                    <div class="mt-4 row align-items-center ">
+                        <div class="col-auto m-0 p-0 ps-3">
                             <a href="{{ route('others.about_us') }}" class="text-decoration-none">
                                 <img src="{{ url('assets/images/about-4x.png') }}" alt="emoji" width="30px"
                                     style="padding-right: 4px">
@@ -221,7 +221,7 @@
                         </div>
                     </div>
                     <div class="mt-4 row align-items-center">
-                        <div class="col-auto m-0 p-0">
+                        <div class="col-auto m-0 p-0 ps-3">
                             <a href="{{ route('others.code_of_coduct') }}" class="text-decoration-none">
                                 <img src="{{ url('assets/images/code-4x.png') }}" alt="emoji" width="30px"
                                     style="padding-right: 4px">
@@ -234,17 +234,25 @@
                         </div>
                     </div>
                     <div class="mt-4 row align-items-center">
-                        <div class="col-auto m-0 p-0">
+                        <div class="col-auto m-0 p-0 ps-3">
                             <a href="{{ route('others.term_of_use') }}" class="text-decoration-none">
                                 <img src="{{ url('assets/images/syarat-4x.png') }}" alt="emoji" width="30px"
                                     style="padding-right: 4px">
                             </a>
                         </div>
-                        <div class="col m-0 p-0">
+                        <div class="col m-0 p-0 ">
                             <a href="{{ route('others.term_of_use') }}" class="text-decoration-none">
                                 <p class="fs-5 fw-normal mb-0">Syarat dan Ketentuan</p>
                             </a>
                         </div>
+
+                    </div>
+                    <div class="mt-4 row align-items-center text-white-50 ps-2">
+                        <p>CeritaDesain: Sebuah forum online yang membangun, ramah, dan inklusif bagi para desainer UI/UX
+                            seperti Anda. Kami siap mendampingi setiap langkah perjalanan desain Anda.
+                        </p>
+
+                        <p> CeritaDesain © 2024.</p>
                     </div>
                 </div>
             </div>
