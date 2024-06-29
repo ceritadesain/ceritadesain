@@ -12,13 +12,17 @@
                     <form action="{{ route('auth.sign-up.sign-up') }}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <h1>Ayo Bergabung dengan Kami</h1>
-                            <p>Buat akun untuk bergabung dengan komunitas.</p>
+                            <a href="{{ route('home') }}" class="nav-link ">
+                                <img src="{{ url('assets/images/logo-1.png') }}" class="img-fluid w-50"
+                                    alt="CeritaDesain logo">
+                            </a>
+                            <h3>Ayo Bergabung dengan Kami</h3>
+                            <p>Buat akun untuk bergabung dengan komunitas</p>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
-                                placeholder="andi@ux.com" autocomplete="off" autofocus name="email"
+                                placeholder="emailmu@uiux.com" autocomplete="off" autofocus name="email"
                                 value="{{ old('email') }}">
                             @error('email')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -55,8 +59,9 @@
                         </div>
                     </form>
                 </div>
-                <div class="text-center">
-                    Sudah punya akun? Masuk <a href="{{ route('auth.login.show') }}"><u>di sini</u></a>
+                <div class="text-center text-white-50">
+                    Sudah punya akun? Masuk <a class="text-primary" href="{{ route('auth.login.show') }}"><u>di
+                            sini</u></a>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-12 col-lg-5 px-6">
                     <div class="text-center">
-                        <a href="#" class="nav-link mb-3 ">
+                        <a href="{{ route('home') }}" class="nav-link mb-3 ">
                             <img src="{{ url('assets/images/logo-1.png') }}" class="img-fluid w-50" alt="CeritaDesain logo">
                         </a>
                         <h1 class="text-white fs-4">Bergabunglah dengan Komunitas CeritaDesain</h1>
@@ -23,7 +23,7 @@
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email"
                                     class="form-control @error('email') is-invalid @enderror @error('credentials') is-invalid @enderror"
-                                    id="email" name="email" placeholder="andi@ux.com" value="{{ old('email') }}"
+                                    id="email" name="email" placeholder="emailmu@uiux.com" value="{{ old('email') }}"
                                     autocomplete="off" autofocus>
                                 @error('email')
                                     <div class="invalid-feedback">

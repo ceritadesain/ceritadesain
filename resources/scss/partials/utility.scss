@@ -142,16 +142,20 @@ a {
 }
 
 .padding-container {
-    padding-left: 15rem;
-    padding-right: 15rem;
-    @include media-breakpoint-down(lg) {
+    padding-left: 5rem;
+    padding-right: 5rem;
+
+    // Aturan untuk layar ukuran large (misalnya untuk laptop)
+    @include media-breakpoint-up(lg) {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+
+    // Aturan untuk layar mobile
+    @include media-breakpoint-down(md) {
         padding-left: 1rem;
         padding-right: 1rem;
-    }
-    @include media-breakpoint-down(md) {
-        padding-left: 3rem;
-        padding-right: 3rem;
-        padding-top: 5rem; /* Tambahan padding atas pada layar md */
+        padding-top: 3rem;
     }
 }
 
