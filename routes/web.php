@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DiscussionController;
 use App\Http\Controllers\My\UserController;
 use App\Http\Controllers\PopularDiscussionController;
+use App\Http\Controllers\SaveController;
 use App\Models\Answer;
 
 /*
@@ -22,6 +23,7 @@ use App\Models\Answer;
 Route::middleware('auth')->group(function () {
     Route::namespace('App\Http\Controllers\My')->group(function () {
         Route::resource('users', UserController::class)->only(['edit', 'update']);
+     
     });
 
     Route::namespace('App\Http\Controllers')->group(function () {

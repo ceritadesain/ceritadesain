@@ -49,7 +49,6 @@
                                                     id="current-url" class="d-none">
                                             </span>
                                             {{-- TOMBOLE DELETE --}}
-
                                             <form action="{{ route('discussions.destroy', $discussion->slug) }}"
                                                 method="POST" class="col-auto ">
                                                 @csrf
@@ -58,8 +57,6 @@
                                                         class="color-gray">Hapus</small></button>
                                             </form>
                                         @endif
-
-
                                         {{-- TOMBOL SHARE --}}
                                         <span class="color-gray col-auto">
                                             <a href="javascript:;" id="share-discussion"><small>Share</small></a>
@@ -67,7 +64,6 @@
                                                 id="current-url" class="d-none ">
                                         </span>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="pb-3">
@@ -272,8 +268,10 @@
                 let alert = $('#alert');
                 alert.removeClass('d-none');
                 let alertContainer = alert.find('.container');
-                alertContainer.first().text('Link to this discussion copied succesfully');
+                alertContainer.first().text('Link untuk discusi ini sukses di salin');
             });
+
+
             $('#answer').summernote({
                 placeholder: 'tulis solusi kamu di sini',
                 tabSize: 2,

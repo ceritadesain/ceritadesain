@@ -18,8 +18,6 @@
                         @endif
                         <span>{{ isset($withCategory) ? ' Tentang ' . $withCategory->name : '' }}</span>
                     </div>
-
-                    {{-- Tombol Diskusi atau Masuk --}}
                     <div class="d-flex justify-content-center justify-content-lg-end">
                         @auth
                             <a href="{{ route('discussions.create') }}" class="btn btn-outline-primary">Buat Diskusi Baru</a>
