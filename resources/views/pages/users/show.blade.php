@@ -18,20 +18,44 @@
                                 <div class="color-gray">
                                     Bergabung dengan CeritaDesain sejak {{ $user->created_at->diffForHumans() }}
                                 </div>
+                                @auth
+                                    @if ($user->id === auth()->id())
+                                        <a href="{{ route('users.edit', $user->username) }}"
+                                            class="btn btn-outline-primary d-flex align-content-center justify-content-center mt-2 mx-4">Edit
+                                            Profile</a>
+                                    @endif
+                                @endauth
                             </div>
                         </div>
 
                     </div>
                     <div>
                         <input type="text" id="current-url" class="d-none" value="{{ request()->url() }}">
-                        <a id="share-profile" class="btn btn-primary me-4" href="javascript:;">Bagikan</a>
-                        @auth
-                            @if ($user->id === auth()->id())
-                                <a href="{{ route('users.edit', $user->username) }}">Edit Profile</a>
-                            @endif
-                        @endauth
+                        <a id="share-profile" class="btn btn-outline-primary me-4" href="javascript:;">Bagikan</a>
+                        <a id="share-profile" class="btn btn-primary me-4" href="javascript:;">Follow</a>
+
+                    </div>
+                    <div class="card mt-4 text-white">
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="text-center">
+                                        <div class="fw-bold fs-4">12</div>
+                                        <div class="text-white">Pengikut</div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="text-center">
+                                        <div class="fw-bold fs-4">3</div>
+                                        <div class="text-white">Mengikuti</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
                 <div class="col-12 col-lg-8 ">
                     <div class="mb-5">
                         <h2 class="mb-3">Diskusi Saya</h2>

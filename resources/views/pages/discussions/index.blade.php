@@ -109,6 +109,58 @@
                     <div class="mt-4 row align-items-center ">
                         <div class="col-auto m-0 p-0 ps-3">
                             <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/challenge1.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">UI/UX Challenge</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-4 row align-items-center ">
+                        <div class="col-auto m-0 p-0 ps-3">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/book.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">Buku UI/UX</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-4 row align-items-center ">
+                        <div class="col-auto m-0 p-0 ps-3">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/podcast.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">Podcasts</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-4 row align-items-center ">
+                        <div class="col-auto m-0 p-0 ps-3">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/writing.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">UX Writing with AI</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-4 row align-items-center ">
+                        <div class="col-auto m-0 p-0 ps-3">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
                                 <img src="{{ url('assets/images/about-4x.png') }}" alt="emoji" width="30px"
                                     style="padding-right: 4px">
                             </a>
@@ -116,6 +168,48 @@
                         <div class="col m-0 p-0">
                             <a href="{{ route('others.about_us') }}" class="text-decoration-none">
                                 <p class="fs-5 fw-normal mb-0">Tentang kami</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-4 row align-items-center ">
+                        <div class="col-auto m-0 p-0 ps-3">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/contact.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">Kontak</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-4 row align-items-center ">
+                        <div class="col-auto m-0 p-0 ps-3">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/help.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">Bantuan</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-4 row align-items-center">
+                        <h3 class="fs-4">Lainnya</h3>
+                    </div>
+                    <div class="mt-4 row align-items-center">
+                        <div class="col-auto m-0 p-0 ps-3">
+                            <a href="{{ route('others.code_of_coduct') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/privacy.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('others.privacy_policy') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">Kebijakan Privasi</p>
                             </a>
                         </div>
                     </div>
