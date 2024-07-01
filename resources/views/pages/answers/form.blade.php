@@ -43,7 +43,7 @@
     <script>
         $(document).ready(function() {
             $('#answer').summernote({
-                placeholder: 'Bagikan pendapat atau pengalaman Anda... | Jelaskan lebih detail atau berikan solusi... | Tambahkan sumber atau referensi yang mendukung...',
+                placeholder: 'Bagikan pendapat atau pengalaman kamu... | Jelaskan lebih detail atau berikan solusi... | Tambahkan sumber atau referensi yang mendukung...',
                 tabSize: 2,
                 height: 320,
                 toolbar: [

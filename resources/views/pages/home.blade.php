@@ -11,8 +11,8 @@
                 </div>
                 <div class="hero-text pt-2 ">
                     <p class="mb-4 text-white">CeritaDesain adalah tempat berdiskusi antar sesama penggiat UI/UX.
-                        Di sini, Anda bisa berbagi wawasan, bertukar ide, dan belajar bersama desainer lainnya. Ayo
-                        bergabung dengan komunitas kami dan kembangkan keterampilan desain Anda bersama-sama.</p>
+                        Di sini, kamu bisa berbagi wawasan, bertukar ide, dan belajar bersama desainer lainnya. Ayo
+                        bergabung dengan komunitas kami dan kembangkan keterampilan desainmu bersama-sama.</p>
                 </div>
                 <a href="{{ route('auth.login.show') }}" class="btn btn-primary me-2 mb-2 mb-lg-0">Masuk</a>
                 <a href="{{ route('discussions.index') }}" class="btn btn-secondary mb-2 mb-lg-0">Gabung Diskusi</a>
@@ -53,7 +53,7 @@
             <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center   ">
                 <div class="text-center">
                     <h2>Kolaborasi Komunitas</h2>
-                    <p>Dengan menggunakan platform CeritaDesain, Anda bisa terhubung dengan komunitas besar UI/UX di
+                    <p>Dengan menggunakan platform CeritaDesain, kamu bisa terhubung dengan komunitas besar UI/UX di
                         Indonesia
                         yang belum pernah ada sebelumnya. Mulai dari desainer pemula hingga senior, platform ini
                         menyediakan ruang untuk kolaborasi, berbagi ide, dan mendapatkan umpan balik yang berharga.</p>
@@ -71,7 +71,7 @@
             <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center ">
                 <div class="text-center">
                     <h2>Pusat Sumber Informasi</h2>
-                    <p>CeritaDesain juga sebagai pusat informasi utama untuk UI/UX. Di sini, Anda bisa menemukan artikel,
+                    <p>CeritaDesain juga sebagai pusat informasi utama untuk UI/UX. Di sini, kamu bisa menemukan artikel,
                         tutorial, dan sumber daya lain yang berguna dari anggota komunitas. Platform ini memberikan akses ke
                         tren terbaru dalam desain antarmuka dan teknik pengujian pengguna yang dapat diandalkan.</p>
                 </div>
@@ -130,7 +130,7 @@
     {{-- CTA --}}
     <section class="container py-80px d-flex flex-column align-items-center justify-content-center text-white">
         <h2>Ayo gabung sekarang!</h2>
-        <p class="mb-4">Siapkan diri Anda untuk aktif berpartisipasi dalam mendukung sesama</p>
+        <p class="mb-4">Siapkan diri kamu untuk aktif berpartisipasi dalam mendukung sesama</p>
         <div class="text-center">
             <a href="{{ route('discussions.index') }}" class="btn btn-secondary mb-2 mb-lg-0">Gabung
                 diskusi

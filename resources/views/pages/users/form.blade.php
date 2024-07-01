@@ -38,7 +38,7 @@
                                         <input type="password" class="form-control @error('password') is-invalid @enderror"
                                             id="password" name="password">
                                         <div class="fs-12px color-gray">
-                                            Kosongkan ini jika Anda tidak ingin mengubah kata sandi Anda
+                                            Kosongkan ini jika kamu tidak ingin mengubah kata sandimu
                                         </div>
                                         @error('password')
                                             <div class="invalid-feedback">{{ $message }}</div>

@@ -3,7 +3,7 @@
     <div class="container mt-4 text-white mb-4">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <h1 class="text-center mb-4">Kode Etik Forum Diskusi UI/UX Indonesia</h1>
+                <h1 class="text-center mb-4">Kode Etik CeritaDesain</h1>
 
                 <div class="card ">
                     <div class="card-body">

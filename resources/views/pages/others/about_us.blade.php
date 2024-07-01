@@ -7,7 +7,7 @@
                 <div class="card mb-5">
                     <div class="card-body">
                         <p>
-                            Selamat datang di forum CeritaDesain! Di sini, Anda dapat berbagi ide, belajar, dan berinteraksi
+                            Selamat datang di forum CeritaDesain! Di sini, kamu dapat berbagi ide, belajar, dan berinteraksi
                             dengan
                             komunitas kami. Kami berdedikasi untuk menyediakan platform yang inklusif dan menyenangkan bagi
                             semua

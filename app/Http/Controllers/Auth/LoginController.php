@@ -20,7 +20,7 @@ class LoginController extends Controller
             return redirect()->route('discussions.index');
         }
 
-        return redirect()->back()->withInput()->withErrors(['credentials' => 'Email atau kata sandi yang Anda masukkan tidak tepat.']);
+        return redirect()->back()->withInput()->withErrors(['credentials' => 'Email atau kata sandi yang kamu masukkan tidak cocok.']);
     }
      public function logout(){
         auth()->logout();

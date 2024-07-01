@@ -7,7 +7,7 @@
                 <div class="d-flex align-items-center justify-content-center">
                     <div class="d-flex ">
                         <div class="fs-2 fw-bold me-2 mb-0">
-                            Buat Diskusi Baru!
+                            Sumbangkan Ide Kamu!
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                                         @method('PUT')
                                     @endisset
                                     <div class="mb-3">
-                                        <label for="title" class="form-label">Judul</label>
+                                        <label for="title" class="form-label">Tulis Judul Diskusi Kamu</label>
                                         <input type="text" class="form-control @error('title') is-invalid @enderror"
                                             id="title" name="title" value="{{ $discussion->title ?? old('title') }}"
                                             autofocus>
@@ -35,10 +35,10 @@
                                         @enderror
                                     </div>
                                     <div class="mb-3">
-                                        <label for="category_slug" class="form-label">Kategori</label>
+                                        <label for="category_slug" class="form-label">Pilih Kategori</label>
                                         <select class="form-select text-black @error('category_slug') is-invalid @enderror"
                                             name="category_slug" id="category_slug">
-                                            <option value="">--Pilih Salah Satu ---</option>
+                                            <option value="">Silakan Pilih Salah Satu</option>
                                             @foreach ($categories as $category)
                                                 <option
                                                     value="{{ $category->slug }}"@if (($discussion->category->slug ?? old('category_slug')) === $category->slug) {{ 'selected' }} @endif>
@@ -52,9 +52,8 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="content"
-                                            class="form-label @error('content') is-invalid @enderror ">Ceritakan
-                                            Pengalamanmu atau Masukkan
-                                            Sebuah pertanyaan
+                                            class="form-label @error('content') is-invalid @enderror ">Ceritakan Pengalaman
+                                            kamu atau Ajukan Sebuah Pertanyaan
                                         </label>
                                         <textarea class="form-control text-white" id="content" name="content">{{ $discussion->content ?? old('content') }}</textarea>
                                         @error('content')
@@ -79,7 +78,7 @@
     <script>
         $(document).ready(function() {
             $('#content').summernote({
-                placeholder: 'Rincian masalah Anda | Apa yang sudah Anda coba | Apa yang Anda harapkan',
+                placeholder: 'Jelaskan masalah yang kamu hadapi secara detail.. | Jelaskan langkah-langkah yang sudah kamu lakukan untuk mencoba menyelesaikan masalah ini... | Sebutkan hasil atau solusi yang kamu harapkan dari diskusi ini...',
                 tabSize: 2,
                 height: 320,
                 toolbar: [

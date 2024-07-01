@@ -60,7 +60,7 @@
 
                             </div>
                             <div class="fs-6 ">
-                                <p>Dengan masuk, Anda menyetujui <a class="text-primary"
+                                <p>Dengan masuk, kamu menyetujui <a class="text-primary"
                                         href="{{ route('others.privacy_policy') }}"> kebijakan
                                         privasi</a>, <a href="{{ route('others.term_of_use') }}" class="text-primary">syarat
                                         penggunaan</a>, dan <a class="text-primary"

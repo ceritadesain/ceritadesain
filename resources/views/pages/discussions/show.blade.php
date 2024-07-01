@@ -276,7 +276,7 @@
 
 
             $('#answer').summernote({
-                placeholder: 'Tulis solusi yang Anda pikirkan di sini...',
+                placeholder: 'Tulis solusi yang kamu pikirkan di sini...',
                 tabSize: 2,
                 height: 220,
                 toolbar: [

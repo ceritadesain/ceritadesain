@@ -13,7 +13,7 @@
                                 <a href="{{ route('discussions.index') }}"
                                     class="{{ Route::currentRouteName() === 'discussions.index' ? 'font-weight-bold' : '' }}">Terbaru</a>
                                 <a href="{{ route('popular-discussions.index') }}"
-                                    class="{{ Route::currentRouteName() === 'popular-discussions.index' ? 'font-weight-bold' : '' }}">Populer</a>
+                                    class="{{ Route::currentRouteName() === 'popular-discussions.index' ? 'font-weight-bold' : '' }}">Teratas</a>
                             </div>
                         @endif
                         <span>{{ isset($withCategory) ? ' Tentang ' . $withCategory->name : '' }}</span>

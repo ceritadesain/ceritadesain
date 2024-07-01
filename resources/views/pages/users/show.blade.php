@@ -16,7 +16,7 @@
                                     {{ $user->username }}
                                 </div>
                                 <div class="color-gray">
-                                    Anggota semenjak {{ $user->created_at->diffForHumans() }}
+                                    Bergabung dengan CeritaDesain sejak {{ $user->created_at->diffForHumans() }}
                                 </div>
                             </div>
                         </div>

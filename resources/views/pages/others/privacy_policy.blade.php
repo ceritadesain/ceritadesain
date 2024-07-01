@@ -9,44 +9,44 @@
                     <div class="card-body">
                         <h4><img src="{{ url('') }}" alt="">Informasi yang Kami Kumpulkan</h4>
                         <p>
-                            Informasi pribadi yang kami kumpulkan mungkin mencakup nama dan alamat email yang Anda berikan
+                            Informasi pribadi yang kami kumpulkan mungkin mencakup nama dan alamat email yang kamu berikan
                             kepada kami. Kami menggunakan informasi ini untuk
-                            menyediakan layanan yang Anda minta, seperti mengirimkan informasi produk atau mengelola akun
-                            Anda.
+                            menyediakan layanan yang kamu minta, seperti mengirimkan informasi produk atau mengelola akun
+                            kamu.
                         </p>
 
                         <h4>Penggunaan Informasi</h4>
                         <p>
-                            Kami hanya menggunakan informasi pribadi Anda sesuai dengan tujuan yang telah dijelaskan dan
+                            Kami hanya menggunakan informasi pribadi kamu sesuai dengan tujuan yang telah dijelaskan dan
                             dengan
-                            persetujuan Anda. Informasi tersebut digunakan untuk memenuhi permintaan Anda, memberikan
+                            persetujuan kamu. Informasi tersebut digunakan untuk memenuhi permintaan kamu, memberikan
                             layanan
-                            yang Anda butuhkan, dan meningkatkan pengalaman pengguna di CeritaDesain.
+                            yang kamu butuhkan, dan meningkatkan pengalaman pengguna di CeritaDesain.
                         </p>
 
                         <h4>Perlindungan Informasi</h4>
                         <p>
-                            Kami sangat menjaga keamanan informasi pribadi Anda. Kami tidak akan membagikan, menjual, atau
-                            menyewakan informasi pribadi Anda kepada pihak ketiga tanpa persetujuan Anda, kecuali jika
+                            Kami sangat menjaga keamanan informasi pribadi kamu. Kami tidak akan membagikan, menjual, atau
+                            menyewakan informasi pribadi kamu kepada pihak ketiga tanpa persetujuan kamu, kecuali jika
                             diwajibkan oleh hukum yang berlaku.
                         </p>
 
 
-                        <h4>Persetujuan Anda</h4>
+                        <h4>Persetujuan</h4>
                         <p>
-                            Dengan menggunakan Situs kami, Anda secara otomatis menyetujui pengumpulan dan penggunaan
+                            Dengan menggunakan Situs kami, kamu secara otomatis menyetujui pengumpulan dan penggunaan
                             informasi
-                            pribadi Anda sesuai dengan Kebijakan Privasi ini.
+                            pribadi kamu sesuai dengan Kebijakan Privasi ini.
                         </p>
 
 
                         <h4>Hubungi Kami</h4>
                         <p>
-                            Jika Anda memiliki pertanyaan lebih lanjut mengenai Kebijakan Privasi kami atau memerlukan
+                            Jika kamu memiliki pertanyaan lebih lanjut mengenai Kebijakan Privasi kami atau memerlukan
                             bantuan,
                             jangan ragu untuk menghubungi kami di ceritadesain@gmail.com.
 
-                            Terima kasih atas kepercayaan Anda kepada CeritaDesain dalam menjaga privasi dan keamanan
+                            Terima kasih atas kepercayaanmu kepada CeritaDesain dalam menjaga privasi dan keamanan
                             informasi
                             Anda.
                         </p>
