@@ -20,7 +20,7 @@
                                     <div class="row">
                                         <div class="col-auto">
                                             <div class="avatar-sm-wrapper d-inline-block">
-                                                <a href="#">
+                                                <a href="{{ route('users.show', $discussion->user->username) }}">
                                                     <img src="{{ filter_var($discussion->user->picture, FILTER_VALIDATE_URL) ? $discussion->user->picture : Storage::url($discussion->user->picture) }}"
                                                         alt="{{ $discussion->user->username }}"
                                                         class="avatar rounded-circle">
@@ -28,7 +28,8 @@
                                             </div>
                                         </div>
                                         <div class="col-auto fs-6 ps-0">
-                                            <a href="#" class="me-1 bold">{{ $discussion->user->username }}</a>
+                                            <a href="{{ route('users.show', $discussion->user->username) }}"
+                                                class="me-1 bold">{{ $discussion->user->username }}</a>
                                         </div>
                                         <div class="col-auto color-gray fs-6 ps-0">
                                             {{ $discussion->created_at->diffForHumans() }}
@@ -60,8 +61,9 @@
                                         {{-- TOMBOL SHARE --}}
                                         <span class="color-gray col-auto">
                                             <a href="javascript:;" id="share-discussion"><small>Share</small></a>
-                                            <input type="text" value="{{ route('discussions.show', $discussion->slug) }}"
-                                                id="current-url" class="d-none ">
+                                            <input type="text"
+                                                value="{{ route('discussions.show', $discussion->slug) }}" id="current-url"
+                                                class="d-none ">
                                         </span>
                                     </div>
                                 </div>
