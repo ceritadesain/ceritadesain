@@ -6,6 +6,14 @@ body {
     height: 48px;
 }
 
+.discussion-title {
+    color: white;
+}
+
+.discussion-title:hover {
+    color: $primary-blue;
+}
+
 .navbar {
     background-color: $navbar-bg-color;
 }

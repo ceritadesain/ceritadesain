@@ -42,29 +42,33 @@
 
                                         @if ($discussion->user_id === auth()->id())
                                             {{-- TOMBOL EDIT --}}
-                                            <span class="color-gray  col-auto">
-                                                <a
-                                                    href="{{ route('discussions.edit', $discussion->slug) }}"><small>Edit</small></a>
-                                                <input type="text"
-                                                    value="{{ route('discussions.show', $discussion->slug) }}"
-                                                    id="current-url" class="d-none">
+                                            <span class="color-gray col-auto p-0 m-0">
+                                                <a href="{{ route('discussions.edit', $discussion->slug) }}">
+                                                    <img src="{{ url('assets/images/edit-white.png') }}" alt="edit"
+                                                        class="pe-2">
+                                                </a>
                                             </span>
                                             {{-- TOMBOLE DELETE --}}
                                             <form action="{{ route('discussions.destroy', $discussion->slug) }}"
-                                                method="POST" class="col-auto ">
+                                                method="POST" class="col-auto p-0 m-0">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="border-0 bg-transparent p-0 " id="delete-discussion"><small
-                                                        class="color-gray">Hapus</small></button>
+                                                <button type="submit" class="border-0 bg-transparent p-0"
+                                                    id="delete-discussion">
+                                                    <img src="{{ url('assets/images/delete-white.png') }}" alt="delete"
+                                                        class="pe-1">
+                                                </button>
                                             </form>
                                         @endif
                                         {{-- TOMBOL SHARE --}}
-                                        <span class="color-gray col-auto">
-                                            <a href="javascript:;" id="share-discussion"><small>Share</small></a>
-                                            <input type="text"
-                                                value="{{ route('discussions.show', $discussion->slug) }}" id="current-url"
-                                                class="d-none ">
+                                        <span class="col-auto p-0 m-0">
+                                            <a href="javascript:;" id="share-discussion">
+                                                <img src="{{ url('assets/images/share-white.png') }}" alt="share"
+                                                    class="pe-2">
+                                            </a>
                                         </span>
+                                        <input type="text" value="{{ route('discussions.show', $discussion->slug) }}"
+                                            id="current-url" class="d-none">
                                     </div>
                                 </div>
                             </div>
@@ -137,14 +141,18 @@
                                                     <div class="row ">
                                                         <div class="col-12 col-lg-auto ">
                                                             @if ($answer->user_id === auth()->id())
-                                                                <span class="color-gray me-2"><a
-                                                                        href="{{ route('answers.edit', $answer->id) }}"><small>Edit</small></a></span>
+                                                                <span class="p-0 m-0"><a
+                                                                        href="{{ route('answers.edit', $answer->id) }}"><img
+                                                                            src="{{ url('assets/images/edit-white.png') }}"
+                                                                            alt="edit" class="pe-1"></a></span>
                                                                 <form action="{{ route('answers.destroy', $answer->id) }}"
                                                                     class="d-inline-block lh-1" method="POST">
                                                                     @csrf
                                                                     @method('DELETE')
                                                                     <button type="submit"
-                                                                        class=" delete-answer color-gray border-0 bg-transparent p-0"><small>Hapus</small></button>
+                                                                        class=" delete-answer color-gray border-0 bg-transparent p-0"><img
+                                                                            src="{{ url('assets/images/delete-white.png') }}"
+                                                                            alt="edit" class="pe-1"></button>
                                                                 </form>
                                                             @endif
                                                         </div>
@@ -331,7 +339,7 @@
             });
 
             $('#delete-discussion').click(function(event) {
-                if (!confirm('Hapus Diskusi?')) {
+                if (!confirm('Hapus diskusi ini?')) {
                     event.preventDefault();
                 }
             });
