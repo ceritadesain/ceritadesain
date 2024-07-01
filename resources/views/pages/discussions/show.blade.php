@@ -2,18 +2,18 @@
 @section('body')
     <div class="text-white pt-4 pb-5">
         <div class="container">
-            <div class="mb-5">
+            <div class="mb-4">
                 <div class="d-flex align-items-center">
                     <div class="d-flex">
-                        <div class="fs-2 fw-bold color-gray me-2 mb-0">Diskusi</div>
-                        <div class="fs-2 fw-bold color-gray me-2 mb-0">></div>
+                        <div class="fs-3 fw-bold color-gray me-2 mb-0">Diskusi</div>
+                        <div class="fs-3 fw-bold color-gray me-2 mb-0">></div>
                     </div>
                     <h2 class="mb-0">{{ $discussion->title }}</h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-lg-8 mb-5 mb-lg-0">
-                    <div class="card card-discussions mb-5">
+                <div class="col-12 col-lg-8 mb-4 mb-lg-0">
+                    <div class="card card-discussions mb-4">
                         <div class="row">
                             <div class="d-flex align-items-center pb-3">
                                 <div class="flex-grow-1">
@@ -95,9 +95,9 @@
                         $answerCount = $discussion->answers->count();
                     @endphp
 
-                    <h3 class="mb-5"> {{ $answerCount }} Tanggapan</h3>
+                    <h3 class="mb-4 fs-4"> {{ $answerCount }} Tanggapan</h3>
 
-                    <div class="mb-5">
+                    <div class="mb-4">
                         @forelse ($discussionAnswers as $answer)
                             <div class="card card-discussions">
                                 <div class="row">
@@ -117,7 +117,7 @@
                                             <div class="row pb-3">
                                                 <div class="col-auto">
                                                     <div class="avatar-sm-wrapper d-inline-block">
-                                                        <a href="#">
+                                                        <a href="{{ route('users.show', $discussion->user->username) }}">
                                                             <img src="{{ filter_var($answer->user->picture, FILTER_VALIDATE_URL) ? $answer->user->picture : Storage::url($answer->user->picture) }}"
                                                                 alt="{{ $answer->user->username }}"
                                                                 class="avatar rounded-circle">
@@ -126,7 +126,8 @@
                                                 </div>
                                                 <span
                                                     class="col-auto fs-6 ps-0 {{ $answer->user->username === $discussion->user->username ? 'text-primary' : '' }} ">
-                                                    <a href="#" class="me-1 bold">{{ $answer->user->username }}</a>
+                                                    <a href="{{ route('users.show', $discussion->user->username) }}"
+                                                        class="me-1 bold">{{ $answer->user->username }}</a>
                                                 </span>
                                                 <div class="col-auto color-gray fs-6 ps-0">
                                                     {{ $answer->created_at->diffForHumans() }}
@@ -159,7 +160,7 @@
                                 </div>
                             </div>
                         @empty
-                            <div class="card card-discussion mb-5">
+                            <div class="card card-discussion mb-4">
                                 Saat ini belum ada tanggapan
                             </div>
                         @endforelse
@@ -168,7 +169,7 @@
                         </div>
 
                         @auth
-                            <h3 class="mb-5">Tanggapanmu</h3>
+                            <h3 class="mb-4 fs-4">Tanggapanmu</h3>
                             <div class="card card-discussions">
                                 <form action="{{ route('discussions.answer.store', $discussion->slug) }}" method="POST">
                                     @csrf
