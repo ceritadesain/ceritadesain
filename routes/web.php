@@ -86,3 +86,7 @@ Route::get('term-of-use', function () {
 Route::get('help', function () {
     return view('pages.others.help');
 })->name('others.help');
+
+Route::get('contact', function () {
+    return view('pages.others.contact');
+})->name('others.contact');

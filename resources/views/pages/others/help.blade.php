@@ -26,7 +26,7 @@
             </div>
             <div class="col-md-10 offset-md-2 ">
                 <h1 class="text-left mb-4">Bantuan CeritaDesain</h1>
-                <p>Selamat datang di halaman bantuan Komunitas DesignSpeak! Di sini, kami menyediakan panduan lengkap untuk
+                <p>Selamat datang di halaman bantuan Komunitas CeritaDesain! Di sini, kami menyediakan panduan lengkap untuk
                     membantu kamu menggunakan platform kami dengan mudah.</p>
 
                 <div class="card align-center mb-5">
@@ -164,7 +164,8 @@
                             </li>
                         </ul>
                     </div>
-                    <p>Jika kamu memiliki pertanyaan lebih lanjut, jangan ragu untuk menghubungi <a href="">kami</a>.
+                    <p>Jika kamu memiliki pertanyaan lebih lanjut, jangan ragu untuk menghubungi <a
+                            href="{{ route('others.contact') }}" class="text-primary">kami</a>.
                         Selamat berdiskusi dan berbagi di Komunitas DesignSpeak!</p>
                 </div>
             </div>
