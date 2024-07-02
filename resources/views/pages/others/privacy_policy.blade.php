@@ -3,7 +3,7 @@
     <div class="container mt-4 text-white ">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <h1 class="text-center mb-4">Kebijakan Privasi</h1>
+                <h1 class="text-center mb-4">Kebijakan Privasi CeritaDesain</h1>
 
                 <div class="card align-center mb-5">
                     <div class="card-body">

@@ -338,3 +338,27 @@ pre {
 .align-center {
     text-align: justify;
 }
+
+.list-fixed {
+    background-color: $background-dark;
+    color: white;
+}
+
+.list-group-item-action {
+    border: none;
+}
+
+.card-list {
+    background-color: $background-dark;
+    border: 1px solid white;
+    border-radius: 8px;
+}
+
+@media (max-width: 767px) {
+    .col-md-2 {
+        display: none;
+    }
+    .col-md-10 {
+        margin-left: 0;
+    }
+}

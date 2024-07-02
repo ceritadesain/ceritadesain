@@ -82,3 +82,7 @@ Route::get('privacy-policy', function () {
 Route::get('term-of-use', function () {
     return view('pages.others.term_of_use');
 })->name('others.term_of_use');
+
+Route::get('help', function () {
+    return view('pages.others.help');
+})->name('others.help');

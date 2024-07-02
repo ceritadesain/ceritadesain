@@ -192,7 +192,7 @@
                             </a>
                         </div>
                         <div class="col m-0 p-0">
-                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                            <a href="{{ route('others.help') }}" class="text-decoration-none">
                                 <p class="fs-5 fw-normal mb-0">Bantuan</p>
                             </a>
                         </div>
