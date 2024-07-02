@@ -145,6 +145,13 @@
                                                                         href="{{ route('answers.edit', $answer->id) }}"><img
                                                                             src="{{ url('assets/images/edit-white.png') }}"
                                                                             alt="edit" class="pe-1"></a></span>
+                                                                {{-- <form action="{{ route('answers.destroy', $answer->id) }}"
+                                                                    class="d-inline-block lh-1" method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="submit"
+                                                                        class=" delete-answer color-gray border-0 bg-transparent p-0"><small>Hapus</small></button>
+                                                                </form> --}}
                                                                 <form action="{{ route('answers.destroy', $answer->id) }}"
                                                                     class="d-inline-block lh-1" method="POST">
                                                                     @csrf

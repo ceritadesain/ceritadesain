@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-
 @section('body')
     <section class="text-white pt-4 pb-5">
         <div class="container">
