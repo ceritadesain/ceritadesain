@@ -362,3 +362,23 @@ pre {
         margin-left: 0;
     }
 }
+
+.card-compe {
+    color: white;
+    background-color: $navbar-bg-color;
+}
+
+.card-compe:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-compe-img {
+    max-width: 100%; /* Gambar tidak melebihi lebar container */
+    max-height: 300px; /* Tinggi maksimum gambar */
+    object-fit: cover; /* Mengisi kontainer dengan memotong dan mempertahankan rasio aspek */
+    border-radius: 20px; /* Sudut bulat */
+}
+.card-image-cap {
+    border-radius: 20px;
+}
