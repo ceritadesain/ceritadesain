@@ -127,7 +127,7 @@
                             </a>
                         </div>
                         <div class="col m-0 p-0">
-                            <a href="{{ route('others.book') }}" class="text-decoration-none">
+                            <a href="{{ route('books.index') }}" class="text-decoration-none">
                                 <p class="fs-5 fw-normal mb-0">Buku UI/UX</p>
                             </a>
                         </div>

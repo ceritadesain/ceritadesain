@@ -8,6 +8,7 @@ use App\Http\Controllers\PopularDiscussionController;
 use App\Http\Controllers\SaveController;
 use App\Models\Answer;
 use App\Http\Controllers\ChallengeController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,13 +93,10 @@ Route::get('contact', function () {
     return view('pages.others.contact');
 })->name('others.contact');
 
-Route::get('challenge', function () {
-    return view('pages.others.challenge');
-})->name('others.challenge');
 
-Route::get('book', function () {
-    return view('pages.others.book');
-})->name('others.book');
 
 Route::get('/challenge', [ChallengeController::class, 'index'])->name('challenge.index');
 Route::get('/challenge/{id}', [ChallengeController::class, 'show'])->name('challenge.show');
+
+Route::get('/book', [BookController::class, 'index'])->name('books.index');
+Route::get('/book/{id}', [BookController::class, 'show'])->name('books.show');
