@@ -101,7 +101,7 @@
                                         </div>
                                         <div class="pb-3">
                                             <a href="{{ route('discussions.show', $discussion->slug) }}">
-                                                <h3>{{ $discussion->title }}</h3>
+                                                <h3 class="discussion-title">{{ $discussion->title }}</h3>
                                             </a>
                                             <p>{!! $discussion->content_preview !!}
                                             </p>
