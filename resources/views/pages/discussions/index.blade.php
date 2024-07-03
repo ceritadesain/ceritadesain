@@ -145,7 +145,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="mt-4 row align-items-center ">
+                    {{-- <div class="mt-4 row align-items-center ">
                         <div class="col-auto m-0 p-0 ps-3">
                             <a href="{{ route('others.about_us') }}" class="text-decoration-none">
                                 <img src="{{ url('assets/images/writing.png') }}" alt="emoji" width="30px"
@@ -153,11 +153,11 @@
                             </a>
                         </div>
                         <div class="col m-0 p-0">
-                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
-                                <p class="fs-5 fw-normal mb-0">UX Writing with AI</p>
+                            <a href="{{ route('generate_output.index') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">UX Writing dengan AI</p>
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="mt-4 row align-items-center ">
                         <div class="col-auto m-0 p-0 ps-3">
                             <a href="{{ route('others.about_us') }}" class="text-decoration-none">

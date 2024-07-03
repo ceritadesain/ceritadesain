@@ -33,7 +33,7 @@ class PodcastController extends Controller
                 if (isset($data['episodes']['items'])) {
                     $podcasts = $data['episodes']['items'];
 
-                    // Simpan data dalam cache selama 1 jam (60 menit)
+                    // Simpan data dalam cache selama 1 bulan
                     Cache::put('podcasts', $podcasts, 30 * 24 * 60 * 60);
 
                     // Simpan atau update data podcast ke database
