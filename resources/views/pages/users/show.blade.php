@@ -11,47 +11,51 @@
                         </div>
                         <div>
                             <div class="mb-4">
-                                <div class="fs-2 fw-bold mb-1 text-break">
-                                    {{ $user->username }}
+                                <div class="row mb-1 text-break p-0">
+                                    <div class="col-auto fs-2 fw-bold d-flex align-items-center ">
+                                        <span class="m-0 p-0"> {{ $user->username }}</span>
+
+                                        @auth
+                                            @if ($user->id === auth()->id())
+                                                <a href="{{ route('users.edit', $user->username) }}" class="ms-2">
+                                                    <img src="{{ url('assets/images/edit-white.png') }}" alt="Edit Icon">
+                                                </a>
+                                            @endif
+                                        @endauth
+                                    </div>
                                 </div>
                                 <div class="color-gray">
                                     Bergabung dengan CeritaDesain sejak {{ $user->created_at->diffForHumans() }}
                                 </div>
-                                @auth
-                                    @if ($user->id === auth()->id())
-                                        <a href="{{ route('users.edit', $user->username) }}"
-                                            class="btn btn-outline-primary d-flex align-content-center justify-content-center mt-2 mx-4">Edit
-                                            Profile</a>
-                                    @endif
-                                @endauth
                             </div>
                         </div>
-
                     </div>
-                    <div>
-                        <input type="text" id="current-url" class="d-none" value="{{ request()->url() }}">
-                        <a id="share-profile" class="btn btn-outline-primary me-4" href="javascript:;">Bagikan</a>
-                        <a id="share-profile" class="btn btn-primary me-4" href="javascript:;">Follow</a>
-
-                    </div>
-                    <div class="card mt-4 text-white">
-                        <div class="card-body">
-
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="text-center">
-                                        <div class="fw-bold fs-4">12</div>
-                                        <div class="text-white">Pengikut</div>
-                                    </div>
+                    <div class="card  mt-4 text-white">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="text-center">
+                                    <div class="fw-bold fs-4">12</div>
+                                    <div class="text-white">Pengikut</div>
                                 </div>
-                                <div class="col-6">
-                                    <div class="text-center">
-                                        <div class="fw-bold fs-4">3</div>
-                                        <div class="text-white">Mengikuti</div>
-                                    </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-center">
+                                    <div class="fw-bold fs-4">3</div>
+                                    <div class="text-white">Mengikuti</div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row mt-4 d-flex justify-content-center align-content-center">
+                        <div class="col-6 col-lg-6">
+                            <input type="text" id="current-url" class="d-none" value="{{ request()->url() }}">
+                            <a id="share-profile" class="btn btn-outline-primary me-4" href="javascript:;">Bagikan</a>
+                        </div>
+                        <div class="col-6 col-lg-6">
+                            <a id="share-profile" class="btn btn-primary me-4" href="javascript:;">Follow</a>
+                        </div>
+
+
                     </div>
                 </div>
 
@@ -121,7 +125,7 @@
                             </div>
                         </div>
                         <div>
-                            <h2 class="mb-3">Jawaban saya</h2>
+                            <h2 class="mb-3">Tanggapan Saya</h2>
                             <div>
                                 @forelse ($answers as $answer)
                                     <div class="card card-discussions">

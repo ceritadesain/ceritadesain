@@ -37,7 +37,7 @@
                                         <label for="password" class="form-label">Password</label>
                                         <input type="password" class="form-control @error('password') is-invalid @enderror"
                                             id="password" name="password">
-                                        <div class="fs-12px color-gray">
+                                        <div class="fs-12px color-gray mt-1">
                                             Kosongkan ini jika kamu tidak ingin mengubah kata sandimu
                                         </div>
                                         @error('password')
@@ -49,7 +49,7 @@
                                         <input type="password"
                                             class="form-control @error('password_confirmation') is-invalid @enderror"
                                             id="password_confirmation" name="password_confirmation">
-                                        <div class="fs-12px color-gray">
+                                        <div class="fs-12px color-gray mt-1">
                                             Kosongkan ini jika Anda tidak ingin mengubah kata sandi Anda
                                         </div>
                                         @error('password_confirmation')
