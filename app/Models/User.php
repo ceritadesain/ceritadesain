@@ -43,4 +43,34 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // Relasi follows dan followers
+    public function follows()
+    {
+        return $this->belongsToMany(User::class, 'follows', 'user_id', 'followed_user_id')->withTimestamps();
+    }
+
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'follows', 'followed_user_id', 'user_id')->withTimestamps();
+    }
+
+    public function isFollowing(User $user)
+    {
+        return $this->follows()->where('followed_user_id', $user->id)->exists();
+    }
+
+    public function follow(User $user)
+    {
+        if (!$this->isFollowing($user)) {
+            return $this->follows()->attach($user);
+        }
+    }
+
+    public function unfollow(User $user)
+    {
+        if ($this->isFollowing($user)) {
+            return $this->follows()->detach($user);
+        }
+    }
 }

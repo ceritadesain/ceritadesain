@@ -34,29 +34,44 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="text-center">
-                                    <div class="fw-bold fs-4">12</div>
+                                    <div class="fw-bold fs-4">{{ $user->followers()->count() }}</div>
                                     <div class="text-white">Pengikut</div>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="text-center">
-                                    <div class="fw-bold fs-4">3</div>
+                                    <div class="fw-bold fs-4">{{ $user->follows()->count() }}</div>
                                     <div class="text-white">Mengikuti</div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
                     <div class="row mt-4 d-flex justify-content-center align-content-center">
                         <div class="col-6 col-lg-6">
                             <input type="text" id="current-url" class="d-none" value="{{ request()->url() }}">
                             <a id="share-profile" class="btn btn-outline-primary me-4" href="javascript:;">Bagikan</a>
                         </div>
-                        <div class="col-6 col-lg-6">
-                            <a id="share-profile" class="btn btn-primary me-4" href="javascript:;">Follow</a>
-                        </div>
-
-
+                        @auth
+                            @if ($user->id !== auth()->id())
+                                {{-- <div class="col-6 col-lg-6">
+                                    <input type="text" id="current-url" class="d-none" value="{{ request()->url() }}">
+                                    <a id="share-profile" class="btn btn-outline-primary me-4" href="javascript:;">Bagikan</a>
+                                </div> --}}
+                                <div class="col-6 col-lg-6">
+                                    @if (auth()->user()->isFollowing($user))
+                                        <a id="unfollow-btn" class="btn btn-primary" href="javascript:;"
+                                            data-user-id="{{ $user->id }}">Berhenti Mengikuti</a>
+                                    @else
+                                        <a id="follow-btn" class="btn btn-primary" href="javascript:;"
+                                            data-user-id="{{ $user->id }}">Ikuti</a>
+                                    @endif
+                                </div>
+                            @endif
+                        @endauth
                     </div>
+
                 </div>
 
                 <div class="col-12 col-lg-8 ">
@@ -158,6 +173,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 @endsection
 
@@ -173,7 +189,50 @@
                 alert.removeClass('d-none');
                 var alertContainer = alert.find('.container');
                 alertContainer.first().text('Link untuk profil ini sukses disalin');
-            })
-        })
+            });
+
+            $('#follow-btn').click(function() {
+                var userId = $(this).data('user-id');
+                $.ajax({
+                    url: '/follow/' + userId,
+                    type: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function(response) {
+                        alert(response.message);
+                        if (response.message.includes('now following')) {
+                            $('#follow-btn').hide();
+                            $('#unfollow-btn').show();
+                        }
+                    },
+                    error: function(xhr) {
+                        alert('Error: ' + xhr.responseJSON.message);
+                    }
+                });
+            });
+
+            $('#unfollow-btn').click(function() {
+                var userId = $(this).data('user-id');
+                $.ajax({
+                    url: '/unfollow/' + userId,
+                    type: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function(response) {
+                        alert(response.message);
+                        if (response.message.includes('have unfollowed')) {
+                            $('#follow-btn').show();
+                            $('#unfollow-btn').hide();
+                        }
+                    },
+                    error: function(xhr) {
+                        alert('Error: ' + xhr.responseJSON.message);
+                    }
+                });
+            });
+
+        });
     </script>
 @endsection

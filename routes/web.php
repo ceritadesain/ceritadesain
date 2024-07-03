@@ -10,7 +10,7 @@ use App\Models\Answer;
 use App\Http\Controllers\ChallengeController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\PodcastController;
-use App\Http\Controllers\GeminiController;
+use App\Http\Controllers\FollowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -106,3 +106,7 @@ Route::get('/book/{id}', [BookController::class, 'show'])->name('books.show');
 
 Route::get('/podcasts', [PodcastController::class, 'index'])->name('podcasts.index');
 
+Route::middleware('auth')->group(function () {
+    Route::post('/follow/{user}', [FollowController::class, 'follow'])->name('follow')->name('user.follow');;
+    Route::post('/unfollow/{user}', [FollowController::class, 'unfollow'])->name('unfollow')->name('user.unfollow');
+});
