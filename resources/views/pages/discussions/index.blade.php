@@ -241,8 +241,9 @@
 
                     </div>
                     <div class="mt-4 row align-items-center text-white-50 ps-2">
-                        <p>CeritaDesain: Sebuah forum online yang membangun, ramah, dan inklusif bagi para desainer UI/UX
-                            seperti Anda. Kami siap mendampingi setiap langkah perjalanan desain Anda.
+                        <p>CeritaDesain adalah sebuah forum online yang membangun, ramah, dan inklusif bagi para desainer
+                            UI/UX. Kami hadir untuk menyediakan wadah inspiratif di mana para profesional dan pecinta desain
+                            dapat berbagi pengetahuan, pengalaman, serta mendiskusikan tren terkini dalam industri UI/UX.
                         </p>
 
                         <p> CeritaDesain © 2024.</p>

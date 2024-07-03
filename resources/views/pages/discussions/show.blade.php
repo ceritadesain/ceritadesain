@@ -224,6 +224,58 @@
                     <div class="mt-4 row align-items-center ">
                         <div class="col-auto m-0 p-0 ps-3">
                             <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/challenge1.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('challenge.index') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">UI/UX Challenges</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-4 row align-items-center ">
+                        <div class="col-auto m-0 p-0 ps-3">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/book.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('books.index') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">Buku UI/UX</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-4 row align-items-center ">
+                        <div class="col-auto m-0 p-0 ps-3">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/podcast.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('podcasts.index') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">Podcasts</p>
+                            </a>
+                        </div>
+                    </div>
+                    {{-- <div class="mt-4 row align-items-center ">
+                        <div class="col-auto m-0 p-0 ps-3">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/writing.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('generate_output.index') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">UX Writing dengan AI</p>
+                            </a>
+                        </div>
+                    </div> --}}
+                    <div class="mt-4 row align-items-center ">
+                        <div class="col-auto m-0 p-0 ps-3">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
                                 <img src="{{ url('assets/images/about-4x.png') }}" alt="emoji" width="30px"
                                     style="padding-right: 4px">
                             </a>
@@ -231,6 +283,48 @@
                         <div class="col m-0 p-0">
                             <a href="{{ route('others.about_us') }}" class="text-decoration-none">
                                 <p class="fs-5 fw-normal mb-0">Tentang kami</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-4 row align-items-center ">
+                        <div class="col-auto m-0 p-0 ps-3">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/contact.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('others.contact') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">Kontak</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-4 row align-items-center ">
+                        <div class="col-auto m-0 p-0 ps-3">
+                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/help.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('others.help') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">Bantuan</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-4 row align-items-center">
+                        <h3 class="fs-4">Lainnya</h3>
+                    </div>
+                    <div class="mt-4 row align-items-center">
+                        <div class="col-auto m-0 p-0 ps-3">
+                            <a href="{{ route('others.code_of_coduct') }}" class="text-decoration-none">
+                                <img src="{{ url('assets/images/privacy.png') }}" alt="emoji" width="30px"
+                                    style="padding-right: 4px">
+                            </a>
+                        </div>
+                        <div class="col m-0 p-0">
+                            <a href="{{ route('others.privacy_policy') }}" class="text-decoration-none">
+                                <p class="fs-5 fw-normal mb-0">Kebijakan Privasi</p>
                             </a>
                         </div>
                     </div>
@@ -262,8 +356,9 @@
 
                     </div>
                     <div class="mt-4 row align-items-center text-white-50 ps-2">
-                        <p>CeritaDesain: Sebuah forum online yang membangun, ramah, dan inklusif bagi para desainer UI/UX
-                            seperti Anda. Kami siap mendampingi setiap langkah perjalanan desain Anda.
+                        <p>CeritaDesain adalah sebuah forum online yang membangun, ramah, dan inklusif bagi para desainer
+                            UI/UX. Kami hadir untuk menyediakan wadah inspiratif di mana para profesional dan pecinta desain
+                            dapat berbagi pengetahuan, pengalaman, serta mendiskusikan tren terkini dalam industri UI/UX.
                         </p>
 
                         <p> CeritaDesain © 2024.</p>
