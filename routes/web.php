@@ -9,6 +9,7 @@ use App\Http\Controllers\SaveController;
 use App\Models\Answer;
 use App\Http\Controllers\ChallengeController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\PodcastController;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,3 +101,6 @@ Route::get('/challenge/{id}', [ChallengeController::class, 'show'])->name('chall
 
 Route::get('/book', [BookController::class, 'index'])->name('books.index');
 Route::get('/book/{id}', [BookController::class, 'show'])->name('books.show');
+
+
+Route::get('/podcasts', [PodcastController::class, 'index'])->name('podcasts.index');
