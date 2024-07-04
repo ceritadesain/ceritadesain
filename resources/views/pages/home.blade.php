@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-12 col-lg-4 d-flex flex-column align-items-center mb-4">
                         <h2 class="font-extra-extra-large">{{ $answerCount }}</h2>
-                        <p class="font-small">Jawaban</p>
+                        <p class="font-small">Tanggapan</p>
                     </div>
                     <div class="col-12 col-lg-4 d-flex flex-column align-items-center">
                         <h2 class="font-extra-extra-large">{{ $userCount }}</h2>

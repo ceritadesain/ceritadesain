@@ -9,9 +9,10 @@
                     <div class="card-body">
                         <h4><img src="{{ url('') }}" alt="">Informasi yang Kami Kumpulkan</h4>
                         <p>
-                            Informasi pribadi yang kami kumpulkan mungkin mencakup nama dan alamat email yang kamu berikan
+                            Informasi pribadi yang kami kumpulkan mungkin mencakup email, password, dan username yang kamu
+                            berikan
                             kepada kami. Kami menggunakan informasi ini untuk
-                            menyediakan layanan yang kamu minta, seperti mengirimkan informasi produk atau mengelola akun
+                            menyediakan layanan yang kamu minta, seperti mengelola akun
                             kamu.
                         </p>
 
@@ -44,7 +45,8 @@
                         <p>
                             Jika kamu memiliki pertanyaan lebih lanjut mengenai Kebijakan Privasi kami atau memerlukan
                             bantuan,
-                            jangan ragu untuk menghubungi kami di ceritadesain@gmail.com.
+                            jangan ragu untuk menghubungi kami di <a href="mailto:ceritadesain@gmail.com"
+                                class="text-primary">ceritadesain@gmail.com</a>.
 
                             Terima kasih atas kepercayaanmu kepada CeritaDesain dalam menjaga privasi dan keamanan
                             informasi

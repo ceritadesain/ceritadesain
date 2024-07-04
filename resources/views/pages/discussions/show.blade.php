@@ -49,16 +49,49 @@
                                                 </a>
                                             </span>
                                             {{-- TOMBOLE DELETE --}}
-                                            <form action="{{ route('discussions.destroy', $discussion->slug) }}"
+                                            {{-- <form action="{{ route('discussions.destroy', $discussion->slug) }}"
                                                 method="POST" class="col-auto p-0 m-0">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="border-0 bg-transparent p-0"
-                                                    id="delete-discussion">
+                                                    id="delete-discussion" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal">
+                                                    <img src="{{ url('assets/images/delete-white.png') }}" alt="delete"
+                                                        class="pe-1">
+                                                </button>
+                                            </form> --}}
+                                            <form action="{{ route('discussions.destroy', $discussion->slug) }}"
+                                                method="POST" class="col-auto p-0 m-0" id="deleteForm">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="button" class="border-0 bg-transparent p-0"
+                                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                     <img src="{{ url('assets/images/delete-white.png') }}" alt="delete"
                                                         class="pe-1">
                                                 </button>
                                             </form>
+                                            <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog text-white">
+                                                    <div class="modal-content bg-dark">
+                                                        <div class="modal-header">
+                                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus
+                                                                Diskusi</h1>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body bg-dark">
+                                                            Apakah kamu yakin untuk menghapus diskusi ini?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Batal</button>
+                                                            <button type="button" class="btn btn-primary"
+                                                                id="confirmDelete">Hapus</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         @endif
                                         {{-- TOMBOL SHARE --}}
                                         <span class="col-auto p-0 m-0">
@@ -152,7 +185,7 @@
                                                                     <button type="submit"
                                                                         class=" delete-answer color-gray border-0 bg-transparent p-0"><small>Hapus</small></button>
                                                                 </form> --}}
-                                                                <form action="{{ route('answers.destroy', $answer->id) }}"
+                                                                {{-- <form action="{{ route('answers.destroy', $answer->id) }}"
                                                                     class="d-inline-block lh-1" method="POST">
                                                                     @csrf
                                                                     @method('DELETE')
@@ -160,7 +193,50 @@
                                                                         class=" delete-answer color-gray border-0 bg-transparent p-0"><img
                                                                             src="{{ url('assets/images/delete-white.png') }}"
                                                                             alt="edit" class="pe-1"></button>
+                                                                </form> --}}
+                                                                <!-- Tombol Hapus -->
+                                                                <form action="{{ route('answers.destroy', $answer->id) }}"
+                                                                    class="d-inline-block lh-1 delete-answer-form"
+                                                                    method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="button"
+                                                                        class="delete-answer color-gray border-0 bg-transparent p-0"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#exampleModal">
+                                                                        <img src="{{ url('assets/images/delete-white.png') }}"
+                                                                            alt="hapus" class="pe-1">
+                                                                    </button>
                                                                 </form>
+
+                                                                <!-- Modal Konfirmasi -->
+                                                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                                    aria-labelledby="exampleModalLabel"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog text-white">
+                                                                        <div class="modal-content bg-dark">
+                                                                            <div class="modal-header">
+                                                                                <h1 class="modal-title fs-5"
+                                                                                    id="exampleModalLabel">Hapus Tanggapan
+                                                                                </h1>
+                                                                                <button type="button" class="btn-close"
+                                                                                    data-bs-dismiss="modal"
+                                                                                    aria-label="Close"></button>
+                                                                            </div>
+                                                                            <div class="modal-body bg-dark">
+                                                                                Apakah kamu yakin untuk menghapus tanggapan
+                                                                                ini?
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button"
+                                                                                    class="btn btn-secondary"
+                                                                                    data-bs-dismiss="modal">Batal</button>
+                                                                                <button type="button"
+                                                                                    class="btn btn-primary confirm-delete-answer">Hapus</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             @endif
                                                         </div>
 
@@ -378,10 +454,15 @@
                 copyText[0].select();
                 copyText[0].setSelectionRange(0, 99999);
                 navigator.clipboard.writeText(copyText.val());
-                let alert = $('#alert');
+
+                let alert = $('#success-alert');
                 alert.removeClass('d-none');
                 let alertContainer = alert.find('.container');
-                alertContainer.first().text('Link untuk discusi ini sukses di salin');
+                alertContainer.first().text('Link untuk diskusi ini sukses di salin');
+
+                setTimeout(function() {
+                    location.reload(); // Refresh halaman setelah 3 detik
+                }, 3000); // Delay 3 detik sebelum merefresh halaman
             });
 
 
@@ -440,16 +521,24 @@
                 })
             });
 
-            $('#delete-discussion').click(function(event) {
-                if (!confirm('Hapus diskusi ini?')) {
-                    event.preventDefault();
-                }
+            // $('#delete-discussion').click(function(event) {
+            //     if (!confirm('Hapus diskusi ini?')) {
+            //         event.preventDefault();
+            //     }
+            // });
+
+            $('#confirmDelete').click(function() {
+                $('#deleteForm').submit();
             });
 
-            $('.delete-answer').click(function(event) {
-                if (!confirm('Hapus tanggapan?')) {
-                    event.preventDefault();
-                }
+            // $('.delete-answer').click(function(event) {
+            //     if (!confirm('Hapus tanggapan?')) {
+            //         event.preventDefault();
+            //     }
+            // });
+
+            $('.confirm-delete-answer').click(function() {
+                $('.delete-answer-form').submit();
             });
 
             $('.answer-like').click(function() {

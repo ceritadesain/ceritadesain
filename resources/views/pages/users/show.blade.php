@@ -4,6 +4,7 @@
     <section class="text-white pt-4 pb-5">
         <div class="container">
             <div class="row">
+
                 <div class="col-12 col-lg-4 mb-5 mb-lg-0">
                     <div class="d-flex mb-4">
                         <div class="avatar-wrapper rounded-circle overflow-hidden flex-shrink-0 me-4">
@@ -181,14 +182,18 @@
     <script>
         $(document).ready(function() {
             $('#share-profile').click(function() {
-                var copyText = $('#current-url')
+                var copyText = $('#current-url');
                 copyText[0].select();
                 copyText[0].setSelectionRange(0, 99999);
                 navigator.clipboard.writeText(copyText.val());
-                var alert = $('#alert');
+                var alert = $('#success-alert');
                 alert.removeClass('d-none');
                 var alertContainer = alert.find('.container');
-                alertContainer.first().text('Link untuk profil ini sukses disalin');
+                alertContainer.first().text('Link sukses disalin');
+
+                setTimeout(function() {
+                    location.reload(); // Refresh halaman setelah 3 detik
+                }, 3000); // Delay 3 detik sebelum merefresh halaman
             });
 
             $('#follow-btn').click(function() {
@@ -200,14 +205,31 @@
                         _token: '{{ csrf_token() }}'
                     },
                     success: function(response) {
-                        alert(response.message);
+                        var alert = $('#success-alert');
+                        alert.removeClass('d-none');
+                        var alertContainer = alert.find('.container');
+                        alertContainer.first().text(response.message);
                         if (response.message.includes('now following')) {
                             $('#follow-btn').hide();
                             $('#unfollow-btn').show();
                         }
+                        setTimeout(function() {
+                            $('#success-alert').addClass('d-none').removeClass(
+                                'alert-success');
+                            location.reload(); // Refresh halaman setelah aksi berhasil
+                        }, 1000); // Sembunyikan alert setelah 3 detik
+
+
                     },
                     error: function(xhr) {
-                        alert('Error: ' + xhr.responseJSON.message);
+                        var alert = $('#error-alert');
+                        alert.removeClass('d-none');
+                        var alertContainer = alert.find('.container');
+                        alertContainer.first().text('Error: ' + xhr.responseJSON.message);
+                        setTimeout(function() {
+                            $('#error-alert').addClass('d-none').removeClass(
+                                'alert-danger');
+                        }, 5000); // Sembunyikan alert setelah 2 detik
                     }
                 });
             });
@@ -221,14 +243,30 @@
                         _token: '{{ csrf_token() }}'
                     },
                     success: function(response) {
-                        alert(response.message);
+                        var alert = $('#success-alert');
+                        alert.removeClass('d-none');
+                        var alertContainer = alert.find('.container');
+                        alertContainer.first().text(response.message);
                         if (response.message.includes('have unfollowed')) {
                             $('#follow-btn').show();
                             $('#unfollow-btn').hide();
                         }
+                        setTimeout(function() {
+                            $('#success-alert').addClass('d-none').removeClass(
+                                'alert-success');
+                            location.reload(); // Refresh halaman setelah aksi berhasil
+                        }, 1000); // Sembunyikan alert setelah 3 detik
                     },
                     error: function(xhr) {
-                        alert('Error: ' + xhr.responseJSON.message);
+                        var alert = $('#error-alert');
+                        alert.removeClass('d-none');
+                        var alertContainer = alert.find('.container');
+                        alertContainer.first().text('Error: ' + xhr.responseJSON
+                            .message); // Menampilkan pesan error
+                        setTimeout(function() {
+                            $('#error-alert').addClass('d-none').removeClass(
+                                'alert-danger');
+                        }, 5000); // Sembunyikan alert setelah 3 detik
                     }
                 });
             });

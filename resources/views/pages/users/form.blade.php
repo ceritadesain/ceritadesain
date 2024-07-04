@@ -83,6 +83,7 @@
             output.onload = function() {
                 URL.revokeObjectURL(output.attr('src'))
             }
+
         })
     </script>
 @endsection

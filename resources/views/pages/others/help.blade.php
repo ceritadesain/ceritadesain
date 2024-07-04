@@ -48,7 +48,7 @@
                         <h4 id="buat-diskusi-baru">Membuat Diskusi Baru</h4>
                         <ul>
                             <li>
-                                <p>Buat Diskusi Baru: Klik tombol "Buat Diskusi Baru" yang biasanya terletak di halaman
+                                <p>Buat Diskusi Baru: Klik tombol "Buat Diskusi Baru" yang terletak di halaman
                                     utama atau halaman kategori.</p>
                             </li>
                             <li>
@@ -76,7 +76,8 @@
                                     tombol share.</p>
                             </li>
                             <li>
-                                <p>Tkamu Biru: Username kamu akan diberi tkamu biru setiap kali kamu memberikan tanggapan di
+                                <p>Highlight Biru Pada Username: Username kamu akan diberi warna biru setiap kali kamu
+                                    memberikan tanggapan di
                                     diskusi yang kamu buat, sehingga user lain tahu siapa pembuat diskusi tersebut.</p>
                             </li>
                         </ul>
@@ -108,13 +109,13 @@
                                     profil, kamu bisa melihat:</p>
                                 <ul>
                                     <li>History Diskusi: Semua diskusi yang pernah kamu buat.</li>
-                                    <li>History Jawaban: Semua tanggapan yang pernah kamu berikan.</li>
+                                    <li>History Tanggapan: Semua tanggapan yang pernah kamu berikan.</li>
                                     <li>Edit Profil: Mengubah informasi profil kamu.</li>
                                     <li>Share Profil: Membagikan profil kamu ke platform lain.</li>
                                 </ul>
                             </li>
                             <li>
-                                <p>Logout: Untuk keluar dari akun, klik ikon avatar di navbar dan pilih "Logout".</p>
+                                <p>Logout: Untuk keluar dari akun, klik ikon foto profil di navbar dan pilih "Logout".</p>
                             </li>
                         </ul>
 
@@ -139,7 +140,7 @@
                                 <p>Podcasts: Daftar podcast yang membahas topik UI/UX.</p>
                             </li>
                             <li>
-                                <p>Tentang Kami: Informasi mengenai tim dan misi dari Komunitas DesignSpeak.</p>
+                                <p>Tentang Kami: Informasi mengenai tim dan misi dari Komunitas CeritaDesain.</p>
                             </li>
                             <li>
                                 <p>Kontak: Cara untuk menghubungi kami jika kamu membutuhkan bantuan atau memiliki
@@ -165,7 +166,7 @@
                     </div>
                     <p>Jika kamu memiliki pertanyaan lebih lanjut, jangan ragu untuk menghubungi <a
                             href="{{ route('others.contact') }}" class="text-primary">kami</a>.
-                        Selamat berdiskusi dan berbagi di Komunitas DesignSpeak!</p>
+                        Selamat berdiskusi dan berbagi di Komunitas CeritaDesain!</p>
                 </div>
             </div>
         </div>

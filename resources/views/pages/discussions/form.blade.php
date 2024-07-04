@@ -55,6 +55,9 @@
                                             class="form-label @error('content') is-invalid @enderror ">Ceritakan Pengalaman
                                             kamu atau Ajukan Sebuah Pertanyaan
                                         </label>
+                                        <br>
+                                        <p class="text-white-50">(Ukuran maksimal gambar adalah 500 KB. Gunakan tautan
+                                            untuk menyisipkan gambar dan file Figma yang berukuran besar)</p>
                                         <textarea class="form-control text-white" id="content" name="content">{{ $discussion->content ?? old('content') }}</textarea>
                                         @error('content')
                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -78,7 +81,7 @@
     <script>
         $(document).ready(function() {
             $('#content').summernote({
-                placeholder: 'Jelaskan masalah yang kamu hadapi secara detail.. | Jelaskan langkah-langkah yang sudah kamu lakukan untuk mencoba menyelesaikan masalah ini... | Sebutkan hasil atau solusi yang kamu harapkan dari diskusi ini...',
+                placeholder: 'Jelaskan masalah yang kamu hadapi secara detail.. | Jelaskan langkah-langkah yang sudah kamu lakukan untuk mencoba menyelesaikan masalah ini... | Sebutkan hasil atau solusi yang kamu harapkan dari diskusi ini... ',
                 tabSize: 2,
                 height: 320,
                 toolbar: [

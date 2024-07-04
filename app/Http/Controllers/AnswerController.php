@@ -104,7 +104,7 @@ class AnswerController extends Controller
         $update = $answer->update($validated);
 
         if($update) {
-            session()->flash('notif.success', 'Jawaban sukses terupdate!');
+            session()->flash('notif.success', 'Tanggapan sukses terupdate!');
             return redirect()->route('discussions.show', $answer->discussion->slug);
         }
 
@@ -142,7 +142,7 @@ class AnswerController extends Controller
         $delete = $answer->delete();
 
         if($delete) {
-            session()->flash('notif.success', 'Jawaban sukses terhapus!');
+            session()->flash('notif.success', 'Tanggapan sukses terhapus!');
             return redirect()->route('discussions.show', $answer->discussion->slug);
         }
 
