@@ -23,6 +23,12 @@
                                     <div class="mb-3">
                                         <label for="answer" class="form-label ">Berikan tanggapanmu di bawah ya!
                                         </label>
+                                        <p class="text-white-50">Ukuran maksimal gambar adalah 50 KB. Gunakan tautan
+                                            untuk menyisipkan gambar dan file Figma yang berukuran besar <span>. Sesuaikan
+                                                dimensi gambar agar tidak terlalu besar. Jika kamu
+                                                bingung, lihat <a href="{{ route('others.help') }}"
+                                                    class="text-primary">Bantuan</a>.</span>
+                                        </p>
                                         <textarea class="form-control text-white" id="answer" name="answer">{{ $answer->answer ?? old('answer') }}</textarea>
                                     </div>
                                     <div>

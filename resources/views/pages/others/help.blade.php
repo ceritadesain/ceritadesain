@@ -57,7 +57,9 @@
                             </li>
                             <li>
                                 <p>Isi Diskusi: Tulis isi diskusi yang ingin kamu bahas. Pastikan untuk memberikan detail
-                                    yang cukup agar user lain dapat memahami topik kamu.</p>
+                                    yang cukup agar user lain dapat memahami topik kamu. Untuk memasukkan gambar, cukup
+                                    seret dan lepas gambar tersebut ke area yang tersedia. Maksimal file adalah 50 KB.
+                                </p>
                             </li>
                         </ul>
 
@@ -65,7 +67,8 @@
                         <ul>
                             <li>
                                 <p>Edit Diskusi: Jika kamu adalah pembuat diskusi, kamu dapat mengedit konten diskusi kapan
-                                    saja untuk memperbarui atau memperbaiki informasi.</p>
+                                    saja untuk memperbarui atau memperbaiki informasi. Untuk memasukkan gambar, cukup
+                                    seret dan lepas gambar tersebut ke area yang tersedia. Maksimal file adalah 50 KB.</p>
                             </li>
                             <li>
                                 <p>Delete Diskusi: kamu juga memiliki opsi untuk menghapus diskusi jika merasa tidak relevan
@@ -86,7 +89,8 @@
                         <ul>
                             <li>
                                 <p>Tanggapan: Setiap user dapat memberikan tanggapan atau komentar terhadap diskusi yang
-                                    sedang dibahas.</p>
+                                    sedang dibahas. Untuk memasukkan gambar, cukup
+                                    seret dan lepas gambar tersebut ke area yang tersedia. Maksimal file adalah 50 KB.</p>
                             </li>
                             <li>
                                 <p>Edit dan Delete Tanggapan: User yang menulis tanggapan memiliki opsi untuk mengedit atau

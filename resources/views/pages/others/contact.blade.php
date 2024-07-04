@@ -12,13 +12,9 @@
                         <p><a href="mailto:ceritadesain@gmail.com" class="text-primary">ceritadesain@gmail.com</a></p>
                         <strong>Twitter</strong>
                         <p>@ceritadesain</p>
-                        <p>Untuk melaporkan bug, silakan buat laporan bug di <a
-                                href="https://github.com/ceritadesain/ceritadesain/issues" target="_blank"
-                                class="text-primary">repositori open source</a>
+                        <p>Untuk melaporkan bug, silakan buat laporan bug di <a href="https://forms.gle/7yxxa37jLpmv6W2A7"
+                                target="_blank" class="text-primary">formulir untuk error atau bug</a>
                             kami.
-
-                            Untuk meminta fitur baru, silakan mulai diskusi baru di repo GitHub <a
-                                href="https://github.com/ceritadesain" target="_blank" class="text-primary">kami</a>!
                         </p>
                     </div>
                 </div>

@@ -56,8 +56,11 @@
                                             kamu atau Ajukan Sebuah Pertanyaan
                                         </label>
                                         <br>
-                                        <p class="text-white-50">(Ukuran maksimal gambar adalah 500 KB. Gunakan tautan
-                                            untuk menyisipkan gambar dan file Figma yang berukuran besar)</p>
+                                        <p class="text-white-50">(Ukuran maksimal gambar adalah 50 KB. Gunakan tautan
+                                            untuk menyisipkan gambar dan file Figma yang berukuran besar) <span>Jika kamu
+                                                bingung, lihat <a href="{{ route('others.help') }}"
+                                                    class="text-primary">Bantuan</a>.</span>
+                                        </p>
                                         <textarea class="form-control text-white" id="content" name="content">{{ $discussion->content ?? old('content') }}</textarea>
                                         @error('content')
                                             <div class="invalid-feedback">{{ $message }}</div>

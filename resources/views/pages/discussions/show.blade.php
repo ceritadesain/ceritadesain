@@ -261,6 +261,12 @@
 
                         @auth
                             <h3 class="mb-4 fs-4">Tanggapanmu</h3>
+                            <p class="text-white-50">Ukuran maksimal gambar adalah 50 KB. Gunakan tautan
+                                untuk menyisipkan gambar dan file Figma yang berukuran besar. Sesuaikan dimensi gambar agar
+                                tidak terlalu besar. <span>Jika kamu
+                                    bingung, lihat <a href="{{ route('others.help') }}"
+                                        class="text-primary">Bantuan</a>.</span>
+                            </p>
                             <div class="card card-discussions">
                                 <form action="{{ route('discussions.answer.store', $discussion->slug) }}" method="POST">
                                     @csrf
