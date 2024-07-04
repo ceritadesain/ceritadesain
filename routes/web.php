@@ -27,7 +27,6 @@ use App\Http\Controllers\FollowController;
 Route::middleware('auth')->group(function () {
     Route::namespace('App\Http\Controllers\My')->group(function () {
         Route::resource('users', UserController::class)->only(['edit', 'update']);
-     
     });
 
     Route::namespace('App\Http\Controllers')->group(function () {
@@ -41,6 +40,7 @@ Route::middleware('auth')->group(function () {
 
         Route::post('answers/{answer}/like', 'LikeController@answerLike')->name('answers.like.like');
         Route::post('answers/{answer}/unlike', 'LikeController@answerUnlike')->name('answers.like.unlike');
+        
     });
 });
 

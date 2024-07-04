@@ -9,7 +9,7 @@
                         <strong>Kontak</strong>
                         <p>CeritaDesain sangat senang mendengar dari Anda!</p>
                         <strong>Email</strong>
-                        <p>halo@ceritadesain.com</p>
+                        <p><a href="mailto:ceritadesain@gmail.com" class="text-primary">ceritadesain@gmail.com</a></p>
                         <strong>Twitter</strong>
                         <p>@ceritadesain</p>
                         <p>Untuk melaporkan bug, silakan buat laporan bug di <a

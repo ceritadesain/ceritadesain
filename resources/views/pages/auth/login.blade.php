@@ -23,7 +23,7 @@
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email"
                                     class="form-control @error('email') is-invalid @enderror @error('credentials') is-invalid @enderror"
-                                    id="email" name="email" placeholder="emailmu@uiux.com" value="{{ old('email') }}"
+                                    id="email" name="email" placeholder="email@uiux.com" value="{{ old('email') }}"
                                     autocomplete="off" autofocus>
                                 @error('email')
                                     <div class="invalid-feedback">

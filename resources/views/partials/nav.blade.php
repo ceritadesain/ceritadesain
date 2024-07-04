@@ -40,8 +40,8 @@
                                  <img src="{{ filter_var(auth()->user()->picture, FILTER_VALIDATE_URL) ? auth()->user()->picture : Storage::url(auth()->user()->picture) }}"
                                      alt="{{ auth()->user()->username }}" class="avatar rounded-circle">
                              </div>
-
                          </a>
+
                          <ul class="dropdown-menu mt-2">
                              <li>
                                  <a class="dropdown-item" href="{{ route('users.show', auth()->user()->username) }}">Profil

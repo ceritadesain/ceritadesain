@@ -68,8 +68,9 @@
                             <div class="col-auto text-center">
                                 <img src="{{ url('assets/images/founder.png') }}" alt="Muhammad Sahal Nurdin"
                                     class="img-fluid rounded-circle mb-4" style="width: 150px;">
-                                <p class="fs-5">Founder CeritaDesain adalah <a href="https://github.com/SahalN"
-                                        target="_blank" class="text-primary">Muhammad Sahal
+                                <p class="fs-5">Founder CeritaDesain adalah <a
+                                        href="https://www.linkedin.com/in/muhammadsahalnurdin/" target="_blank"
+                                        class="text-primary">Muhammad Sahal
                                         Nurdin</a> </p>
                             </div>
                         </div>

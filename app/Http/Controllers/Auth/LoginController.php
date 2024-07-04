@@ -19,12 +19,12 @@ class LoginController extends Controller
         if(Auth::attempt($credentials)){
             return redirect()->route('discussions.index');
         }
-
+       
         return redirect()->back()->withInput()->withErrors(['credentials' => 'Email atau kata sandi yang kamu masukkan tidak cocok.']);
     }
      public function logout(){
         auth()->logout();
-
+        
         return redirect()->route('home');
     }
 }

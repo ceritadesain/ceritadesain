@@ -139,15 +139,14 @@
                                 <p>Podcasts: Daftar podcast yang membahas topik UI/UX.</p>
                             </li>
                             <li>
-                                <p>UX Writing with AI: Panduan dan alat untuk membantu kamu menulis konten UX menggunakan
-                                    AI.</p>
-                            </li>
-                            <li>
                                 <p>Tentang Kami: Informasi mengenai tim dan misi dari Komunitas DesignSpeak.</p>
                             </li>
                             <li>
                                 <p>Kontak: Cara untuk menghubungi kami jika kamu membutuhkan bantuan atau memiliki
                                     pertanyaan.</p>
+                            </li>
+                            <li>
+                                <p>Bantuan: Membantu kamu dalam menggunakan CeritaDesain.</p>
                             </li>
                         </ul>
 

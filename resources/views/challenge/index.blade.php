@@ -2,7 +2,7 @@
 
 @section('body')
     <div class="container mt-4 text-white align-center">
-        <h1 class="text-center mb-4">Rangkuman Buku UI/UX</h1>
+        <h1 class="text-center mb-4">UI/UX Challenges</h1>
 
         <div class="row">
             @forelse ($challenges as $challenge)
