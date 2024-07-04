@@ -26,7 +26,7 @@ class SignUpRequest extends FormRequest
         return [
             'email' => 'required|email|unique:App\Models\User,email|min:8|max:50',
             'password' => ['required', Password::min(8)->numbers()->symbols(), new CustomPassword],
-            'username' => 'required|alpha_dash|unique:App\Models\User,username|min:3|max:50',
+            'username' => 'required|alpha_dash|unique:App\Models\User,username|min:3|max:10',
         ];
     }
     public function messages(): array
@@ -45,7 +45,7 @@ class SignUpRequest extends FormRequest
             'username.alpha_dash' => 'Nama pengguna hanya boleh mengandung huruf, angka, tanda hubung, dan garis bawah.',
             'username.unique' => 'Nama pengguna sudah terdaftar, silakan gunakan nama lain.',
             'username.min' => 'Nama pengguna harus memiliki minimal 3 karakter.',
-            'username.max' => 'Nama pengguna tidak boleh lebih dari 50 karakter.',
+            'username.max' => 'Nama pengguna tidak boleh lebih dari 10 karakter.',
         ];
     }
 }

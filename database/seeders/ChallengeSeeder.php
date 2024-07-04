@@ -18,7 +18,7 @@ class ChallengeSeeder extends Seeder
             [
                 'judul' => 'Optimalkan UI Aplikasi CeritaDesain',
                 'preview' => 'Optimalkan UI Aplikasi CeritaDesain bertujuan untuk meningkatkan kesan visual, aksesibilitas, dan keseluruhan pengalaman pengguna aplikasi. ',
-                'gambar' => 'assets/images/ceritadesain.png',
+                'gambar' => 'assets/images/ceritadesain-header.png',
                 'deskripsi' => 'Scenario
 Anda adalah seorang UI/UX designer untuk CeritaDesain, sebuah platform forum untuk para desainer UI/UX. Tim Anda ingin meningkatkan antarmuka pengguna (UI) aplikasi CeritaDesain dengan fokus pada desain visual, aksesibilitas, dan pengalaman pengguna secara keseluruhan.
 

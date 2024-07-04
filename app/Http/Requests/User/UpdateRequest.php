@@ -25,7 +25,7 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'username'=>['required', 'alpha_dash', Rule::unique('users')->ignore(request()->username, 'username'), 'min:3', 'max:50'],
+            'username'=>['required', 'alpha_dash', Rule::unique('users')->ignore(request()->username, 'username'), 'min:3', 'max:10'],
             'password' => ['nullable', 'confirmed', Password::min(8)->numbers()->symbols(), new CustomPassword],
             'password_confirmation' => ['nullable'],
             'picture' => ['nullable', 'image', 'max:1500']
@@ -44,12 +44,14 @@ class UpdateRequest extends FormRequest
             'username.required' => 'Username wajib diisi.',
             'username.alpha_dash' => 'Username hanya boleh mengandung huruf, angka, strip, dan garis bawah.',
             'username.unique' => 'Username sudah digunakan, silakan pilih username lain.',
+            'username.min' => 'Nama pengguna harus memiliki minimal 3 karakter.',
+            'username.max' => 'Nama pengguna tidak boleh lebih dari 10 karakter.',
             'password.confirmed' => 'Konfirmasi password tidak cocok.',
             'password.min' => 'Password minimal harus terdiri dari :min karakter.',
             'password.numbers' => 'Password harus mengandung setidaknya satu angka.',
             'password.symbols' => 'Password harus mengandung setidaknya satu simbol.',
             'picture.image' => 'File yang diunggah harus berupa gambar.',
-            'picture.max' => 'Ukuran gambar tidak boleh lebih dari :max kilobytes.'
+            'picture.max' => 'Ukuran gambar tidak boleh lebih dari 1500 kilobytes.'
         ];
     }
 }
