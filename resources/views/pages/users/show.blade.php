@@ -52,7 +52,7 @@
                     <div class="row mt-4 d-flex justify-content-center align-content-center">
                         <div class="col-6 col-lg-6">
                             <input type="text" id="current-url" class="d-none" value="{{ request()->url() }}">
-                            <a id="share-profile" class="btn btn-outline-primary me-4" href="javascript:;">Bagikan</a>
+                            <a id="share-page" class="btn btn-outline-primary me-4" href="javascript:;">Bagikan</a>
                         </div>
                         @auth
                             @if ($user->id !== auth()->id())
@@ -179,22 +179,23 @@
 @endsection
 
 @section('after-script')
+    @include('partials.copy-link-to-current-page')
     <script>
         $(document).ready(function() {
-            $('#share-profile').click(function() {
-                var copyText = $('#current-url');
-                copyText[0].select();
-                copyText[0].setSelectionRange(0, 99999);
-                navigator.clipboard.writeText(copyText.val());
-                var alert = $('#success-alert');
-                alert.removeClass('d-none');
-                var alertContainer = alert.find('.container');
-                alertContainer.first().text('Link sukses disalin');
+            // $('#share-profile').click(function() {
+            //     var copyText = $('#current-url');
+            //     copyText[0].select();
+            //     copyText[0].setSelectionRange(0, 99999);
+            //     navigator.clipboard.writeText(copyText.val());
+            //     var alert = $('#success-alert');
+            //     alert.removeClass('d-none');
+            //     var alertContainer = alert.find('.container');
+            //     alertContainer.first().text('Link sukses disalin');
 
-                setTimeout(function() {
-                    location.reload(); // Refresh halaman setelah 3 detik
-                }, 3000); // Delay 3 detik sebelum merefresh halaman
-            });
+            //     setTimeout(function() {
+            //         location.reload(); // Refresh halaman setelah 3 detik
+            //     }, 3000); // Delay 3 detik sebelum merefresh halaman
+            // });
 
             $('#follow-btn').click(function() {
                 var userId = $(this).data('user-id');

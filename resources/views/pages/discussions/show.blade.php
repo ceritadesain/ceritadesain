@@ -95,7 +95,7 @@
                                         @endif
                                         {{-- TOMBOL SHARE --}}
                                         <span class="col-auto p-0 m-0">
-                                            <a href="javascript:;" id="share-discussion">
+                                            <a href="javascript:;" id="share-page">
                                                 <img src="{{ url('assets/images/share-white.png') }}" alt="share"
                                                     class="pe-2">
                                             </a>
@@ -453,23 +453,24 @@
 @endsection
 
 @section('after-script')
+    @include('partials.copy-link-to-current-page')
     <script>
         $(document).ready(function() {
-            $('#share-discussion').click(function() {
-                let copyText = $('#current-url')
-                copyText[0].select();
-                copyText[0].setSelectionRange(0, 99999);
-                navigator.clipboard.writeText(copyText.val());
+            // $('#share-discussion').click(function() {
+            //     let copyText = $('#current-url')
+            //     copyText[0].select();
+            //     copyText[0].setSelectionRange(0, 99999);
+            //     navigator.clipboard.writeText(copyText.val());
 
-                let alert = $('#success-alert');
-                alert.removeClass('d-none');
-                let alertContainer = alert.find('.container');
-                alertContainer.first().text('Link untuk diskusi ini sukses di salin');
+            //     let alert = $('#success-alert');
+            //     alert.removeClass('d-none');
+            //     let alertContainer = alert.find('.container');
+            //     alertContainer.first().text('Link untuk diskusi ini sukses di salin');
 
-                setTimeout(function() {
-                    location.reload(); // Refresh halaman setelah 3 detik
-                }, 3000); // Delay 3 detik sebelum merefresh halaman
-            });
+            //     setTimeout(function() {
+            //         location.reload(); // Refresh halaman setelah 3 detik
+            //     }, 3000); // Delay 3 detik sebelum merefresh halaman
+            // });
 
 
             $('#answer').summernote({
