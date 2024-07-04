@@ -7,7 +7,8 @@
                 <div class="col-12 col-lg-5 px-6">
                     <div class="text-center">
                         <a href="{{ route('home') }}" class="nav-link mb-3 ">
-                            <img src="{{ url('assets/images/logo-1.png') }}" class="img-fluid w-50" alt="CeritaDesain logo">
+                            <img src="{{ url('assets/images/main-logo-ceritadesain.png') }}" class="img-fluid w-50"
+                                alt="CeritaDesain logo">
                         </a>
                         <h1 class="text-white fs-4">Bergabunglah dengan Komunitas CeritaDesain</h1>
                         <p class="text-white-50">Tempat di mana

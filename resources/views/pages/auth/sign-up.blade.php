@@ -13,7 +13,7 @@
                         @csrf
                         <div class="mb-3">
                             <a href="{{ route('home') }}" class="nav-link ">
-                                <img src="{{ url('assets/images/logo-1.png') }}" class="img-fluid w-50"
+                                <img src="{{ url('assets/images/main-logo-ceritadesain.png') }}" class="img-fluid w-50"
                                     alt="CeritaDesain logo">
                             </a>
                             <h3>Ayo Bergabung dengan Kami</h3>

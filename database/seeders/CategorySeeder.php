@@ -19,45 +19,53 @@ class CategorySeeder extends Seeder
                 'name' => 'UI Design'
             ],
             [
-                'slug' => 'ux-research',
-                'name' => 'UX Research'
+                'slug' => 'ux-design',
+                'name' => 'UX Design'
             ],
-             [
-                'slug' => 'user-centered-design',
-                'name' => 'User-Centered Design'
-            ],
-              [
+            [
                 'slug' => 'interaction-design',
                 'name' => 'Interaction Design'
             ],
-              [
-                'slug' => 'wireframing',
-                'name' => 'Wireframing'
+             [
+                'slug' => 'wireframing-and-prototyping',
+                'name' => 'Wireframing and Prototyping'
             ],
             [
-                'slug' => 'prototyping',
-                'name' => 'Prototyping'
-            ],  
-             [
-                'slug' => 'usability-testing',
-                'name' => 'Usability Testing'
-            ], 
+                'slug' => 'visual-design',
+                'name' => 'Visual Design'
+            ],
              [
                 'slug' => 'information-architecture',
                 'name' => 'Information Architecture'
-            ], 
+            ],
+              [
+                'slug' => 'user-research',
+                'name' => 'User Research'
+            ],
+              [
+                'slug' => 'accessibility-design',
+                'name' => 'Accessibility Design'
+            ],
+            [
+                'slug' => 'mobile-ux-design',
+                'name' => 'Mobile UX Design'
+            ],  
              [
-                'slug' => 'visual-design',
-                'name' => 'Visual Design'
+                'slug' => 'voice-ux-design',
+                'name' => 'Voice UX Design'
             ], 
             [
-                'slug' => 'user-journey-mapping',
-                'name' => 'User Journey Mapping'
+                'slug' => 'conversational-ux-design',
+                'name' => 'Conversational UX Design'
+            ],
+             [
+                'slug' => 'ar-ux-design',
+                'name' => 'AR UX Design'
             ], 
             [
-                'slug' => 'accessibility-in-design',
-                'name' => 'Accessibility in Design'
-            ], 
+                'slug' => 'vr-ux-design',
+                'name' => 'VR UX Design'
+            ],  
         ]);
     }
 }
