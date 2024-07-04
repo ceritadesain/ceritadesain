@@ -1,7 +1,7 @@
  <nav class="navbar navbar-dark navbar-expand-lg ">
      <div class="container flex justify-content-between">
-         <a class="navbar-link" href="{{ route('home') }}"><img class="h-48px" src="{{ url('assets/images/logo-1.png') }}"
-                 alt="ceritadesain-logo"></a>
+         <a class="navbar-link" href="{{ route('home') }}"><img class="h-48px"
+                 src="{{ url('assets/images/main-logo-ceritadesain.png') }}" alt="ceritadesain-logo"></a>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon"></span>
