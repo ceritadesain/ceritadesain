@@ -143,14 +143,14 @@
                         <div>
                             <h2 class="mb-3">Tanggapan Saya</h2>
                             <div>
-                                @forelse ($answers as $answer)
-                                    <div class="card card-discussions">
-                                        <div class="row align-items-center">
-                                            <div class="col-2 col-lg-1 text-center">
-                                                {{ $answer->likeCount }}
-                                            </div>
-                                            <div class="col">
-                                                @if ($answer->discussion)
+                                @foreach ($answers as $answer)
+                                    @if ($answer->discussion && $answer->discussion->exists)
+                                        <div class="card card-discussions">
+                                            <div class="row align-items-center">
+                                                <div class="col-2 col-lg-1 text-center">
+                                                    {{ $answer->likeCount }}
+                                                </div>
+                                                <div class="col">
                                                     <span>Menanggapi </span>
                                                     <span class="fw-bold text-primary">
                                                         <a
@@ -158,21 +158,20 @@
                                                             {{ $answer->discussion->title }}
                                                         </a>
                                                     </span>
-                                                @else
-                                                    <span class="fw-bold text-danger">Diskusi tidak ditemukan</span>
-                                                @endif
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @empty
+                                    @endif
+                                @endforeach
+
+                                @if ($answers->isEmpty())
                                     <div class="card card-discussions">
                                         Saat ini belum ada list tanggapan dari diskusi
                                     </div>
-                                @endforelse
+                                @endif
                                 <div class="pagination-info">
                                     {{ $answers->appends(['discussions' => $discussions->currentPage()])->links('vendor.pagination.bootstrap-5') }}
                                 </div>
-
                             </div>
                         </div>
                     </div>
