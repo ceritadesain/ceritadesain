@@ -9,7 +9,7 @@
                         <strong>Kontak</strong>
                         <p>CeritaDesain sangat senang mendengar dari Anda!</p>
                         <strong>Email</strong>
-                        <p><a href="mailto:ceritadesain@gmail.com" class="text-primary">ceritadesain@gmail.com</a></p>
+                        <p><a href="mailto:ceritadesainapp@gmail.com" class="text-primary">ceritadesainapp@gmail.com</a></p>
                         <strong>Twitter</strong>
                         <p>@ceritadesain</p>
                         <p>Untuk melaporkan bug, silakan buat laporan bug di <a href="https://forms.gle/7yxxa37jLpmv6W2A7"

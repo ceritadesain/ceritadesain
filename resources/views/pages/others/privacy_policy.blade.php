@@ -45,8 +45,8 @@
                         <p>
                             Jika kamu memiliki pertanyaan lebih lanjut mengenai Kebijakan Privasi kami atau memerlukan
                             bantuan,
-                            jangan ragu untuk menghubungi kami di <a href="mailto:ceritadesain@gmail.com"
-                                class="text-primary">ceritadesain@gmail.com</a>.
+                            jangan ragu untuk menghubungi kami di <a href="mailto:ceritadesainapp@gmail.com"
+                                class="text-primary">ceritadesainapp@gmail.com</a>.
 
                             Terima kasih atas kepercayaanmu kepada CeritaDesain dalam menjaga privasi dan keamanan
                             informasi
