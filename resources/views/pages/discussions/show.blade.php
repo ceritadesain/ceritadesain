@@ -204,21 +204,23 @@
                                                                     <button type="button"
                                                                         class="delete-answer color-gray border-0 bg-transparent p-0"
                                                                         data-bs-toggle="modal"
-                                                                        data-bs-target="#exampleModal">
+                                                                        data-bs-target="#exampleAnswerModal">
                                                                         <img src="{{ url('assets/images/delete-white.png') }}"
                                                                             alt="hapus" class="pe-1">
                                                                     </button>
                                                                 </form>
 
                                                                 <!-- Modal Konfirmasi -->
-                                                                <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                                    aria-labelledby="exampleModalLabel"
+                                                                <div class="modal fade" id="exampleAnswerModal"
+                                                                    tabindex="-1"
+                                                                    aria-labelledby="exampleAnswerModalLabel"
                                                                     aria-hidden="true">
                                                                     <div class="modal-dialog text-white">
                                                                         <div class="modal-content bg-dark">
                                                                             <div class="modal-header">
                                                                                 <h1 class="modal-title fs-5"
-                                                                                    id="exampleModalLabel">Hapus Tanggapan
+                                                                                    id="exampleAnswerModalLabel">Hapus
+                                                                                    Tanggapan
                                                                                 </h1>
                                                                                 <button type="button" class="btn-close"
                                                                                     data-bs-dismiss="modal"
