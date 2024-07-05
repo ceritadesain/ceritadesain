@@ -2,10 +2,11 @@
 
 @section('body')
     {{-- HERO --}}
-    <section class="container-fluid hero ">
+    <section class="container-fluid hero"
+        style="padding-top: 3rem; padding-bottom: 7rem; background-image: url('{{ asset('assets/images/hero-image.png') }}'); background-size: cover; background-position: center;">
         <div class="row align-items-center h-100 text-center px-lg-5 ">
             <div class="col-12">
-                <div class=" hero-text">
+                <div class="hero-text">
                     <h1 class="text-white">Selamat Datang di CeritaDesain <br>
                         Forum Online untuk Komunitas UI/UX Indonesia</h1>
                 </div>
