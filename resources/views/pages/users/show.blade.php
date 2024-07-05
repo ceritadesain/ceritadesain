@@ -52,7 +52,9 @@
                     <div class="row mt-4 d-flex justify-content-center align-content-center">
                         <div class="col-6 col-lg-6">
                             <input type="text" id="current-url" class="d-none" value="{{ request()->url() }}">
-                            <a id="share-page" class="btn btn-outline-primary me-4" href="javascript:;">Bagikan</a>
+                            <a id="share-page"
+                                class="btn btn-outline-primary d-flex justify-content-center align-content-center"
+                                href="javascript:;">Bagikan</a>
                         </div>
                         @auth
                             @if ($user->id !== auth()->id())
@@ -62,11 +64,13 @@
                                 </div> --}}
                                 <div class="col-6 col-lg-6">
                                     @if (auth()->user()->isFollowing($user))
-                                        <a id="unfollow-btn" class="btn btn-primary" href="javascript:;"
-                                            data-user-id="{{ $user->id }}">Berhenti Mengikuti</a>
+                                        <a id="unfollow-btn"
+                                            class="btn btn-outline-danger d-flex justify-content-center align-content-center"
+                                            href="javascript:;" data-user-id="{{ $user->id }}">Berhenti Mengikuti</a>
                                     @else
-                                        <a id="follow-btn" class="btn btn-primary" href="javascript:;"
-                                            data-user-id="{{ $user->id }}">Ikuti</a>
+                                        <a id="follow-btn"
+                                            class="btn btn-primary-ikuti d-flex justify-content-center align-content-center "
+                                            href="javascript:;" data-user-id="{{ $user->id }}">Ikuti</a>
                                     @endif
                                 </div>
                             @endif
@@ -151,7 +155,7 @@
                                                     {{ $answer->likeCount }}
                                                 </div>
                                                 <div class="col">
-                                                    <span>Menanggapi </span>
+                                                    <span>Menanggapi</span>
                                                     <span class="fw-bold text-primary">
                                                         <a
                                                             href="{{ route('discussions.show', $answer->discussion->slug) }}">

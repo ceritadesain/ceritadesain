@@ -263,8 +263,9 @@
 
                         @auth
                             <h3 class="mb-4 fs-4">Tanggapanmu</h3>
-                            <p class="text-white-50">Ukuran maksimal gambar adalah 50 KB. Gunakan tautan
-                                untuk menyisipkan gambar dan file Figma yang berukuran besar. Sesuaikan dimensi gambar agar
+                            <p class="text-white-50">Jika kamu ingin menggunakan gambar. Ukuran maksimal gambar adalah 50 KB.
+                                Gunakan tautan
+                                untuk menyisipkan gambar yang berukuran besar. Sesuaikan dimensi gambar agar
                                 tidak terlalu besar. <span>Jika kamu
                                     bingung, lihat <a href="{{ route('others.help') }}"
                                         class="text-primary">Bantuan</a>.</span>
@@ -275,6 +276,12 @@
                                     <div class="mb-3">
                                         <textarea name="answer" id="answer">{{ old('answer') }}</textarea>
                                     </div>
+                                    <p class="text-white-50">Kami menegaskan bahwa penggunaan aset yang ilegal atau
+                                        bukan hak cipta, termasuk
+                                        tetapi tidak terbatas pada gambar, teks, video, atau materi lainnya yang tidak
+                                        dimiliki oleh pengguna, dilarang di forum ini. Pengguna bertanggung jawab
+                                        penuh atas keabsahan dan kepatuhan hukum dari semua konten yang mereka unggah
+                                        atau bagikan di platform ini.</p>
                                     <div>
                                         <button class="btn btn-primary me-4" type="submit">Kirim</button>
                                     </div>

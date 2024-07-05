@@ -56,8 +56,11 @@
                                             kamu atau Ajukan Sebuah Pertanyaan
                                         </label>
                                         <br>
-                                        <p class="text-white-50">(Ukuran maksimal gambar adalah 50 KB. Gunakan tautan
-                                            untuk menyisipkan gambar dan file Figma yang berukuran besar) <span>Jika kamu
+                                        <p class="text-white-50">Jika kamu ingin menggunakan gambar. Ukuran maksimal gambar
+                                            adalah 50 KB.
+                                            Gunakan tautan
+                                            untuk menyisipkan gambar yang berukuran besar. Sesuaikan dimensi gambar agar
+                                            tidak terlalu besar.<span> Jika kamu
                                                 bingung, lihat <a href="{{ route('others.help') }}"
                                                     class="text-primary">Bantuan</a>.</span>
                                         </p>
@@ -65,6 +68,12 @@
                                         @error('content')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
+                                        <p class="text-white-50">Kami menegaskan bahwa penggunaan aset yang ilegal atau
+                                            bukan hak cipta, termasuk
+                                            tetapi tidak terbatas pada gambar, teks, video, atau materi lainnya yang tidak
+                                            dimiliki oleh pengguna, dilarang di forum ini. Pengguna bertanggung jawab
+                                            penuh atas keabsahan dan kepatuhan hukum dari semua konten yang mereka unggah
+                                            atau bagikan di platform ini.</p>
                                     </div>
                                     <div>
                                         <button class="btn btn-primary me-4" type="submit">Kirim</button>
