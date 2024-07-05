@@ -49,7 +49,7 @@
                                                 </a>
                                             </span>
                                             {{-- TOMBOLE DELETE --}}
-                                            {{-- <form action="{{ route('discussions.destroy', $discussion->slug) }}"
+                                            <form action="{{ route('discussions.destroy', $discussion->slug) }}"
                                                 method="POST" class="col-auto p-0 m-0">
                                                 @csrf
                                                 @method('DELETE')
@@ -59,8 +59,9 @@
                                                     <img src="{{ url('assets/images/delete-white.png') }}" alt="delete"
                                                         class="pe-1">
                                                 </button>
-                                            </form> --}}
-                                            <form action="{{ route('discussions.destroy', $discussion->slug) }}"
+                                            </form>
+                                            {{-- konfirmasi --}}
+                                            {{-- <form action="{{ route('discussions.destroy', $discussion->slug) }}"
                                                 method="POST" class="col-auto p-0 m-0" id="deleteForm">
                                                 @csrf
                                                 @method('DELETE')
@@ -91,7 +92,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         @endif
                                         {{-- TOMBOL SHARE --}}
                                         <span class="col-auto p-0 m-0">
@@ -185,7 +186,7 @@
                                                                     <button type="submit"
                                                                         class=" delete-answer color-gray border-0 bg-transparent p-0"><small>Hapus</small></button>
                                                                 </form> --}}
-                                                                {{-- <form action="{{ route('answers.destroy', $answer->id) }}"
+                                                                <form action="{{ route('answers.destroy', $answer->id) }}"
                                                                     class="d-inline-block lh-1" method="POST">
                                                                     @csrf
                                                                     @method('DELETE')
@@ -193,156 +194,152 @@
                                                                         class=" delete-answer color-gray border-0 bg-transparent p-0"><img
                                                                             src="{{ url('assets/images/delete-white.png') }}"
                                                                             alt="edit" class="pe-1"></button>
-                                                                </form> --}}
-                                                                <!-- Tombol Hapus -->
-                                                                <form action="{{ route('answers.destroy', $answer->id) }}"
-                                                                    class="d-inline-block lh-1 delete-answer-form"
-                                                                    method="POST">
-                                                                    @csrf
-                                                                    @method('DELETE')
-                                                                    <button type="button"
-                                                                        class="delete-answer color-gray border-0 bg-transparent p-0"
-                                                                        data-bs-toggle="modal"
-                                                                        data-bs-target="#exampleModal">
-                                                                        <img src="{{ url('assets/images/delete-white.png') }}"
-                                                                            alt="hapus" class="pe-1">
-                                                                    </button>
                                                                 </form>
+                                                                <!-- Tombol Hapus -->
+                                                                {{-- <form action="{{ route('answers.destroy', $answer->id) }}" --}}
+                                                                {{-- class="d-inline-block lh-1 delete-answer-form"
+                                                                method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="button"
+                                                                    class="delete-answer color-gray border-0 bg-transparent p-0"
+                                                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                                    <img src="{{ url('assets/images/delete-white.png') }}"
+                                                                        alt="hapus" class="pe-1">
+                                                                </button> --}}
+                                                                {{-- </form> --}}
 
                                                                 <!-- Modal Konfirmasi -->
-                                                                <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                                    aria-labelledby="exampleModalLabel"
-                                                                    aria-hidden="true">
-                                                                    <div class="modal-dialog text-white">
-                                                                        <div class="modal-content bg-dark">
-                                                                            <div class="modal-header">
-                                                                                <h1 class="modal-title fs-5"
-                                                                                    id="exampleModalLabel">Hapus Tanggapan
-                                                                                </h1>
-                                                                                <button type="button" class="btn-close"
-                                                                                    data-bs-dismiss="modal"
-                                                                                    aria-label="Close"></button>
-                                                                            </div>
-                                                                            <div class="modal-body bg-dark">
-                                                                                Apakah kamu yakin untuk menghapus tanggapan
-                                                                                ini?
-                                                                            </div>
-                                                                            <div class="modal-footer">
-                                                                                <button type="button"
-                                                                                    class="btn btn-secondary"
-                                                                                    data-bs-dismiss="modal">Batal</button>
-                                                                                <button type="button"
-                                                                                    class="btn btn-primary confirm-delete-answer">Hapus</button>
-                                                                            </div>
+                                                                {{-- <div class="modal fade" id="exampleModal" tabindex="-1" --}}
+                                                                {{-- aria-labelledby="exampleModalLabel"
+                                                                aria-hidden="true">
+                                                                <div class="modal-dialog text-white">
+                                                                    <div class="modal-content bg-dark">
+                                                                        <div class="modal-header">
+                                                                            <h1 class="modal-title fs-5"
+                                                                                id="exampleModalLabel">Hapus Tanggapan
+                                                                            </h1>
+                                                                            <button type="button" class="btn-close"
+                                                                                data-bs-dismiss="modal"
+                                                                                aria-label="Close"></button>
+                                                                        </div>
+                                                                        <div class="modal-body bg-dark">
+                                                                            Apakah kamu yakin untuk menghapus tanggapan
+                                                                            ini?
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button"
+                                                                                class="btn btn-secondary"
+                                                                                data-bs-dismiss="modal">Batal</button>
+                                                                            <button type="button"
+                                                                                class="btn btn-primary confirm-delete-answer">Hapus</button>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                            @endif
+                                                                </div> --}}
                                                         </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div>{!! $answer->answer !!}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @empty
-                            <div class="card card-discussion mb-4">
-                                Saat ini belum ada tanggapan
-                            </div>
-                        @endforelse
-                        <div class="pagination-info">
-                            {{ $discussionAnswers->links('vendor.pagination.bootstrap-5') }}
-                        </div>
-
-                        @auth
-                            <h3 class="mb-4 fs-4">Tanggapanmu</h3>
-                            <p class="text-white-50">Ukuran maksimal gambar adalah 50 KB. Gunakan tautan
-                                untuk menyisipkan gambar dan file Figma yang berukuran besar. Sesuaikan dimensi gambar agar
-                                tidak terlalu besar. <span>Jika kamu
-                                    bingung, lihat <a href="{{ route('others.help') }}"
-                                        class="text-primary">Bantuan</a>.</span>
-                            </p>
-                            <div class="card card-discussions">
-                                <form action="{{ route('discussions.answer.store', $discussion->slug) }}" method="POST">
-                                    @csrf
-                                    <div class="mb-3">
-                                        <textarea name="answer" id="answer">{{ old('answer') }}</textarea>
-                                    </div>
-                                    <div>
-                                        <button class="btn btn-primary me-4" type="submit">Kirim</button>
-                                    </div>
-                                </form>
-                            </div>
-
-                        @endauth
-                        @guest
-                            <div class="fw-bold text-center">Silakan <a href="{{ route('auth.login.show') }}"
-                                    class="text-primary">masuk</a> atau <a href="{{ route('auth.sign-up.show') }}"
-                                    class="text-primary">buat akun</a>
-                                untuk berpartisipasi dalam diskusi ini.
-                            </div>
-                        @endguest
-
+                        @endif
                     </div>
                 </div>
-                <div class="col-12 col-lg-4">
-                    <div class="card">
-                        <h3>Semua Kategori</h3>
-                        <div>
-                            @foreach ($categories as $category)
-                                <a href="{{ route('discussions.categories.show', $category->slug) }}">
-                                    <span class="badge rounded-pill text-bg-light m-lg-1">{{ $category->name }}</span>
+            </div>
+        </div>
+        <div>
+            <div>{!! $answer->answer !!}</div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+@empty
+    <div class="card card-discussion mb-4">
+        Saat ini belum ada tanggapan
+    </div>
+    @endforelse
+    <div class="pagination-info">
+        {{ $discussionAnswers->links('vendor.pagination.bootstrap-5') }}
+    </div>
 
-                                </a>
-                            @endforeach
+    @auth
+        <h3 class="mb-4 fs-4">Tanggapanmu</h3>
+        <p class="text-white-50">Ukuran maksimal gambar adalah 50 KB. Gunakan tautan
+            untuk menyisipkan gambar dan file Figma yang berukuran besar. Sesuaikan dimensi gambar agar
+            tidak terlalu besar. <span>Jika kamu
+                bingung, lihat <a href="{{ route('others.help') }}" class="text-primary">Bantuan</a>.</span>
+        </p>
+        <div class="card card-discussions">
+            <form action="{{ route('discussions.answer.store', $discussion->slug) }}" method="POST">
+                @csrf
+                <div class="mb-3">
+                    <textarea name="answer" id="answer">{{ old('answer') }}</textarea>
+                </div>
+                <div>
+                    <button class="btn btn-primary me-4" type="submit">Kirim</button>
+                </div>
+            </form>
+        </div>
 
-                        </div>
-                    </div>
-                    <div class="mt-4 row align-items-center ">
-                        <div class="col-auto m-0 p-0 ps-3">
-                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
-                                <img src="{{ url('assets/images/challenge1.png') }}" alt="emoji" width="30px"
-                                    style="padding-right: 4px">
-                            </a>
-                        </div>
-                        <div class="col m-0 p-0">
-                            <a href="{{ route('challenge.index') }}" class="text-decoration-none">
-                                <p class="fs-5 fw-normal mb-0">UI/UX Challenges</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mt-4 row align-items-center ">
-                        <div class="col-auto m-0 p-0 ps-3">
-                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
-                                <img src="{{ url('assets/images/book.png') }}" alt="emoji" width="30px"
-                                    style="padding-right: 4px">
-                            </a>
-                        </div>
-                        <div class="col m-0 p-0">
-                            <a href="{{ route('books.index') }}" class="text-decoration-none">
-                                <p class="fs-5 fw-normal mb-0">Buku UI/UX</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mt-4 row align-items-center ">
-                        <div class="col-auto m-0 p-0 ps-3">
-                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
-                                <img src="{{ url('assets/images/podcast.png') }}" alt="emoji" width="30px"
-                                    style="padding-right: 4px">
-                            </a>
-                        </div>
-                        <div class="col m-0 p-0">
-                            <a href="{{ route('podcasts.index') }}" class="text-decoration-none">
-                                <p class="fs-5 fw-normal mb-0">Podcasts</p>
-                            </a>
-                        </div>
-                    </div>
-                    {{-- <div class="mt-4 row align-items-center ">
+    @endauth
+    @guest
+        <div class="fw-bold text-center">Silakan <a href="{{ route('auth.login.show') }}" class="text-primary">masuk</a>
+            atau <a href="{{ route('auth.sign-up.show') }}" class="text-primary">buat akun</a>
+            untuk berpartisipasi dalam diskusi ini.
+        </div>
+    @endguest
+
+    </div>
+    </div>
+    <div class="col-12 col-lg-4">
+        <div class="card">
+            <h3>Semua Kategori</h3>
+            <div>
+                @foreach ($categories as $category)
+                    <a href="{{ route('discussions.categories.show', $category->slug) }}">
+                        <span class="badge rounded-pill text-bg-light m-lg-1">{{ $category->name }}</span>
+
+                    </a>
+                @endforeach
+
+            </div>
+        </div>
+        <div class="mt-4 row align-items-center ">
+            <div class="col-auto m-0 p-0 ps-3">
+                <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                    <img src="{{ url('assets/images/challenge1.png') }}" alt="emoji" width="30px"
+                        style="padding-right: 4px">
+                </a>
+            </div>
+            <div class="col m-0 p-0">
+                <a href="{{ route('challenge.index') }}" class="text-decoration-none">
+                    <p class="fs-5 fw-normal mb-0">UI/UX Challenges</p>
+                </a>
+            </div>
+        </div>
+        <div class="mt-4 row align-items-center ">
+            <div class="col-auto m-0 p-0 ps-3">
+                <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                    <img src="{{ url('assets/images/book.png') }}" alt="emoji" width="30px"
+                        style="padding-right: 4px">
+                </a>
+            </div>
+            <div class="col m-0 p-0">
+                <a href="{{ route('books.index') }}" class="text-decoration-none">
+                    <p class="fs-5 fw-normal mb-0">Buku UI/UX</p>
+                </a>
+            </div>
+        </div>
+        <div class="mt-4 row align-items-center ">
+            <div class="col-auto m-0 p-0 ps-3">
+                <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                    <img src="{{ url('assets/images/podcast.png') }}" alt="emoji" width="30px"
+                        style="padding-right: 4px">
+                </a>
+            </div>
+            <div class="col m-0 p-0">
+                <a href="{{ route('podcasts.index') }}" class="text-decoration-none">
+                    <p class="fs-5 fw-normal mb-0">Podcasts</p>
+                </a>
+            </div>
+        </div>
+        {{-- <div class="mt-4 row align-items-center ">
                         <div class="col-auto m-0 p-0 ps-3">
                             <a href="{{ route('others.about_us') }}" class="text-decoration-none">
                                 <img src="{{ url('assets/images/writing.png') }}" alt="emoji" width="30px"
@@ -355,99 +352,99 @@
                             </a>
                         </div>
                     </div> --}}
-                    <div class="mt-4 row align-items-center ">
-                        <div class="col-auto m-0 p-0 ps-3">
-                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
-                                <img src="{{ url('assets/images/about-4x.png') }}" alt="emoji" width="30px"
-                                    style="padding-right: 4px">
-                            </a>
-                        </div>
-                        <div class="col m-0 p-0">
-                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
-                                <p class="fs-5 fw-normal mb-0">Tentang kami</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mt-4 row align-items-center ">
-                        <div class="col-auto m-0 p-0 ps-3">
-                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
-                                <img src="{{ url('assets/images/contact.png') }}" alt="emoji" width="30px"
-                                    style="padding-right: 4px">
-                            </a>
-                        </div>
-                        <div class="col m-0 p-0">
-                            <a href="{{ route('others.contact') }}" class="text-decoration-none">
-                                <p class="fs-5 fw-normal mb-0">Kontak</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mt-4 row align-items-center ">
-                        <div class="col-auto m-0 p-0 ps-3">
-                            <a href="{{ route('others.about_us') }}" class="text-decoration-none">
-                                <img src="{{ url('assets/images/help.png') }}" alt="emoji" width="30px"
-                                    style="padding-right: 4px">
-                            </a>
-                        </div>
-                        <div class="col m-0 p-0">
-                            <a href="{{ route('others.help') }}" class="text-decoration-none">
-                                <p class="fs-5 fw-normal mb-0">Bantuan</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mt-4 row align-items-center">
-                        <h3 class="fs-4">Lainnya</h3>
-                    </div>
-                    <div class="mt-4 row align-items-center">
-                        <div class="col-auto m-0 p-0 ps-3">
-                            <a href="{{ route('others.code_of_coduct') }}" class="text-decoration-none">
-                                <img src="{{ url('assets/images/privacy.png') }}" alt="emoji" width="30px"
-                                    style="padding-right: 4px">
-                            </a>
-                        </div>
-                        <div class="col m-0 p-0">
-                            <a href="{{ route('others.privacy_policy') }}" class="text-decoration-none">
-                                <p class="fs-5 fw-normal mb-0">Kebijakan Privasi</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mt-4 row align-items-center">
-                        <div class="col-auto m-0 p-0 ps-3">
-                            <a href="{{ route('others.code_of_coduct') }}" class="text-decoration-none">
-                                <img src="{{ url('assets/images/code-4x.png') }}" alt="emoji" width="30px"
-                                    style="padding-right: 4px">
-                            </a>
-                        </div>
-                        <div class="col m-0 p-0">
-                            <a href="{{ route('others.code_of_coduct') }}" class="text-decoration-none">
-                                <p class="fs-5 fw-normal mb-0">Kode Etik</p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mt-4 row align-items-center">
-                        <div class="col-auto m-0 p-0 ps-3">
-                            <a href="{{ route('others.term_of_use') }}" class="text-decoration-none">
-                                <img src="{{ url('assets/images/syarat-4x.png') }}" alt="emoji" width="30px"
-                                    style="padding-right: 4px">
-                            </a>
-                        </div>
-                        <div class="col m-0 p-0 ">
-                            <a href="{{ route('others.term_of_use') }}" class="text-decoration-none">
-                                <p class="fs-5 fw-normal mb-0">Syarat dan Ketentuan</p>
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="mt-4 row align-items-center text-white-50 ps-2">
-                        <p>CeritaDesain adalah sebuah forum online yang membangun, ramah, dan inklusif bagi para desainer
-                            UI/UX. Kami hadir untuk menyediakan wadah inspiratif di mana para profesional dan pecinta desain
-                            dapat berbagi pengetahuan, pengalaman, serta mendiskusikan tren terkini dalam industri UI/UX.
-                        </p>
-
-                        <p> CeritaDesain © 2024.</p>
-                    </div>
-                </div>
+        <div class="mt-4 row align-items-center ">
+            <div class="col-auto m-0 p-0 ps-3">
+                <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                    <img src="{{ url('assets/images/about-4x.png') }}" alt="emoji" width="30px"
+                        style="padding-right: 4px">
+                </a>
+            </div>
+            <div class="col m-0 p-0">
+                <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                    <p class="fs-5 fw-normal mb-0">Tentang kami</p>
+                </a>
             </div>
         </div>
+        <div class="mt-4 row align-items-center ">
+            <div class="col-auto m-0 p-0 ps-3">
+                <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                    <img src="{{ url('assets/images/contact.png') }}" alt="emoji" width="30px"
+                        style="padding-right: 4px">
+                </a>
+            </div>
+            <div class="col m-0 p-0">
+                <a href="{{ route('others.contact') }}" class="text-decoration-none">
+                    <p class="fs-5 fw-normal mb-0">Kontak</p>
+                </a>
+            </div>
+        </div>
+        <div class="mt-4 row align-items-center ">
+            <div class="col-auto m-0 p-0 ps-3">
+                <a href="{{ route('others.about_us') }}" class="text-decoration-none">
+                    <img src="{{ url('assets/images/help.png') }}" alt="emoji" width="30px"
+                        style="padding-right: 4px">
+                </a>
+            </div>
+            <div class="col m-0 p-0">
+                <a href="{{ route('others.help') }}" class="text-decoration-none">
+                    <p class="fs-5 fw-normal mb-0">Bantuan</p>
+                </a>
+            </div>
+        </div>
+        <div class="mt-4 row align-items-center">
+            <h3 class="fs-4">Lainnya</h3>
+        </div>
+        <div class="mt-4 row align-items-center">
+            <div class="col-auto m-0 p-0 ps-3">
+                <a href="{{ route('others.code_of_coduct') }}" class="text-decoration-none">
+                    <img src="{{ url('assets/images/privacy.png') }}" alt="emoji" width="30px"
+                        style="padding-right: 4px">
+                </a>
+            </div>
+            <div class="col m-0 p-0">
+                <a href="{{ route('others.privacy_policy') }}" class="text-decoration-none">
+                    <p class="fs-5 fw-normal mb-0">Kebijakan Privasi</p>
+                </a>
+            </div>
+        </div>
+        <div class="mt-4 row align-items-center">
+            <div class="col-auto m-0 p-0 ps-3">
+                <a href="{{ route('others.code_of_coduct') }}" class="text-decoration-none">
+                    <img src="{{ url('assets/images/code-4x.png') }}" alt="emoji" width="30px"
+                        style="padding-right: 4px">
+                </a>
+            </div>
+            <div class="col m-0 p-0">
+                <a href="{{ route('others.code_of_coduct') }}" class="text-decoration-none">
+                    <p class="fs-5 fw-normal mb-0">Kode Etik</p>
+                </a>
+            </div>
+        </div>
+        <div class="mt-4 row align-items-center">
+            <div class="col-auto m-0 p-0 ps-3">
+                <a href="{{ route('others.term_of_use') }}" class="text-decoration-none">
+                    <img src="{{ url('assets/images/syarat-4x.png') }}" alt="emoji" width="30px"
+                        style="padding-right: 4px">
+                </a>
+            </div>
+            <div class="col m-0 p-0 ">
+                <a href="{{ route('others.term_of_use') }}" class="text-decoration-none">
+                    <p class="fs-5 fw-normal mb-0">Syarat dan Ketentuan</p>
+                </a>
+            </div>
+
+        </div>
+        <div class="mt-4 row align-items-center text-white-50 ps-2">
+            <p>CeritaDesain adalah sebuah forum online yang membangun, ramah, dan inklusif bagi para desainer
+                UI/UX. Kami hadir untuk menyediakan wadah inspiratif di mana para profesional dan pecinta desain
+                dapat berbagi pengetahuan, pengalaman, serta mendiskusikan tren terkini dalam industri UI/UX.
+            </p>
+
+            <p> CeritaDesain © 2024.</p>
+        </div>
+    </div>
+    </div>
+    </div>
     </div>
     </div>
 @endsection
@@ -528,25 +525,25 @@
                 })
             });
 
-            // $('#delete-discussion').click(function(event) {
-            //     if (!confirm('Hapus diskusi ini?')) {
-            //         event.preventDefault();
-            //     }
-            // });
-
-            $('#confirmDelete').click(function() {
-                $('#deleteForm').submit();
+            $('#delete-discussion').click(function(event) {
+                if (!confirm('Hapus diskusi ini?')) {
+                    event.preventDefault();
+                }
             });
 
-            // $('.delete-answer').click(function(event) {
-            //     if (!confirm('Hapus tanggapan?')) {
-            //         event.preventDefault();
-            //     }
+            // $('#confirmDelete').click(function() {
+            //     $('#deleteForm').submit();
             // });
 
-            $('.confirm-delete-answer').click(function() {
-                $('.delete-answer-form').submit();
+            $('.delete-answer').click(function(event) {
+                if (!confirm('Hapus tanggapan?')) {
+                    event.preventDefault();
+                }
             });
+
+            // $('.confirm-delete-answer').click(function() {
+            //     $('.delete-answer-form').submit();
+            // });
 
             $('.answer-like').click(function() {
                 // dapatkan data apakah answer ini sudah pernah dilike oleh user

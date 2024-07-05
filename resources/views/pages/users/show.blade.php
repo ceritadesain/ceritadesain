@@ -150,13 +150,17 @@
                                                 {{ $answer->likeCount }}
                                             </div>
                                             <div class="col">
-                                                <span>Menanggapi </span>
-                                                <span class="fw-bold text-primary">
-                                                    <a href="{{ route('discussions.show', $answer->discussion->slug) }}">
-                                                        {{ $answer->discussion->title }}
-                                                    </a>
-                                                </span>
-
+                                                @if ($answer->discussion)
+                                                    <span>Menanggapi </span>
+                                                    <span class="fw-bold text-primary">
+                                                        <a
+                                                            href="{{ route('discussions.show', $answer->discussion->slug) }}">
+                                                            {{ $answer->discussion->title }}
+                                                        </a>
+                                                    </span>
+                                                @else
+                                                    <span class="fw-bold text-danger">Diskusi tidak ditemukan</span>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
