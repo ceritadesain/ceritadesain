@@ -155,7 +155,7 @@
                                             <div class="row pb-3">
                                                 <div class="col-auto">
                                                     <div class="avatar-sm-wrapper d-inline-block">
-                                                        <a href="{{ route('users.show', $discussion->user->username) }}">
+                                                        <a href="{{ route('users.show', $answer->user->username) }}">
                                                             <img src="{{ filter_var($answer->user->picture, FILTER_VALIDATE_URL) ? $answer->user->picture : Storage::url($answer->user->picture) }}"
                                                                 alt="{{ $answer->user->username }}"
                                                                 class="avatar rounded-circle">
@@ -164,7 +164,7 @@
                                                 </div>
                                                 <span
                                                     class="col-auto fs-6 ps-0 {{ $answer->user->username === $discussion->user->username ? 'text-primary' : '' }} ">
-                                                    <a href="{{ route('users.show', $discussion->user->username) }}"
+                                                    <a href="{{ route('users.show', $answer->user->username) }}"
                                                         class="me-1 bold">{{ $answer->user->username }}</a>
                                                 </span>
                                                 <div class="col-auto color-gray fs-6 ps-0">
