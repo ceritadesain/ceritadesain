@@ -36,7 +36,7 @@ class SignUpRequest extends FormRequest
             'email.email' => 'Format email tidak valid.',
             'email.unique' => 'Email sudah terdaftar, silakan gunakan email lain.',
             'email.min' => 'Email harus memiliki minimal 8 karakter.',
-            'email.max' => 'Email tidak boleh lebih dari 50 karakter.',
+            'email.max' => 'Email tidak boleh lebih dari 20 karakter.',
             'password.required' => 'Kata sandi wajib diisi.',
             'password.min' => 'Kata sandi harus memiliki minimal 8 karakter.',
             'password.numbers' => 'Kata sandi harus mengandung minimal satu angka.',

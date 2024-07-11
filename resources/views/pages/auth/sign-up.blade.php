@@ -46,18 +46,13 @@
                                 @enderror
                             </div>
                             <div>
-                                <p class="text-white-50 m-0 pt-1 pb-1">
-                                    Saran kata sandi:
-                                <ul class="text-white-50">
-                                    <li>Kata sandi harus memiliki minimal 8 karakter.</li>
-                                    <li>Kata sandi harus mengandung minimal satu angka.</li>
-                                    <li>Kata sandi harus mengandung minimal satu simbol.</li>
-                                    <li>Kata sandi harus mengandung minimal satu huruf besar dan satu huruf kecil.</li>
+                                <ul class="text-white-50 m-0 pt-1 pb-1">
+                                    <li>Harus memiliki minimal 8 karakter.</li>
+                                    <li>Harus mengandung minimal satu angka.</li>
+                                    <li>Harus mengandung minimal satu simbol.</li>
+                                    <li>Harus mengandung minimal satu huruf besar dan satu huruf kecil.</li>
                                 </ul>
-                                </p>
                             </div>
-
-
                         </div>
                         <div class="mb-5">
                             <label for="username" class="form-label">Username</label>

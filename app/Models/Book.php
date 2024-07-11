@@ -12,6 +12,7 @@ class Book extends Model
     protected $fillable = [
         'judul',
         'preview',
+        'link',
         'summary'
     ];
 }

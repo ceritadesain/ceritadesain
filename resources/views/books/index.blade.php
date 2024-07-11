@@ -10,8 +10,10 @@
                     <div class="card mb-4 card-compe">
                         <div class="card-body p-0 mt-2">
                             <h5 class="card-title">{{ $book->judul }}</h5>
+                            <p><a href="{{ $book->link }}" class="text-primary" target="_blank">Link Pembelian Buku</a></p>
                             <p class="card-text">{{ $book->preview }}</p>
-                            <a href="{{ route('books.show', $book->id) }}" class="btn btn-outline-light btn-sm">Rangkuman</a>
+                            <a href="{{ route('books.show', $book->id) }}"
+                                class="btn btn-outline-light btn-sm">Rangkuman</a>
                         </div>
                     </div>
                 </div>
