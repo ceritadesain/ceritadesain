@@ -41,13 +41,11 @@
                                             Kosongkan ini jika kamu tidak ingin mengubah kata sandimu
                                         </div>
                                         <div>
-                                            <ul class="fs-12px color-gray mt-1 ">
-                                                <li>Harus memiliki minimal 8 karakter.</li>
-                                                <li>Harus mengandung minimal satu angka.</li>
-                                                <li>Harus mengandung minimal satu simbol.</li>
-                                                <li>Harus mengandung minimal satu huruf besar dan satu huruf kecil.</li>
-                                            </ul>
+                                            <p class="fs-12px color-gray mt-1">Kata sandi harus memiliki minimal 8 karakter,
+                                                mengandung minimal satu angka, satu
+                                                simbol, satu huruf besar, dan satu huruf kecil.</p>
                                         </div>
+
                                         @error('password')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
@@ -60,14 +58,7 @@
                                         <div class="fs-12px color-gray mt-1">
                                             Kosongkan ini jika Anda tidak ingin mengubah kata sandi Anda
                                         </div>
-                                        <div>
-                                            <ul class="fs-12px color-gray mt-1">
-                                                <li>Harus memiliki minimal 8 karakter.</li>
-                                                <li>Harus mengandung minimal satu angka.</li>
-                                                <li>Harus mengandung minimal satu simbol.</li>
-                                                <li>Harus mengandung minimal satu huruf besar dan satu huruf kecil.</li>
-                                            </ul>
-                                        </div>
+
                                         @error('password_confirmation')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
