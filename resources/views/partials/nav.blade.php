@@ -47,6 +47,11 @@
                                  <a class="dropdown-item" href="{{ route('users.show', auth()->user()->username) }}">Profil
                                      Saya</a>
                              </li>
+
+                             <li>
+                                 <a href="{{ route('users.edit', auth()->user()->username) }}" class="dropdown-item">Edit
+                                     Profil</a>
+                             </li>
                              <li>
                                  <form action="{{ route('auth.login.logout') }}" method="POST">
                                      @csrf

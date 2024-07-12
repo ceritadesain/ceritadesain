@@ -290,7 +290,7 @@
                                                                             {{ $reply->created_at->diffForHumans() }}
                                                                         </div>
                                                                         <div class="ms-auto d-flex align-items-center">
-                                                                            {{-- Tombol Hapus Balasan --}}
+
                                                                             @if ($reply->user_id === auth()->id())
                                                                                 <div class="d-flex align-items-center">
                                                                                     <div class="me-2">
@@ -302,7 +302,67 @@
                                                                                         </a>
                                                                                     </div>
                                                                                     <div>
+                                                                                        <!-- Tombol Hapus -->
                                                                                         <form
+                                                                                            action="{{ route('replies.destroy', $reply->id) }}"
+                                                                                            method="POST"
+                                                                                            class="d-inline-block lh-1 delete-replies-form" ">
+                                                                                                    @csrf
+                                                                                                    @method('DELETE')
+                                                                                                    <button type="button"
+                                                                                                        class="delete-replies color-gray border-0 bg-transparent p-0"
+                                                                                                        data-bs-toggle="modal"
+                                                                                                        data-bs-target="#exampleRepliesModal">
+                                                                                                        <img src="{{ url('assets/images/delete-white.png') }}"
+                                                                                                            alt="hapus"
+                                                                                                            class="pe-1">
+                                                                                                    </button>
+                                                                                                </form>
+
+                                                                                                <!-- Modal Konfirmasi -->
+                                                                                                <div class="modal fade"
+                                                                                                    id="exampleRepliesModal"
+                                                                                                    tabindex="-1"
+                                                                                                    aria-labelledby="exampleRepliesModalLabel"
+                                                                                                    aria-hidden="true">
+                                                                                                    <div
+                                                                                                        class="modal-dialog text-white">
+                                                                                                        <div
+                                                                                                            class="modal-content bg-dark">
+                                                                                                            <div
+                                                                                                                class="modal-header">
+                                                                                                                <h1 class="modal-title fs-5"
+                                                                                                                    id="exampleRepliesModalLabel">
+                                                                                                                    Hapus
+                                                                                                                    Balasan
+                                                                                                                </h1>
+                                                                                                                <button
+                                                                                                                    type="button"
+                                                                                                                    class="btn-close"
+                                                                                                                    data-bs-dismiss="modal"
+                                                                                                                    aria-label="Close"></button>
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                class="modal-body bg-dark">
+                                                                                                                Apakah kamu yakin
+                                                                                                                untuk menghapus
+                                                                                                                balasan
+                                                                                                                ini?
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                class="modal-footer">
+                                                                                                                <button
+                                                                                                                    type="button"
+                                                                                                                    class="btn btn-secondary"
+                                                                                                                    data-bs-dismiss="modal">Batal</button>
+                                                                                                                <button
+                                                                                                                    type="button"
+                                                                                                                    class="btn btn-primary confirm-delete-replies">Hapus</button>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                {{-- <form
                                                                                             action="{{ route('replies.destroy', $reply->id) }}"
                                                                                             method="POST">
                                                                                             @csrf
@@ -313,21 +373,21 @@
                                                                                                     alt="hapus"
                                                                                                     class="pe-1">
                                                                                             </button>
-                                                                                        </form>
+                                                                                        </form> --}}
+                                                                                            </div>
+                                                                                        </div>
+     @endif
                                                                                     </div>
+
                                                                                 </div>
-                                                                            @endif
                                                                         </div>
-
+                                                                        <div class="mt-2">{!! $reply->reply_content !!}</div>
                                                                     </div>
+
+
                                                                 </div>
-                                                                <div class="mt-2">{!! $reply->reply_content !!}</div>
-                                                            </div>
-
-
-                                                        </div>
-                                                    @empty
-                                                        <div class="mt-2">Saat ini belum ada balasan.</div>
+                                                            @empty
+                                                                <div class="mt-2">Saat ini belum ada balasan.</div>
                                                     @endforelse
                                                 </div>
                                                 {{-- Form Balasan --}}
@@ -687,6 +747,10 @@
 
             $('.confirm-delete-answer').click(function() {
                 $('.delete-answer-form').submit();
+            });
+
+            $('.confirm-delete-replies').click(function() {
+                $('.delete-replies-form').submit();
             });
 
             $('.answer-like').click(function() {

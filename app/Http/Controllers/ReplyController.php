@@ -29,6 +29,8 @@ class ReplyController extends Controller
 
         // Save the reply
         $reply->save();
+         
+        session()->flash('notif.success', 'Balasan berhasil ditambahkan!');
 
         return back()->with('success', 'Balasan berhasil ditambahkan.');
     }
@@ -77,6 +79,7 @@ class ReplyController extends Controller
     $answer = $reply->answer;
 
     if ($answer) {
+        session()->flash('notif.success', 'Balasan berhasil diperbarui!');
         return redirect()->route('discussions.show', $answer->discussion->slug)
             ->with('success', 'Balasan berhasil diperbarui.');
     } else {
@@ -95,6 +98,7 @@ class ReplyController extends Controller
         }
 
         $reply->delete();
+        session()->flash('notif.success', 'Balasan berhasil dihapus!');
 
         return back()->with('success', 'Balasan berhasil dihapus.');
     }
