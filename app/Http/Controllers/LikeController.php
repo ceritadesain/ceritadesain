@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Discussion;
 use App\Models\Answer;
+use App\Models\Reply;
 
 
 class LikeController extends Controller
@@ -68,6 +69,41 @@ class LikeController extends Controller
                 'data' => [
                     'likeCount' => $answer->likeCount,
                 ]
+        ]);
+    }
+    public function replyLike(string $replyId)
+    {
+        $reply = Reply::find($replyId);
+
+
+        $reply->like();
+
+        return response()->json([
+            'status' => 'success',
+            'data' => [
+                'likeCount' => $reply->likeCount,
+            ]
+        ]);
+    }
+
+    public function replyUnlike(string $replyId)
+    {
+        $reply = Reply::find($replyId);
+
+        if (!$reply) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Balasan tidak ditemukan.'
+            ], 404);
+        }
+
+        $reply->unlike();
+
+        return response()->json([
+            'status' => 'success',
+            'data' => [
+                'likeCount' => $reply->likeCount,
+            ]
         ]);
     }
 }

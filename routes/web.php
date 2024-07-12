@@ -14,6 +14,7 @@ use App\Http\Controllers\FollowController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\ReplyController;
+use App\Http\Controllers\LikeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,15 +47,15 @@ Route::middleware('auth')->group(function () {
         Route::post('/answers/{answer}/reply', [ReplyController::class, 'store'])->name('answers.reply');
         Route::get('replies/{reply}/edit', [ReplyController::class, 'edit'])->name('replies.edit');
         Route::put('replies/{reply}', [ReplyController::class, 'update'])->name('replies.update');
-
-        
-
         // Route untuk menghapus reply
         Route::delete('/replies/{reply}', [ReplyController::class, 'destroy'])->name('replies.destroy');
+
+        
+        Route::post('/replies/{replyId}/like', 'LikeController@replyLike')->name('replies.like.like');
+        Route::post('/replies/{replyId}/unlike', 'LikeController@replyUnlike')->name('replies.like.unlike');
         
 
         Route::resource('answers', AnswerController::class)->only(['edit', 'update', 'destroy']);
-
         Route::post('answers/{answer}/like', 'LikeController@answerLike')->name('answers.like.like');
         Route::post('answers/{answer}/unlike', 'LikeController@answerUnlike')->name('answers.like.unlike');
         

@@ -253,7 +253,20 @@
                                                     {{-- Menampilkan Balasan --}}
                                                     @forelse ($answer->replies as $reply)
                                                         <div class="row card-reply ms-2 me-2 mt-3 mb-3">
-                                                            <div class="col-12">
+                                                            <div class="col-1">
+                                                                <a href="javascript:;" data-id="{{ $reply->id }}"
+                                                                    class="reply-like d-flex flex-column justify-content-start align-items-center "
+                                                                    data-liked="{{ $reply->liked() }}">
+                                                                    <img src="{{ $reply->liked() ? $likedImage : $notLikedImage }}"
+                                                                        alt="Like"
+                                                                        class="like-icon reply-like-icon mb-1"
+                                                                        width="5px">
+                                                                    <span
+                                                                        class="reply-like-count fs-6 color-gray mb-1">{{ $reply->likeCount }}
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-11">
                                                                 <div class="col-12 col-lg-auto">
                                                                     <div class="d-flex align-items-center">
                                                                         <div class="pe-2">
@@ -308,8 +321,10 @@
 
                                                                     </div>
                                                                 </div>
+                                                                <div class="mt-2">{!! $reply->reply_content !!}</div>
                                                             </div>
-                                                            <div class="mt-2">{!! $reply->reply_content !!}</div>
+
+
                                                         </div>
                                                     @empty
                                                         <div class="mt-2">Saat ini belum ada balasan.</div>
@@ -711,6 +726,40 @@
                     }
                 })
             })
+            $('.reply-like').click(function() {
+                var $this = $(this);
+                var replyId = $this.data('id');
+                var isLiked = $this.data('liked');
+                var likeRoute = isLiked ? '{{ url('') }}/replies/' + replyId + '/unlike' :
+                    '{{ url('') }}/replies/' + replyId + '/like';
+                console.log(likeRoute);
+
+
+                $.ajax({
+                    method: 'POST',
+                    url: likeRoute,
+                    data: {
+                        '_token': '{{ csrf_token() }}'
+                    }
+                }).done(function(res) {
+                    if (res.status === 'success') {
+                        $this.find('.reply-like-count').text(res.data.likeCount);
+
+                        // Ganti ikon like berdasarkan status sebelumnya
+                        if (isLiked) {
+                            $this.find('.reply-like-icon').attr('src',
+                                '{{ asset($notLikedImage) }}');
+                        } else {
+                            $this.find('.reply-like-icon').attr('src',
+                                '{{ asset($likedImage) }}');
+                        }
+
+                        // Toggle status liked
+                        $this.data('liked', !isLiked);
+                    }
+                });
+            });
+
         });
     </script>
 @endsection
