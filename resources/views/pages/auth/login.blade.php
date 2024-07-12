@@ -37,7 +37,7 @@
                                     </div>
                                 @enderror
                             </div>
-                            <div class="mb-5 ">
+                            <div class="mb-4 ">
                                 <label for="password" class="form-label">Password</label>
                                 <div class="input-group">
                                     <input type="password"
@@ -55,6 +55,8 @@
                                         </div>
                                     @enderror
                                 </div>
+
+
                             </div>
                             <div class="mb-3 d-grid">
                                 <button type="submit" class="btn btn-primary rounded-2">Masuk</button>
