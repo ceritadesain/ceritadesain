@@ -11,6 +11,8 @@ use App\Http\Controllers\ChallengeController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\PodcastController;
 use App\Http\Controllers\FollowController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +24,10 @@ use App\Http\Controllers\FollowController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('auth.password.request');
+Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('auth.password.email');
+Route::get('password/reset/form', [ResetPasswordController::class, 'showResetForm'])->name('auth.password.reset');
+Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('auth.password.update');
 
 Route::middleware('auth')->group(function () {
     Route::namespace('App\Http\Controllers\My')->group(function () {

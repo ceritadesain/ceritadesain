@@ -10,38 +10,28 @@
                             <img src="{{ url('assets/images/main-logo-ceritadesain.png') }}" class="img-fluid w-50"
                                 alt="CeritaDesain logo">
                         </a>
-                        <h1 class="text-white fs-4">Bergabunglah dengan Komunitas CeritaDesain</h1>
-                        <p class="text-white-50">Tempat di mana
-                            ide-ide kreatif berkembang, kolaborasi , dan setiap desainer dapat berbagi
-                            pengalaman serta belajar bersama.
-                        </p>
+                        <h1 class="text-white fs-4">Reset Password</h1>
+                        <p class="text-white-50">Masukkan password baru Anda.</p>
                     </div>
 
                     <div class="mb-5 text-white">
-                        <form action="{{ route('auth.login.login') }}" method="POST">
+                        <form action="{{ route('auth.password.update') }}" method="POST">
                             @csrf
-                            <div class="mb-3 ">
+                            <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email"
-                                    class="form-control @error('email') is-invalid @enderror @error('credentials') is-invalid @enderror"
+                                <input type="email" class="form-control @error('email') is-invalid @enderror"
                                     id="email" name="email" placeholder="email@uiux.com" value="{{ old('email') }}"
-                                    autocomplete="off" autofocus>
+                                    autocomplete="off">
                                 @error('email')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
                                 @enderror
-                                @error('credentials')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
                             </div>
-                            <div class="mb-4 ">
-                                <label for="password" class="form-label">Password</label>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password Baru</label>
                                 <div class="input-group">
-                                    <input type="password"
-                                        class="form-control border-end-0 pe-0 rounded-0 rounded-start @error('password') is-invalid @enderror"
+                                    <input type="password" class="form-control @error('password') is-invalid @enderror"
                                         id="password" name="password">
                                     <span
                                         class="input-group-text bg-white border-start-0 pe-auto @error('password') border-danger rounded-end @enderror"><a
@@ -54,39 +44,29 @@
                                             {{ $message }}
                                         </div>
                                     @enderror
+
                                 </div>
-                                <div><a href="{{ route('auth.password.request') }}"
-                                        class="d-flex flex-row-reverse text-primary pt-2">Lupa Password?</a>
+                                <div>
+                                    <p class="text-white-50 m-0 pt-1 pb-1">Kata sandi harus memiliki minimal 8 karakter,
+                                        mengandung minimal satu angka, satu
+                                        simbol, satu huruf besar, dan satu huruf kecil.</p>
                                 </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
+                                <input type="password" class="form-control" id="password_confirmation"
+                                    name="password_confirmation">
                             </div>
                             <div class="mb-3 d-grid">
-                                <button type="submit" class="btn btn-primary rounded-2">Masuk</button>
-
-                            </div>
-                            <div class="fs-6 ">
-                                <p>Dengan masuk, kamu menyetujui <a class="text-primary"
-                                        href="{{ route('others.privacy_policy') }}"> kebijakan
-                                        privasi</a>, <a href="{{ route('others.term_of_use') }}"
-                                        class="text-primary">syarat
-                                        penggunaan</a>, dan <a class="text-primary"
-                                        href="
-                                        {{ route('others.code_of_coduct') }}">kode
-                                        etik</a>
-                                    kami.
-                                </p>
+                                <button type="submit" class="btn btn-primary rounded-2">Reset Password</button>
                             </div>
                         </form>
-                    </div>
-                    <div class="text-center text-white-50">
-                        Belum mempunyai akun? Daftar<a class="text-primary" href="{{ route('auth.sign-up.show') }}"><u> di
-                                sini</u></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 @endsection
-
 
 @section('after-script')
     <script>
