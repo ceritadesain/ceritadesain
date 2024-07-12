@@ -3,28 +3,97 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UpdateReplyRequest;
+use App\Http\Requests\StoreReplyRequest;
+use App\Models\Discussion;
+use App\Models\Answer;
 use App\Models\Reply;
 
 class ReplyController extends Controller
 {
-    public function store(Request $request, $answer_id)
+       public function store(StoreReplyRequest $request, $answer_id)
     {
-        $request->validate([
-            'reply_content' => 'required|string',
-        ]);
+        $validated = $request->validated();
 
+        // Find the associated answer
+        $answer = Answer::findOrFail($answer_id);
+
+        // Create a new reply instance
         $reply = new Reply();
         $reply->answer_id = $answer_id;
         $reply->user_id = auth()->id();
-        $reply->reply_content = $request->reply_content;
+        $reply->reply_content = $validated['reply_content'];
+
+        // Assign the discussion_id from the associated answer
+        $reply->discussion_id = $answer->discussion_id;
+
+        // Save the reply
         $reply->save();
 
         return back()->with('success', 'Balasan berhasil ditambahkan.');
     }
 
+    public function edit($id)
+    {
+        $reply = Reply::find($id);
+
+        // Check if the reply exists
+        if (!$reply) {
+            return abort(404);
+        }
+
+        // Check if the reply belongs to the authenticated user
+        if ($reply->user_id !== auth()->id()) {
+            abort(403, 'Unauthorized action.');
+        }
+
+        // Return view with reply data
+        return view('pages.replies.form', [
+            'reply' => $reply,
+        ]);
+    }
+
+    public function update(UpdateReplyRequest $request, $id)
+{
+    $reply = Reply::find($id);
+
+    // Check if the reply exists
+    if (!$reply) {
+        return abort(404);
+    }
+
+    // Check if the reply belongs to the authenticated user
+    if ($reply->user_id !== auth()->id()) {
+        abort(403, 'Unauthorized action.');
+    }
+
+    // Validate the incoming request data
+    $validated = $request->validated();
+
+    // Update the reply with validated data
+    $reply->update($validated);
+
+    // Retrieve the associated answer to get the discussion slug
+    $answer = $reply->answer;
+
+    if ($answer) {
+        return redirect()->route('discussions.show', $answer->discussion->slug)
+            ->with('success', 'Balasan berhasil diperbarui.');
+    } else {
+        return redirect()->back()->with('error', 'Tidak dapat menemukan diskusi terkait.');
+    }
+}
+
+
     public function destroy($id)
     {
         $reply = Reply::findOrFail($id);
+
+        // Check if the reply belongs to the authenticated user
+        if ($reply->user_id !== auth()->id()) {
+            abort(403, 'Unauthorized action.');
+        }
+
         $reply->delete();
 
         return back()->with('success', 'Balasan berhasil dihapus.');

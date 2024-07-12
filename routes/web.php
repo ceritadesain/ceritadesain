@@ -41,8 +41,13 @@ Route::middleware('auth')->group(function () {
         Route::post('discussions/{discussion}/unlike', 'LikeController@discussionUnlike')->name('discussions.like.unlike');
 
         Route::post('discussions/{discussion}/answer', 'AnswerController@store')->name('discussions.answer.store');
+       
         // Route untuk menampilkan form reply
         Route::post('/answers/{answer}/reply', [ReplyController::class, 'store'])->name('answers.reply');
+        Route::get('replies/{reply}/edit', [ReplyController::class, 'edit'])->name('replies.edit');
+        Route::put('replies/{reply}', [ReplyController::class, 'update'])->name('replies.update');
+
+        
 
         // Route untuk menghapus reply
         Route::delete('/replies/{reply}', [ReplyController::class, 'destroy'])->name('replies.destroy');

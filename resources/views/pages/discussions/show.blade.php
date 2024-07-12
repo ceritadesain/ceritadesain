@@ -267,8 +267,11 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="me-2">
-                                                                            <a href="{{ route('users.show', $reply->user->username) }}"
-                                                                                class="me-1 bold">{{ $reply->user->username }}</a>
+                                                                            <span
+                                                                                class="col-auto fs-6 ps-0 {{ $reply->user->username === $discussion->user->username ? 'text-primary' : '' }} ">
+                                                                                <a href="{{ route('users.show', $reply->user->username) }}"
+                                                                                    class="me-1 bold">{{ $reply->user->username }}</a>
+                                                                            </span>
                                                                         </div>
                                                                         <div class="color-gray fs-6">
                                                                             {{ $reply->created_at->diffForHumans() }}
@@ -279,7 +282,7 @@
                                                                                 <div class="d-flex align-items-center">
                                                                                     <div class="me-2">
                                                                                         <a
-                                                                                            href="{{ route('answers.edit', $answer->id) }}">
+                                                                                            href="{{ route('replies.edit', $reply->id) }}">
                                                                                             <img src="{{ url('assets/images/edit-white.png') }}"
                                                                                                 alt="edit"
                                                                                                 class="pe-1">
