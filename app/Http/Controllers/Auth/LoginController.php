@@ -17,8 +17,10 @@ class LoginController extends Controller
         $credentials = $request->validated();
 
         if(Auth::attempt($credentials)){
+            session()->flash('notif.success', 'Login Berhasil, Selamat Datang di CeritaDesain!');
             return redirect()->route('discussions.index');
         }
+       
        
         return redirect()->back()->withInput()->withErrors(['credentials' => 'Email atau kata sandi yang kamu masukkan tidak cocok.']);
     }

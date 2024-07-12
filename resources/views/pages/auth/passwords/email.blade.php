@@ -11,9 +11,7 @@
                                 alt="CeritaDesain logo">
                         </a>
                         <h1 class="text-white fs-4">Reset Password</h1>
-                        <p class="text-white-50">Masukkan password baru Anda.</p>
                     </div>
-
                     <div class="mb-5 text-white">
                         <form action="{{ route('auth.password.update') }}" method="POST">
                             @csrf

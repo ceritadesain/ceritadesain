@@ -24,6 +24,7 @@ class ResetPasswordController extends Controller
             $user->save();
 
             Auth::login($user);
+            session()->flash('notif.success', 'Password Berhasil Direset, Selamat Datang di CeritaDesain!');
 
             return redirect()->route('discussions.index')->with('status', 'Password berhasil direset.');
         }

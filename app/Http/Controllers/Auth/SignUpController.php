@@ -29,6 +29,7 @@ class SignUpController extends Controller
         $create = User::create($validated);
 
         if($create) {
+            session()->flash('notif.success', 'Akun kamu berhasil terdaftar, Selamat Datang di CeritaDesain!');
             Auth::login($create);
             return redirect()->route('discussions.index');
         }
