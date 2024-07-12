@@ -23,4 +23,8 @@ class Answer extends Model
      public function discussion(){
         return $this->belongsTo(Discussion::class);
     }
+    public function replies()
+    {
+    return $this->hasMany(Reply::class);
+    }
 }

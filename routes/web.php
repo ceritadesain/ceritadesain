@@ -13,6 +13,7 @@ use App\Http\Controllers\PodcastController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\ReplyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,12 @@ Route::middleware('auth')->group(function () {
         Route::post('discussions/{discussion}/unlike', 'LikeController@discussionUnlike')->name('discussions.like.unlike');
 
         Route::post('discussions/{discussion}/answer', 'AnswerController@store')->name('discussions.answer.store');
+        // Route untuk menampilkan form reply
+        Route::post('/answers/{answer}/reply', [ReplyController::class, 'store'])->name('answers.reply');
+
+        // Route untuk menghapus reply
+        Route::delete('/replies/{reply}', [ReplyController::class, 'destroy'])->name('replies.destroy');
+        
 
         Route::resource('answers', AnswerController::class)->only(['edit', 'update', 'destroy']);
 

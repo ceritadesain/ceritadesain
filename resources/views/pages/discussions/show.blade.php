@@ -247,6 +247,87 @@
                                             </div>
                                             <div>
                                                 <div>{!! $answer->answer !!}</div>
+                                                <div class="fs-5 bold ">Balasan</div>
+
+                                                <div>
+                                                    {{-- Menampilkan Balasan --}}
+                                                    @forelse ($answer->replies as $reply)
+                                                        <div class="row card-reply ms-2 me-2 mt-3 mb-3">
+                                                            <div class="col-12">
+                                                                <div class="col-12 col-lg-auto">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="pe-2">
+                                                                            <div class="avatar-sm-wrapper d-inline-block">
+                                                                                <a
+                                                                                    href="{{ route('users.show', $reply->user->username) }}">
+                                                                                    <img src="{{ filter_var($reply->user->picture, FILTER_VALIDATE_URL) ? $reply->user->picture : Storage::url($reply->user->picture) }}"
+                                                                                        alt="{{ $reply->user->username }}"
+                                                                                        class="avatar rounded-circle">
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="me-2">
+                                                                            <a href="{{ route('users.show', $reply->user->username) }}"
+                                                                                class="me-1 bold">{{ $reply->user->username }}</a>
+                                                                        </div>
+                                                                        <div class="color-gray fs-6">
+                                                                            {{ $reply->created_at->diffForHumans() }}
+                                                                        </div>
+                                                                        <div class="ms-auto d-flex align-items-center">
+                                                                            {{-- Tombol Hapus Balasan --}}
+                                                                            @if ($reply->user_id === auth()->id())
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="me-2">
+                                                                                        <a
+                                                                                            href="{{ route('answers.edit', $answer->id) }}">
+                                                                                            <img src="{{ url('assets/images/edit-white.png') }}"
+                                                                                                alt="edit"
+                                                                                                class="pe-1">
+                                                                                        </a>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <form
+                                                                                            action="{{ route('replies.destroy', $reply->id) }}"
+                                                                                            method="POST">
+                                                                                            @csrf
+                                                                                            @method('DELETE')
+                                                                                            <button type="submit"
+                                                                                                class="delete-answer color-gray border-0 bg-transparent p-0">
+                                                                                                <img src="{{ url('assets/images/delete-white.png') }}"
+                                                                                                    alt="hapus"
+                                                                                                    class="pe-1">
+                                                                                            </button>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                </div>
+                                                                            @endif
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mt-2">{!! $reply->reply_content !!}</div>
+                                                        </div>
+                                                    @empty
+                                                        <div class="mt-2">Saat ini belum ada balasan.</div>
+                                                    @endforelse
+                                                </div>
+                                                {{-- Form Balasan --}}
+                                                @auth
+                                                    <div class="p-3">
+                                                        <h5 class="reply-toggle text-primary" style="cursor: pointer;">Balas
+                                                        </h5>
+                                                        <form action="{{ route('answers.reply', $answer->id) }}"
+                                                            method="POST" class="reply-form" style="display: none;">
+                                                            @csrf
+                                                            <div class="mb-3">
+                                                                <textarea name="reply_content" class="reply_content">{{ old('reply_content') }}</textarea>
+                                                            </div>
+                                                            <button type="submit" class="btn btn-primary">Balas</button>
+                                                        </form>
+                                                    </div>
+                                                @endauth
+
                                             </div>
                                         </div>
                                     </div>
@@ -480,6 +561,17 @@
             //         location.reload(); // Refresh halaman setelah 3 detik
             //     }, 3000); // Delay 3 detik sebelum merefresh halaman
             // });
+            var toggleButtons = document.querySelectorAll('.reply-toggle');
+            toggleButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    var form = this.nextElementSibling;
+                    if (form.style.display === "none") {
+                        form.style.display = "block";
+                    } else {
+                        form.style.display = "none";
+                    }
+                });
+            });
 
 
             $('#answer').summernote({
@@ -502,6 +594,28 @@
                 }
             });
             $('span.note-icon-caret').remove();
+
+            $('.reply_content').summernote({
+                placeholder: 'Tulis solusi yang kamu pikirkan di sini...',
+                tabSize: 2,
+                height: 220,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link']],
+                    ['view', ['codeview', 'help']],
+                ],
+                callbacks: {
+                    onInit: function() {
+                        $('.note-editable').css('color', 'white');
+                    }
+                }
+            });
+            $('span.note-icon-caret').remove();
+
 
 
             $('#discussion-like').click(function() {
