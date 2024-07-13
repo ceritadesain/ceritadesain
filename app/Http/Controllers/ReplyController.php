@@ -39,17 +39,17 @@ class ReplyController extends Controller
     {
         $reply = Reply::find($id);
 
-        // Check if the reply exists
+     
         if (!$reply) {
             return abort(404);
         }
 
-        // Check if the reply belongs to the authenticated user
+        
         if ($reply->user_id !== auth()->id()) {
             abort(403, 'Unauthorized action.');
         }
 
-        // Return view with reply data
+        
         return view('pages.replies.form', [
             'reply' => $reply,
         ]);
@@ -59,23 +59,23 @@ class ReplyController extends Controller
 {
     $reply = Reply::find($id);
 
-    // Check if the reply exists
+    
     if (!$reply) {
         return abort(404);
     }
 
-    // Check if the reply belongs to the authenticated user
+    
     if ($reply->user_id !== auth()->id()) {
         abort(403, 'Unauthorized action.');
     }
 
-    // Validate the incoming request data
+    
     $validated = $request->validated();
 
-    // Update the reply with validated data
+    
     $reply->update($validated);
 
-    // Retrieve the associated answer to get the discussion slug
+    
     $answer = $reply->answer;
 
     if ($answer) {
