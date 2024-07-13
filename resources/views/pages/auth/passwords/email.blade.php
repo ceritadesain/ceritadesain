@@ -51,7 +51,7 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
+                                <label for="password_confirmation" class="form-label">Konfirmasi Password Baru</label>
                                 <input type="password" class="form-control" id="password_confirmation"
                                     name="password_confirmation">
                             </div>
