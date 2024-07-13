@@ -25,7 +25,7 @@ class ResetPasswordRequest extends FormRequest
     {
         return [
             'email' => 'required|email|min:8|max:20',
-            'password' => ['required', 'confirmed', Password::min(8)->numbers()->symbols(), new CustomPassword],
+            'password' => ['required', 'confirmed', Password::min(8)->numbers()->symbols(),'max:20', new CustomPassword],
         ];
     }
      public function messages(): array
@@ -40,6 +40,7 @@ class ResetPasswordRequest extends FormRequest
             'password.numbers' => 'Kata sandi harus mengandung minimal satu angka.',
             'password.symbols' => 'Kata sandi harus mengandung minimal satu simbol.',
             'password.confirmed' => 'Konfirmasi kata sandi tidak cocok.',
+            'password.max' => 'Kata sandi maksimal 20 karakter.',
         ];
     }
 }

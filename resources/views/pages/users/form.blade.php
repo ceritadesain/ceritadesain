@@ -41,9 +41,9 @@
                                             Kosongkan ini jika kamu tidak ingin mengubah kata sandimu
                                         </div>
                                         <div>
-                                            <p class="fs-12px color-gray mt-1">Kata sandi harus memiliki minimal 8 karakter,
-                                                mengandung minimal satu angka, satu
-                                                simbol, satu huruf besar, dan satu huruf kecil.</p>
+                                            <p class="fs-12px color-gray mt-1">Kata sandi harus memiliki 8-20 karakter,
+                                                dengan minimal satu angka, satu simbol, satu huruf besar, dan satu huruf
+                                                kecil.</p>
                                         </div>
 
                                         @error('password')

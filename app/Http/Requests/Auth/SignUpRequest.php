@@ -25,7 +25,8 @@ class SignUpRequest extends FormRequest
     {
         return [
             'email' => 'required|email|unique:App\Models\User,email|min:8|max:20',
-            'password' => ['required', Password::min(8)->numbers()->symbols(), new CustomPassword],
+            'password' => ['required', Password::min(8)->numbers()->symbols(),
+            'max:20', new CustomPassword],
             'username' => 'required|alpha_dash|unique:App\Models\User,username|min:3|max:10',
         ];
     }
@@ -39,6 +40,7 @@ class SignUpRequest extends FormRequest
             'email.max' => 'Email tidak boleh lebih dari 20 karakter.',
             'password.required' => 'Kata sandi wajib diisi.',
             'password.min' => 'Kata sandi harus memiliki minimal 8 karakter.',
+            'password.max' => 'Kata sandi maksimal 20 karakter.',
             'password.numbers' => 'Kata sandi harus mengandung minimal satu angka.',
             'password.symbols' => 'Kata sandi harus mengandung minimal satu simbol.',
             'username.required' => 'Nama pengguna wajib diisi.',

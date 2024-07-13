@@ -46,9 +46,7 @@
                                 @enderror
                             </div>
                             <div>
-                                <p class="text-white-50 m-0 pt-1 pb-1">Kata sandi harus memiliki minimal 8 karakter,
-                                    mengandung minimal satu angka, satu
-                                    simbol, satu huruf besar, dan satu huruf kecil.</p>
+                                <p class="text-white-50 m-0 pt-1 pb-1">Kata sandi harus memiliki 8-20 karakter, dengan minimal satu angka, satu simbol, satu huruf besar, dan satu huruf kecil.</p>
                             </div>
                         </div>
                         <div class="mb-5">
