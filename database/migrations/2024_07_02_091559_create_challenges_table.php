@@ -13,9 +13,9 @@ class CreateChallengesTable extends Migration
     {
           Schema::create('challenges', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->string('preview');
-            $table->string('gambar'); // Menambahkan kolom gambar
+            $table->string('judul',60);
+            $table->string('preview', 200);
+            $table->string('gambar', 50); // Menambahkan kolom gambar
             $table->text('deskripsi');
             $table->timestamps(); // Memelihara kolom created_at dan updated_at
         });

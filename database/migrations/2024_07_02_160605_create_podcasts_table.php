@@ -14,7 +14,7 @@ class CreatePodcastsTable extends Migration
        Schema::create('podcasts', function (Blueprint $table) {
             $table->id();
             $table->string('spotify_id')->unique();
-            $table->string('title');
+            $table->string('title', 120);
             $table->string('spotify_uri')->unique();
             $table->string('image_url');
             $table->timestamps();

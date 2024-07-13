@@ -55,8 +55,9 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <div><a href="{{ route('auth.password.request') }}"
-                                        class="d-flex flex-row-reverse text-primary pt-2">Lupa Password?</a>
+                                <div>
+                                    <div class="d-flex flex-row-reverse text-primary pt-2"><a
+                                            href="{{ route('auth.password.request') }}">Lupa Password?</a></div>
                                 </div>
                             </div>
                             <div class="mb-3 d-grid">

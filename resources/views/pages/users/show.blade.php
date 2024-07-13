@@ -81,7 +81,7 @@
 
                 <div class="col-12 col-lg-8 ">
                     <div class="mb-5">
-                        <h2 class="mb-3">Diskusi Saya</h2>
+                        <h2 class="mb-3">Catatan Diskusi</h2>
                         <div>
                             @forelse ($discussions as $discussion)
                                 <div class="card card-discussions">
@@ -137,7 +137,7 @@
                                 </div>
                             @empty
                                 <div class="card card-discussions">
-                                    Saat ini belum ada diskusi
+                                    Saat ini belum ada catatan diskusi
                                 </div>
                             @endforelse
                             <div class="pagination-info">
@@ -145,7 +145,7 @@
                             </div>
                         </div>
                         <div>
-                            <h2 class="mb-3">Tanggapan Saya</h2>
+                            <h2 class="mb-3">Catatan Tanggapan</h2>
                             <div>
                                 @foreach ($answers as $answer)
                                     @if ($answer->discussion && $answer->discussion->exists)
@@ -170,7 +170,7 @@
 
                                 @if ($answers->isEmpty())
                                     <div class="card card-discussions">
-                                        Saat ini belum ada list tanggapan dari diskusi
+                                        Saat ini belum ada daftar catatan tanggapan dari diskusi
                                     </div>
                                 @endif
                                 <div class="pagination-info">

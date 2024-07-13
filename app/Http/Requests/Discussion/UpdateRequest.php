@@ -37,7 +37,7 @@ class UpdateRequest extends FormRequest
         return [
             'title.required' => 'Judul diskusi wajib diisi.',
             'title.string' => 'Judul diskusi harus berupa teks.',
-            'title.max' => 'Judul diskusi tidak boleh lebih dari 110 karakter.',
+            'title.max' => 'Judul diskusi tidak boleh lebih dari 50 karakter.',
             'category_slug.required' => 'Kategori wajib dipilih.',
             'category_slug.string' => 'Format kategori tidak valid.',
             'category_slug.exists' => 'Kategori yang dipilih tidak tersedia.',

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('category_id')->unsigned();
-            $table->string('title');
+            $table->string('title', 50);
             $table->string('slug');
             $table->string('content_preview');
             $table->longText('content');

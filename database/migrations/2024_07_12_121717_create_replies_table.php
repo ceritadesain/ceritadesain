@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreign('answer_id')->references('id')->on('answers')->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->text('reply_content');
+            $table->longText('reply_content');
             $table->timestamps();
         });
     }
