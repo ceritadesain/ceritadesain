@@ -12,6 +12,8 @@
                         Diskusi</a>
                     <a href="#memberikan-tanggapan" class="list-fixed list-group-item list-group-item-action">Memberikan
                         Tanggapan</a>
+                    <a href="#memberikan-balasan" class="list-fixed list-group-item list-group-item-action">Memberikan
+                        Balasan</a>
                     <a href="#diskusi-teratas" class="list-fixed list-group-item list-group-item-action">Melihat Diskusi
                         Teratas</a>
                     <a href="#profil-logout" class="list-fixed list-group-item list-group-item-action">Profil dan Logout</a>
@@ -19,9 +21,8 @@
                         Diskusi</a>
                     <a href="#kategori-diskusi" class="list-fixed list-group-item list-group-item-action">Kategori
                         Diskusi</a>
-                    <a href="#halaman-utilitas" class="list-fixed list-group-item list-group-item-action">Halaman
-                        Utilitas</a>
-                    <a href="#lainnya" class="list-fixed list-group-item list-group-item-action">Lainnya</a>
+                    <a href="#halaman-informasi" class="list-fixed list-group-item list-group-item-action">Halaman
+                        Informasi</a>
                 </div>
             </div>
             <div class="col-md-10 offset-md-2 ">
@@ -101,6 +102,22 @@
                                 </p>
                             </li>
                         </ul>
+                        <h4 id="memberikan-balasan">Memberikan Balasan</h4>
+                        <ul>
+                            <li>
+                                <p>Balasan: Setiap user dapat memberikan balasan terhadap tanggapan yang
+                                    sedang dibahas. Untuk memasukkan gambar, cukup
+                                    seret dan lepas gambar tersebut ke area yang tersedia. Maksimal file adalah 50 KB.</p>
+                            </li>
+                            <li>
+                                <p>Edit dan Delete Balasan: User yang menulis balasan memiliki opsi untuk mengedit atau
+                                    menghapus balasan mereka.</p>
+                            </li>
+                            <li>
+                                <p>Like Balasan: kamu dapat menyukai balasan yang menurut kamu bermanfaat atau menarik.
+                                </p>
+                            </li>
+                        </ul>
 
                         <h4 id="diskusi-teratas">Melihat Diskusi Teratas</h4>
                         <p>Diskusi Teratas: Untuk melihat diskusi yang paling populer atau banyak dibicarakan, buka bagian
@@ -131,7 +148,7 @@
                         <p>Kategori: kamu dapat mengklik kategori tertentu untuk melihat daftar diskusi yang sedang
                             dibicarakan di kategori tersebut.</p>
 
-                        <h4 id="halaman-utilitas">Halaman Utilitas</h4>
+                        <h4 id="halaman-informasi">Halaman Informasi</h4>
                         <ul>
                             <li>
                                 <p>UI/UX Challenge: Menyediakan tantangan dan latihan untuk meningkatkan kemampuan UI/UX
@@ -153,10 +170,6 @@
                             <li>
                                 <p>Bantuan: Membantu kamu dalam menggunakan CeritaDesain.</p>
                             </li>
-                        </ul>
-
-                        <h4 id="lainnya">Lainnya</h4>
-                        <ul>
                             <li>
                                 <p>Kebijakan Privasi: Informasi tentang bagaimana data kamu digunakan dan dilindungi.</p>
                             </li>
@@ -167,6 +180,8 @@
                                 <p>Syarat dan Ketentuan: Aturan dan ketentuan penggunaan platform kami.</p>
                             </li>
                         </ul>
+
+
                     </div>
                     <p>Jika kamu memiliki pertanyaan lebih lanjut, jangan ragu untuk menghubungi <a
                             href="{{ route('others.contact') }}" class="text-primary">kami</a>.
