@@ -25,7 +25,7 @@ class ReplyController extends Controller
         $reply->reply_content = $validated['reply_content'];
 
         // Assign the discussion_id from the associated answer
-        $reply->discussion_id = $answer->discussion_id;
+        // $reply->discussion_id = $answer->discussion_id;
 
         // Save the reply
         $reply->save();

@@ -9,7 +9,7 @@ use Conner\Likeable\Likeable;
 class Reply extends Model
 {
     use HasFactory, Likeable;
-     protected $fillable = ['answer_id', 'user_id', 'discussion_id','reply_content'];
+     protected $fillable = ['answer_id', 'user_id','reply_content'];
 
     public function user()
     {
