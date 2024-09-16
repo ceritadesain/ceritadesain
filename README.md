@@ -28,16 +28,17 @@ Repository ini berisi kode sumber untuk aplikasi **CeritaDesain**, sebuah platfo
    ```bash
    git clone https://github.com/username/ceritadesain.git
 2. Install dependensi backend:
+   ```bash
    cd backend
    composer install
-3. Install dependensi frontend:
-    Copy code
+4. Install dependensi frontend:
+    ```bash
     cd frontend
     npm install
-4. Jalankan migrasi database:
-    Copy code
+5. Jalankan migrasi database:
+    ```bash
     php artisan migrate
-5. Mulai aplikasi:
+6. Mulai aplikasi:
     Backend: php artisan serve
     Frontend: npm run dev
    
