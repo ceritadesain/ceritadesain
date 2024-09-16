@@ -41,8 +41,7 @@ Repository ini berisi kode sumber untuk aplikasi **CeritaDesain**, sebuah platfo
 6. Mulai aplikasi:
     Backend: php artisan serve
     Frontend: npm run dev
-   
-Kontribusi
-Kami menyambut kontribusi dari siapa pun yang ingin membantu mengembangkan CeritaDesain. Silakan lakukan pull request atau diskusikan ide-ide baru melalui issues.
 
-Struktur di atas mengikuti format Markdown yang benar, dengan kode disorot dan instruksi ditulis dengan rapi.
+---
+## Kontribusi <br>
+Kami menyambut kontribusi dari siapa pun yang ingin membantu mengembangkan CeritaDesain. Silakan lakukan pull request atau diskusikan ide-ide baru melalui issues.
