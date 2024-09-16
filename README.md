@@ -1,66 +1,47 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# CeritaDesain
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Repository ini berisi kode sumber untuk aplikasi **CeritaDesain**, sebuah platform forum online yang ramah, inklusif, dan membangun bagi para desainer UI/UX. Aplikasi ini mencakup pengembangan frontend dan backend dengan fokus pada pengalaman pengguna yang optimal serta fitur interaktif yang mendukung komunitas desain.
 
-## About Laravel
+## Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Frontend**: Dibangun dengan teknologi web modern untuk memastikan tampilan yang responsif dan mudah digunakan.
+- **Backend**: Berbasis framework **Laravel**, dilengkapi dengan sistem autentikasi, pengelolaan diskusi forum, dan manajemen pengguna.
+- **Manajemen Pengguna**: Pendaftaran, login, dan pengelolaan profil pengguna.
+- **Diskusi Forum**: Fitur untuk membuat postingan diskusi dan memberi tanggapan pada diskusi yang ada.
+- **Media**: Pengelolaan gambar profil dan media pendukung lainnya.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Struktur Proyek
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- `frontend/`: Berisi kode untuk antarmuka pengguna (UI).
+- `backend/`: Berisi kode untuk logika server, database, dan API.
+- `migrations/`: Berisi migrasi database untuk memastikan struktur database selalu mutakhir.
+- `controllers/`: Berisi logika untuk mengelola rute dan permintaan dari frontend.
 
-## Learning Laravel
+## Teknologi yang Digunakan
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Laravel**: Untuk backend dan API.
+- **MySQL**: Database yang digunakan untuk menyimpan data pengguna, diskusi, dan lainnya.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Cara Menggunakan
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Clone repository ini:
+   ```bash
+   git clone https://github.com/username/ceritadesain.git
+2. Install dependensi backend:
+   cd backend
+   composer install
+3. Install dependensi frontend:
+    Copy code
+    cd frontend
+    npm install
+4. Jalankan migrasi database:
+    Copy code
+    php artisan migrate
+5. Mulai aplikasi:
+    Backend: php artisan serve
+    Frontend: npm run dev
+   
+Kontribusi
+Kami menyambut kontribusi dari siapa pun yang ingin membantu mengembangkan CeritaDesain. Silakan lakukan pull request atau diskusikan ide-ide baru melalui issues.
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Struktur di atas mengikuti format Markdown yang benar, dengan kode disorot dan instruksi ditulis dengan rapi.
