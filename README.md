@@ -43,5 +43,5 @@ Repository ini berisi kode sumber untuk aplikasi **CeritaDesain**, sebuah platfo
     Frontend: npm run dev
 
 ---
-## Kontribusi <br>
+## Kontribusi 
 Kami menyambut kontribusi dari siapa pun yang ingin membantu mengembangkan CeritaDesain. Silakan lakukan pull request atau diskusikan ide-ide baru melalui issues.
